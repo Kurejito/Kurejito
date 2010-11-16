@@ -1,8 +1,6 @@
-﻿using System.Dynamic;
+﻿using System;
 
-namespace Kurejito
-{
-    public class Options : DynamicObject
-    {
-    }
+namespace Kurejito {
+	public class Options {
+	}
 }
