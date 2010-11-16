@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurejito", "Kurejito\Kurejito.csproj", "{EC232F2E-B508-44EF-9FA4-ECA2D3E2034D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurejito.Tests", "Kurejito.Tests\Kurejito.Tests.csproj", "{84120395-C28D-4432-940A-920BB914219F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC232F2E-B508-44EF-9FA4-ECA2D3E2034D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC232F2E-B508-44EF-9FA4-ECA2D3E2034D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC232F2E-B508-44EF-9FA4-ECA2D3E2034D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC232F2E-B508-44EF-9FA4-ECA2D3E2034D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84120395-C28D-4432-940A-920BB914219F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84120395-C28D-4432-940A-920BB914219F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84120395-C28D-4432-940A-920BB914219F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84120395-C28D-4432-940A-920BB914219F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
