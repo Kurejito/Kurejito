@@ -64,16 +64,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gateway\FakeBank\PaymentGateway.cs" />
+    <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
+    <Compile Include="Gateways\SagePay\SagePayGateway.cs" />
     <Compile Include="PaymentResponse.cs" />
     <Compile Include="PaymentStatus.cs" />
-    <Compile Include="Payment\CreditCard.cs" />
-    <Compile Include="IPaymentGateway.cs" />
-    <Compile Include="Payment\Money.cs" />
+    <Compile Include="Payments\BankCard.cs" />
+    <Compile Include="IPurchaseGateway.cs" />
+    <Compile Include="Payments\CardDate.cs" />
+    <Compile Include="Payments\CardType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -91,6 +95,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Transport\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

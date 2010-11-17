@@ -1,6 +1,4 @@
-﻿using Kurejito.Gateway;
-
-namespace Kurejito {
+﻿namespace Kurejito {
 	/// <summary>
 	/// The result returned by the <see cref="IPaymentGateway" /> in response to a payment request.
 	/// </summary>
@@ -9,6 +7,6 @@ namespace Kurejito {
 		public PaymentStatus Status { get; set; }
 		/// <summary>A human-readable description of the payment status, including the reason for failure if applicable.</summary>
 		/// <remarks>This should be suitable for passing to the customer explaining why their payment succeeded or failed.</remarks>
-		public string StatusDetail { get; set; }
+		public string Reason { get; set; }
 	}
 }
