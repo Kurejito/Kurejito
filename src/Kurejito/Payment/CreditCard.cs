@@ -1,4 +1,4 @@
-﻿namespace Kurejito {
+﻿namespace Kurejito.Payment {
 	public class CreditCard {
 	}
 }

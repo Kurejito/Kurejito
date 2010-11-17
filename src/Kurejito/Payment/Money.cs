@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kurejito.Payments {
+namespace Kurejito.Payment {
 	public class Money {
 
 		public decimal Amount { get; private set; }
