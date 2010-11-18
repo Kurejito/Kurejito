@@ -11,7 +11,7 @@ _Keep it simple.  One assembly, basic functionality, no dependencies. Build, dis
 ### Build the minimum viable implementation
 * Datacash [@dylanbeattie](http://twitter.com/dylanbeattie)
 * SagePay [@dylanbeattie](http://twitter.com/dylanbeattie)
-* TBC [@bentayloruk](http://twitter.com/bentayloruk)
+* PayPal NVP [@bentayloruk](http://twitter.com/bentayloruk)
 * TBC @you-yes-you-know-you-want-to-get-involved
 
 ### Tech
