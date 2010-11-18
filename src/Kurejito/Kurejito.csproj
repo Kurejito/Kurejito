@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
+    <Compile Include="Gateways\PayPalNvp\PayPalNvpPaymentGateway.cs" />
     <Compile Include="Gateways\SagePay\SagePayGateway.cs" />
     <Compile Include="PaymentResponse.cs" />
     <Compile Include="PaymentStatus.cs" />
