@@ -1,7 +1,8 @@
 # Kurejito
 _Kurejito is Japanese for "credit" - or rather, it's the English word as pronounced when written in Kanji._  [@dylanbeattie](http://twitter.com/dylanbeattie/status/4526129926901760)
 
-.NET/Mono library providing simple and consistent access to as many payment gateways as possible.  
+.NET and Mono library for consistent usage of payment cards and payment gateways.
+  
 Sparked by this [tweet](http://twitter.com/dylanbeattie/status/4143251615383552) and galvanised by the existence of [Active Merchant](http://www.activemerchant.org/).
 
 ## Draft 0.1 Plan
