@@ -2,13 +2,12 @@
 using Kurejito.Gateways.PayPal.DirectPayment;
 using Kurejito.Payments;
 using Kurejito.Transport;
-using Moq;
 using Should;
 using Xunit;
 
-namespace Kurejito.Tests.Gateways.PayPalNvp
+namespace Kurejito.Tests.Gateways.PayPal.DirectPayment
 {
-    public class PayPalSandboxTests
+    public class PayPalDirectPaymentSandboxTests
     {
         [Fact]
         public void Purchase_Successful_Against_Sandbox()
