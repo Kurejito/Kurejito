@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Specialized;
+using System.Net;
 using Kurejito.Payments;
 
 namespace Kurejito.Gateways.PayPalNvp
@@ -15,24 +17,14 @@ namespace Kurejito.Gateways.PayPalNvp
 
         public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card)
         {
-            throw new NotImplementedException();
-        }
-    }
+            //PayPal spec I am playing with https://www.x.com/docs/DOC-1160#id086970AK044
 
-    public class PayPalCredentials
-    {
-        public PayPalCredentials(string username, string password, string signature)
-        {
-            if (username == null) throw new ArgumentNullException("username");
-            if (password == null) throw new ArgumentNullException("password");
-            if (signature == null) throw new ArgumentNullException("signature");
-            Username = username;
-            Password = password;
-            Signature = signature;
+            using (var wc = new WebClient())
+            {
+                _payPalCredentials.SetOn(wc.QueryString);
+                var openRead = wc.OpenRead("https://api-3t.sandbox.paypal.com/nvp");
+            }
+            return new PaymentResponse();
         }
-
-        public string Username { get; private set; }
-        public string Password { get; private set; }
-        public string Signature { get; private set; }
     }
 }
