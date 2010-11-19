@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -67,14 +68,17 @@
   <ItemGroup>
     <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
     <Compile Include="Gateways\PayPalNvp\PayPalNvpPaymentGateway.cs" />
-    <Compile Include="Gateways\SagePay\SagePayGateway.cs" />
+    <Compile Include="Gateways\SagePay\VspDirect\GatewayMode.cs" />
+    <Compile Include="Gateways\SagePay\VspDirect\SagePayPaymentGateway.cs" />
     <Compile Include="PaymentResponse.cs" />
     <Compile Include="PaymentStatus.cs" />
-    <Compile Include="Payments\BankCard.cs" />
+    <Compile Include="Payments\PaymentCard.cs" />
     <Compile Include="IPurchaseGateway.cs" />
     <Compile Include="Payments\CardDate.cs" />
     <Compile Include="Payments\CardType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transport\HttpTransport.cs" />
+    <Compile Include="Transport\IHttpPostTransport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -98,9 +102,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Transport\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

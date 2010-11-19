@@ -16,7 +16,7 @@ namespace Kurejito.Tests.Gateways.PayPalNvp
         {
             var payPalCredentials = new PayPalCredentials("username", "password", "signature");
             var payPalNvpPaymentGateway = new PayPalNvpPaymentGateway(payPalCredentials);
-            payPalNvpPaymentGateway.Purchase("REF", 100m, "USD", new BankCard()).ShouldNotBeNull();
+            payPalNvpPaymentGateway.Purchase("REF", 100m, "USD", new PaymentCard()).ShouldNotBeNull();
         }
     }
 }

@@ -53,5 +53,24 @@ namespace Kurejito.Tests.Payments {
 		    Assert.Equal("05", cd.TwoDigitMonth);
 		    Assert.Equal("08", cd.TwoDigitYear);
 		}
+
+		[Fact]
+		public void Verify_CardDate_ToString_Works_On_0508() {
+			CardDate cd = "0508";
+			Assert.Equal("0508", cd.ToString());
+		}
+
+		[Fact]
+		public void Verify_CardDate_ToString_Works_On_1010() {
+			CardDate cd = "1010";
+			Assert.Equal("1010", cd.ToString());
+		}
+
+		[Fact]
+		public void Verify_CardDate_ToString_Works_On_0899() {
+			CardDate cd = new CardDate(8, 1999);
+			Assert.Equal("0899", cd.ToString());
+		}
+
 	}
 }

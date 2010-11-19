@@ -13,7 +13,7 @@ namespace Kurejito.Gateways.PayPalNvp
             _payPalCredentials = payPalCredentials;
         }
 
-        public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, BankCard card)
+        public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card)
         {
             throw new NotImplementedException();
         }

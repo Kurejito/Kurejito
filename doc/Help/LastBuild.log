@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder Utilities" version="1.9.1.0" projectFile="D:\Projects\Kurejito\doc\Kurejito.shfbproj" started="18/11/2010 00:29:33">
+<buildStep step="Initializing">
+</buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
+</buildStep>
+<buildStep step="FindingTools">
+Finding tools...
+Searching for Sandcastle tools...
+    Last step completed in 00:00:00.0029
+</buildStep>
+<buildStep step="Failed">
+
+SHFB: Error BE0035: Could not find the path to the Microsoft Sandcastle documentation compiler tools.  See the error number topic in the help file for details.
+
+
+</buildStep>
+</shfbBuild>

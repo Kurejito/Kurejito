@@ -77,6 +77,10 @@ namespace Kurejito.Payments {
 			throw (new ArgumentException("dateString must contain a valid expiry date, in the format MMYY or MM/YY", "dateString"));
 		}
 
+		public override string ToString() {
+			return (this.Month.ToString("00") + (this.Year % 100).ToString("00"));
+		}
+
 		public static implicit operator CardDate(string	dateString) {
 			return (CardDate.Parse(dateString));
 		}

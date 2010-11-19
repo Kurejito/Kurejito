@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -66,7 +67,9 @@
   <ItemGroup>
     <Compile Include="Gateways\FakeBank\PaymentGatewayTests.cs" />
     <Compile Include="Gateways\PayPalNvp\PayPalNvpPaymentGatewayTests.cs" />
-    <Compile Include="Gateways\SagePay\SagePayGatewayTests.cs" />
+    <Compile Include="Gateways\SagePay\SagePaySimulatorTests.cs" />
+    <Compile Include="Gateways\SagePay\SagePayTestBase.cs" />
+    <Compile Include="Gateways\SagePay\SagePayUnitTests.cs" />
     <Compile Include="Payments\CardDateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
