@@ -50,6 +50,9 @@
     <Reference Include="Moq">
       <HintPath>..\..\lib\moq\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="Should">
+      <HintPath>..\..\lib\should\Should.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gateways\FakeBank\PaymentGatewayTests.cs" />
+    <Compile Include="Gateways\PayPalNvp\PayPalNvpPaymentGatewayTests.cs" />
     <Compile Include="Gateways\SagePay\SagePayGatewayTests.cs" />
     <Compile Include="Payments\CardDateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
