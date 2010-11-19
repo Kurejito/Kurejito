@@ -24,7 +24,8 @@ _Keep it simple.  One assembly, basic functionality, no dependencies. Build, dis
 ### Tech
 * .NET 3.5
 * C#
-* xUnit tests.
+* Moq
+* xUnit
 * Visual Studio 2010 sln.
 
 ### What can you do?
