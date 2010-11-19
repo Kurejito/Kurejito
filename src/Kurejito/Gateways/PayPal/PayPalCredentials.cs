@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Specialized;
 
-namespace Kurejito.Gateways.PayPalNvp
+namespace Kurejito.Gateways.PayPal
 {
     public class PayPalCredentials
     {
@@ -21,18 +20,8 @@ namespace Kurejito.Gateways.PayPalNvp
 
         public static PayPalCredentials CreateSampleCredentials()
         {
-            return new PayPalCredentials("sdk-three_api1.sdk.com", "QFZCWN5HZM8VBG7Q",
-                                         "A‑IzJhZZjhg29XQ2qnhapuwxIDzyAZQ92FRP5dqBzVesOkzbdUONzmOU");
-        }
-
-        public void SetOn(NameValueCollection nameValueCollection)
-        {
-            if (nameValueCollection == null) throw new ArgumentNullException("nameValueCollection");
-            
-            //TODO if these need URL encoding too then will get rid of SetOn
-            nameValueCollection["USER"] = Username;
-            nameValueCollection["PWD"] = Password;
-            nameValueCollection["SIGNATURE"] = Signature;
+            return new PayPalCredentials("usguy_1290197714_biz_api1.bentaylor.org", "1290197724",
+                                         "AFcWxV21C7fd0v3bYYYRCpSSRl31ArACdUVW.OGiJn8.H3UIaPI36X97");
         }
     }
 }
