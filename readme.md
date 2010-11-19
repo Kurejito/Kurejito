@@ -1,8 +1,15 @@
 # Kurejito
+
+**Kurejito: Write your app now. Choose your bank later.**
+
+Kurejito is a standard API for incorporating card payments into your .NET or Mono application.
+
+* Write your app against a clean API, using built-in test implementations to refine your payment system.
+* Deploy your app against any supported payment provider with minimal code changes - or write your own provider.
+* Switch providers easily if your current payment provider goes under, goes offline, or just plain lets you down.
+
 _Kurejito is Japanese for "credit" - or rather, it's the English word as pronounced when written in Kanji._  [@dylanbeattie](http://twitter.com/dylanbeattie/status/4526129926901760)
 
-.NET and Mono library for consistent usage of payment cards and payment gateways.
-  
 Sparked by this [tweet](http://twitter.com/dylanbeattie/status/4143251615383552) and galvanised by the existence of [Active Merchant](http://www.activemerchant.org/).
 
 ## Draft 0.1 Plan
