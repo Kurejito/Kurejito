@@ -69,7 +69,7 @@ namespace Kurejito.Payments {
 						yearString = tokens[1];
 					}
 				}
-				
+
 				if (Int32.TryParse(monthString, out month) && Int32.TryParse(yearString, out year)) {
 					return (new CardDate(month, year));
 				}
@@ -78,12 +78,34 @@ namespace Kurejito.Payments {
 		}
 
 		public override string ToString() {
-			return (this.Month.ToString("00") + (this.Year % 100).ToString("00"));
+			return (this.ToString(String.Empty));
 		}
 
-		public static implicit operator CardDate(string	dateString) {
+		public string ToString(string separator) {
+			return(String.Format("{0:00}{1}{2:00}", this.Month, separator, (this.Year % 100)));
+		}
+
+		public static implicit operator CardDate(string dateString) {
 			return (CardDate.Parse(dateString));
 		}
 
+		/// <summary>Gets a string containing this card date in the format MMYY</summary>
+		public string MMYY {
+			get {
+				return (this.ToString());
+			}
+		}
+		/// <summary>Gets a string containing this card date in the format MM/YY</summary>
+		public string MM_YY {
+			get {
+				return (this.ToString("/"));
+			}
+		}
+		/// <summary>Returns true if this card date has a non-default month and year assigned; otherwise false.</summary>
+		public bool HasValue {
+			get {
+				return (this.month != default(int) || this.year != default(int));
+			}
+		}
 	}
 }

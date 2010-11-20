@@ -1,4 +1,5 @@
-﻿namespace Kurejito.Payments {
+﻿using System;
+namespace Kurejito.Payments {
 	/// <summary>Represents a credit or debit card used for online payments</summary>
 	public class PaymentCard {
 		/// <summary>The card holder's name, as it appears on the payment card.</summary>
@@ -38,5 +39,9 @@
 
 		/// <summary>The type of payment card (Visa, Mastercard, etc).</summary>
 		public CardType CardType { get; set; }
+
+		public bool HasStartDate { get { return (this.StartDate is CardDate && this.StartDate.HasValue); } }
+
+		public bool HasIssueNumber { get { return (this.IssueNumber.HasValue); } }
 	}
 }

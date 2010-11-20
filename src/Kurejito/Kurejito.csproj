@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gateways\DataCash\DataCashPaymentGateway.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
     <Compile Include="Gateways\PayPal\PayPalCredentials.cs" />
     <Compile Include="Gateways\PayPal\DirectPayment\PayPalDirectPaymentGateway.cs" />

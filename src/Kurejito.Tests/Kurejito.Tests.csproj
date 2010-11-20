@@ -65,8 +65,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gateways\DataCash\DataCashHttpMockTests.cs" />
+    <Compile Include="Gateways\IPurchaseGatewayTests.cs" />
+    <Compile Include="Gateways\DataCash\DataCashPurchaseTests.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGatewayTests.cs" />
     <Compile Include="Gateways\PayPal\DirectPayment\PayPalDirectPaymentSandboxTests.cs" />
+    <Compile Include="Gateways\PurchaseGatewayTests.cs" />
     <Compile Include="Gateways\SagePay\SagePaySimulatorTests.cs" />
     <Compile Include="Gateways\SagePay\SagePayTestBase.cs" />
     <Compile Include="Gateways\SagePay\SagePayUnitTests.cs" />

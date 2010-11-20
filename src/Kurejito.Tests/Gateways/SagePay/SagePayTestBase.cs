@@ -8,14 +8,10 @@ using Kurejito.Gateways.SagePay.VspDirect;
 using Kurejito.Payments;
 
 namespace Kurejito.Tests.Gateways.SagePay {
-	public abstract class SagePayTestBase {
-		protected Mock<IHttpPostTransport> http;
-
-		protected SagePayPaymentGateway gateway;
-		protected PaymentCard card;
-
-		protected const string VENDOR_NAME = "rockshop";
-		protected const decimal VPS_PROTOCOL = 2.23m;
-
+	public abstract class SagePayTestBase  {
+		//protected Mock<IHttpPostTransport> http;
+		//protected SagePayPaymentGateway gateway;
+		//protected const string VENDOR_NAME = "rockshop";
+		//protected const decimal VPS_PROTOCOL = 2.23m;
 	}
 }
