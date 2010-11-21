@@ -52,7 +52,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment
             //TODO support payment response and not the hack below.
             return new PaymentResponse()
                        {
-                           Reason = "",
+                           Reason = post,
                            Status = post.Contains("ACK=Success") ? PaymentStatus.OK : PaymentStatus.Error
                        };
         }

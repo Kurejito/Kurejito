@@ -1,5 +1,7 @@
 ﻿namespace Kurejito {
 	public enum PaymentStatus {
+		///<summary>The default value </summary>
+		UNDEFINED,
 		/// <summary>The payment was taken successfully.</summary>
 		OK,
 		/// <summary>The payment was declined by the card's issuing bank</summary>
