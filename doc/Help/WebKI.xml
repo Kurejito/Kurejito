@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+
+  <HelpKINode Title="CardDate class" Url="html/24670669-122d-715e-9a0a-b3dba6dfe119.htm" />
+  <HelpKINode Title="CardDate class" Url="html/a3c1f0ce-8a26-47a2-627d-ae58a8e4dab7.htm" />
+  <HelpKINode Title="CardDate class">
+    <HelpKINode Title="about CardDate class" Url="html/24670669-122d-715e-9a0a-b3dba6dfe119.htm" />
+    <HelpKINode Title="all members" Url="html/a3c1f0ce-8a26-47a2-627d-ae58a8e4dab7.htm" />
+    <HelpKINode Title="constructor" Url="html/b8a553c2-9981-523e-4549-8543bf4532cc.htm" />
+    <HelpKINode Title="methods" Url="html/3c06b216-7c4f-a11f-75ef-d167b75a6c1e.htm" />
+    <HelpKINode Title="properties" Url="html/e8e12507-5331-db9e-3253-47b4a4fdd06c.htm" />
+    <HelpKINode Title="type conversions" Url="html/33e0475e-2199-b14a-32a5-bf07dd068ce9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CardDate.CardDate constructor" Url="html/b8a553c2-9981-523e-4549-8543bf4532cc.htm" />
+  <HelpKINode Title="CardDate.HasValue property" Url="html/f6f9e893-5e6f-e679-4b8e-2f4eb7bf9ef0.htm" />
+  <HelpKINode Title="CardDate.MMYY property" Url="html/73c9bb00-0888-c693-6ae0-40641f7be89f.htm" />
+  <HelpKINode Title="CardDate.MM_YY property" Url="html/5aa06dcf-6eee-0613-ba4e-292ac23af4eb.htm" />
+  <HelpKINode Title="CardDate.Month property" Url="html/ec0a59e1-d223-27be-a231-2ed49e1b351a.htm" />
+  <HelpKINode Title="CardDate.Parse method" Url="html/051ec602-f35e-f68b-1437-05df758884cd.htm" />
+  <HelpKINode Title="CardDate.Threshold property" Url="html/947c57c8-a963-e15b-2d85-36ae2f5ec685.htm" />
+  <HelpKINode Title="CardDate.ToString method" Url="html/ff22ce55-969c-9c2d-809e-862b2445108c.htm" />
+  <HelpKINode Title="CardDate.TwoDigitMonth property" Url="html/836819e1-61b4-5104-356e-78a6ea1eacd5.htm" />
+  <HelpKINode Title="CardDate.TwoDigitYear property" Url="html/9cc1a16c-b198-a1f8-4735-85ace866e650.htm" />
+  <HelpKINode Title="CardDate.Year property" Url="html/cc574f7d-316c-90c6-35fd-3e9b72f0d8e9.htm" />
+  <HelpKINode Title="CardHolder property" Url="html/98a8d766-a702-deab-abd1-459c5698a2b9.htm" />
+  <HelpKINode Title="CardNumber property" Url="html/8bd4ee2f-0edb-e2c0-ebd0-8f6104beab95.htm" />
+  <HelpKINode Title="CardType enumeration" Url="html/0429ca8a-35c6-5e07-6f96-04c225fe16b1.htm" />
+  <HelpKINode Title="CardType property" Url="html/8d32d2d4-7b6d-a5e6-cc08-9a4a1cdd0e29.htm" />
+  <HelpKINode Title="CreateSampleCredentials method" Url="html/1c8790ce-4384-ab78-ebde-484e3e7c8b6b.htm" />
+  <HelpKINode Title="CV2 property" Url="html/7a6e7730-77f7-6368-5ede-90f9e75554b4.htm" />
+  <HelpKINode Title="DataCashPaymentGateway class" Url="html/0c2de53b-77f2-6b5b-8e28-bb5aea2a0d81.htm" />
+  <HelpKINode Title="DataCashPaymentGateway class" Url="html/5e3b4644-ed76-baa8-eb6e-a8632bf399a1.htm" />
+  <HelpKINode Title="DataCashPaymentGateway class">
+    <HelpKINode Title="about DataCashPaymentGateway class" Url="html/5e3b4644-ed76-baa8-eb6e-a8632bf399a1.htm" />
+    <HelpKINode Title="all members" Url="html/0c2de53b-77f2-6b5b-8e28-bb5aea2a0d81.htm" />
+    <HelpKINode Title="constructor" Url="html/1d8a2580-4a99-766e-90f5-aa56833ad747.htm" />
+    <HelpKINode Title="methods" Url="html/56578177-f3b5-fdb8-9017-5bb9758d4fd4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DataCashPaymentGateway.DataCashPaymentGateway constructor" Url="html/1d8a2580-4a99-766e-90f5-aa56833ad747.htm" />
+  <HelpKINode Title="DataCashPaymentGateway.Purchase method" Url="html/20958e47-fd41-d5ef-8854-4450844d2384.htm" />
+  <HelpKINode Title="Declined enumeration member" Url="html/8207e927-08d7-049a-276c-e608ff714e45.htm" />
+  <HelpKINode Title="Error enumeration member" Url="html/8207e927-08d7-049a-276c-e608ff714e45.htm" />
+  <HelpKINode Title="ExpiryDate property" Url="html/69288f9a-8c08-9b76-bed6-5fdb12133163.htm" />
+  <HelpKINode Title="GatewayMode enumeration" Url="html/7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm" />
+  <HelpKINode Title="HasIssueNumber property" Url="html/0588ad54-09cd-1627-37be-afd35ddeabf5.htm" />
+  <HelpKINode Title="HasStartDate property" Url="html/7ddf763a-9c84-c342-4f67-b0edafe0d54e.htm" />
+  <HelpKINode Title="HasValue property" Url="html/f6f9e893-5e6f-e679-4b8e-2f4eb7bf9ef0.htm" />
+  <HelpKINode Title="HttpTransport class" Url="html/035045ca-aefa-560a-b753-ced3e994ea32.htm" />
+  <HelpKINode Title="HttpTransport class" Url="html/a344c87e-3c03-82b0-9c9e-13b3854e7c11.htm" />
+  <HelpKINode Title="HttpTransport class">
+    <HelpKINode Title="about HttpTransport class" Url="html/a344c87e-3c03-82b0-9c9e-13b3854e7c11.htm" />
+    <HelpKINode Title="all members" Url="html/035045ca-aefa-560a-b753-ced3e994ea32.htm" />
+    <HelpKINode Title="constructor" Url="html/7d59a64b-27a2-018f-e3a8-705ec86b9b69.htm" />
+    <HelpKINode Title="methods" Url="html/cea9a9fa-4fa4-61de-0d66-a2222920bbae.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HttpTransport.HttpTransport constructor" Url="html/7d59a64b-27a2-018f-e3a8-705ec86b9b69.htm" />
+  <HelpKINode Title="HttpTransport.Post method" Url="html/9431de64-5dcd-2582-b11e-46ded056c71c.htm" />
+  <HelpKINode Title="IHttpPostTransport interface" Url="html/6b3223e7-405d-55b5-6b9b-d5a1ae25ac09.htm" />
+  <HelpKINode Title="IHttpPostTransport interface" Url="html/7f761642-9e51-7375-de40-9d6bdf845523.htm" />
+  <HelpKINode Title="IHttpPostTransport interface">
+    <HelpKINode Title="about IHttpPostTransport interface" Url="html/6b3223e7-405d-55b5-6b9b-d5a1ae25ac09.htm" />
+    <HelpKINode Title="all members" Url="html/7f761642-9e51-7375-de40-9d6bdf845523.htm" />
+    <HelpKINode Title="methods" Url="html/d6a2f0e6-352c-d6c8-7eed-62f3001eb7d6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IHttpPostTransport.Post method" Url="html/bc5e1ecb-b528-5835-bebc-318b7918f3d0.htm" />
+  <HelpKINode Title="Invalid enumeration member" Url="html/8207e927-08d7-049a-276c-e608ff714e45.htm" />
+  <HelpKINode Title="IPurchaseGateway interface" Url="html/7d9917a8-c4a1-0233-027b-9f966447d619.htm" />
+  <HelpKINode Title="IPurchaseGateway interface" Url="html/d52fed0b-74c1-843c-c718-8b045961cd35.htm" />
+  <HelpKINode Title="IPurchaseGateway interface">
+    <HelpKINode Title="about IPurchaseGateway interface" Url="html/d52fed0b-74c1-843c-c718-8b045961cd35.htm" />
+    <HelpKINode Title="all members" Url="html/7d9917a8-c4a1-0233-027b-9f966447d619.htm" />
+    <HelpKINode Title="methods" Url="html/23fb35b3-8604-bfdc-4527-20910dc1445f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IPurchaseGateway.Purchase method" Url="html/4b0f723e-31d3-aa03-6fc9-e75838814960.htm" />
+  <HelpKINode Title="IssueNumber property" Url="html/175c382c-df12-0562-9995-14599e2a0a10.htm" />
+  <HelpKINode Title="Kurejito namespace" Url="html/e924dda2-89a2-ea49-0d11-fc5ed44ec29b.htm" />
+  <HelpKINode Title="Kurejito.Gateways.DataCash namespace" Url="html/0ba39c1a-2ebd-0d37-7af4-f31040028d8c.htm" />
+  <HelpKINode Title="Kurejito.Gateways.DataCash.DataCashPaymentGateway class" Url="html/0c2de53b-77f2-6b5b-8e28-bb5aea2a0d81.htm" />
+  <HelpKINode Title="Kurejito.Gateways.DataCash.DataCashPaymentGateway class" Url="html/5e3b4644-ed76-baa8-eb6e-a8632bf399a1.htm" />
+  <HelpKINode Title="Kurejito.Gateways.FakeBank namespace" Url="html/bf5abae8-8d99-7b76-884a-b5d36b2c878e.htm" />
+  <HelpKINode Title="Kurejito.Gateways.FakeBank.PaymentGateway class" Url="html/b4042e83-4115-284d-d0b3-03796e4efc78.htm" />
+  <HelpKINode Title="Kurejito.Gateways.FakeBank.PaymentGateway class" Url="html/d18bfd0a-c816-b505-3462-10324a602dbb.htm" />
+  <HelpKINode Title="Kurejito.Gateways.PayPal namespace" Url="html/5c6a366e-3c79-f80c-6c27-9e08da81dc46.htm" />
+  <HelpKINode Title="Kurejito.Gateways.PayPal.DirectPayment namespace" Url="html/d1ef3813-dd53-a3c7-e58d-fef1f84332e2.htm" />
+  <HelpKINode Title="Kurejito.Gateways.PayPal.DirectPayment.PayPalDirectPaymentGateway class" Url="html/e7e49c26-e97b-9a84-8979-d8bf301f4d10.htm" />
+  <HelpKINode Title="Kurejito.Gateways.PayPal.DirectPayment.PayPalDirectPaymentGateway class" Url="html/f2d342a6-4f75-3d00-3b21-6dfe5cb7171c.htm" />
+  <HelpKINode Title="Kurejito.Gateways.PayPal.PayPalCredentials class" Url="html/230922c9-2c16-dcb5-c729-e5c6d6a42b75.htm" />
+  <HelpKINode Title="Kurejito.Gateways.PayPal.PayPalCredentials class" Url="html/c3a887e5-98ca-9785-5641-e7d18f840f32.htm" />
+  <HelpKINode Title="Kurejito.Gateways.SagePay.VspDirect namespace" Url="html/c42ece63-cda8-cb06-57ef-b5622e94f3d0.htm" />
+  <HelpKINode Title="Kurejito.Gateways.SagePay.VspDirect.GatewayMode enumeration" Url="html/7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm" />
+  <HelpKINode Title="Kurejito.Gateways.SagePay.VspDirect.SagePayPaymentGateway class" Url="html/0d73d2ff-3986-0da0-8b69-285736e798af.htm" />
+  <HelpKINode Title="Kurejito.Gateways.SagePay.VspDirect.SagePayPaymentGateway class" Url="html/7d68a7ea-f70d-75e9-f87f-3e8b1dbef260.htm" />
+  <HelpKINode Title="Kurejito.IPurchaseGateway interface" Url="html/7d9917a8-c4a1-0233-027b-9f966447d619.htm" />
+  <HelpKINode Title="Kurejito.IPurchaseGateway interface" Url="html/d52fed0b-74c1-843c-c718-8b045961cd35.htm" />
+  <HelpKINode Title="Kurejito.PaymentResponse class" Url="html/6d863258-3693-47d5-1d82-dd9cce24d4e4.htm" />
+  <HelpKINode Title="Kurejito.PaymentResponse class" Url="html/8e48659a-aaa9-308f-24e5-396bfac5ff69.htm" />
+  <HelpKINode Title="Kurejito.Payments namespace" Url="html/15500825-00cc-d62e-c216-fb79b8a7000d.htm" />
+  <HelpKINode Title="Kurejito.Payments.CardDate class" Url="html/24670669-122d-715e-9a0a-b3dba6dfe119.htm" />
+  <HelpKINode Title="Kurejito.Payments.CardDate class" Url="html/a3c1f0ce-8a26-47a2-627d-ae58a8e4dab7.htm" />
+  <HelpKINode Title="Kurejito.Payments.CardType enumeration" Url="html/0429ca8a-35c6-5e07-6f96-04c225fe16b1.htm" />
+  <HelpKINode Title="Kurejito.Payments.PaymentCard class" Url="html/29817606-6e21-855e-7bb4-11f89b59cc93.htm" />
+  <HelpKINode Title="Kurejito.Payments.PaymentCard class" Url="html/4f03d9c8-f44e-2805-4056-41656588a2a4.htm" />
+  <HelpKINode Title="Kurejito.PaymentStatus enumeration" Url="html/8207e927-08d7-049a-276c-e608ff714e45.htm" />
+  <HelpKINode Title="Kurejito.Transport namespace" Url="html/06961d74-5431-c98e-d90a-9163e70d6816.htm" />
+  <HelpKINode Title="Kurejito.Transport.HttpTransport class" Url="html/035045ca-aefa-560a-b753-ced3e994ea32.htm" />
+  <HelpKINode Title="Kurejito.Transport.HttpTransport class" Url="html/a344c87e-3c03-82b0-9c9e-13b3854e7c11.htm" />
+  <HelpKINode Title="Kurejito.Transport.IHttpPostTransport interface" Url="html/6b3223e7-405d-55b5-6b9b-d5a1ae25ac09.htm" />
+  <HelpKINode Title="Kurejito.Transport.IHttpPostTransport interface" Url="html/7f761642-9e51-7375-de40-9d6bdf845523.htm" />
+  <HelpKINode Title="Live enumeration member" Url="html/7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm" />
+  <HelpKINode Title="Mastercard enumeration member" Url="html/0429ca8a-35c6-5e07-6f96-04c225fe16b1.htm" />
+  <HelpKINode Title="MMYY property" Url="html/73c9bb00-0888-c693-6ae0-40641f7be89f.htm" />
+  <HelpKINode Title="MM_YY property" Url="html/5aa06dcf-6eee-0613-ba4e-292ac23af4eb.htm" />
+  <HelpKINode Title="Month property" Url="html/ec0a59e1-d223-27be-a231-2ed49e1b351a.htm" />
+  <HelpKINode Title="OK enumeration member" Url="html/8207e927-08d7-049a-276c-e608ff714e45.htm" />
+  <HelpKINode Title="Parse method" Url="html/051ec602-f35e-f68b-1437-05df758884cd.htm" />
+  <HelpKINode Title="Password property" Url="html/3ee1c0f3-bb60-b3fb-0d3e-9e2e79da9641.htm" />
+  <HelpKINode Title="PaymentCard class" Url="html/29817606-6e21-855e-7bb4-11f89b59cc93.htm" />
+  <HelpKINode Title="PaymentCard class" Url="html/4f03d9c8-f44e-2805-4056-41656588a2a4.htm" />
+  <HelpKINode Title="PaymentCard class">
+    <HelpKINode Title="about PaymentCard class" Url="html/29817606-6e21-855e-7bb4-11f89b59cc93.htm" />
+    <HelpKINode Title="all members" Url="html/4f03d9c8-f44e-2805-4056-41656588a2a4.htm" />
+    <HelpKINode Title="constructor" Url="html/2e81b565-dfa2-c72c-dff5-4d931fd9c869.htm" />
+    <HelpKINode Title="methods" Url="html/32e826bd-cb4c-a22d-c85b-d8e3b7740dac.htm" />
+    <HelpKINode Title="properties" Url="html/cb9e2f9d-4b60-9a71-7d6a-a0fc9f92fce8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PaymentCard.CardHolder property" Url="html/98a8d766-a702-deab-abd1-459c5698a2b9.htm" />
+  <HelpKINode Title="PaymentCard.CardNumber property" Url="html/8bd4ee2f-0edb-e2c0-ebd0-8f6104beab95.htm" />
+  <HelpKINode Title="PaymentCard.CardType property" Url="html/8d32d2d4-7b6d-a5e6-cc08-9a4a1cdd0e29.htm" />
+  <HelpKINode Title="PaymentCard.CV2 property" Url="html/7a6e7730-77f7-6368-5ede-90f9e75554b4.htm" />
+  <HelpKINode Title="PaymentCard.ExpiryDate property" Url="html/69288f9a-8c08-9b76-bed6-5fdb12133163.htm" />
+  <HelpKINode Title="PaymentCard.HasIssueNumber property" Url="html/0588ad54-09cd-1627-37be-afd35ddeabf5.htm" />
+  <HelpKINode Title="PaymentCard.HasStartDate property" Url="html/7ddf763a-9c84-c342-4f67-b0edafe0d54e.htm" />
+  <HelpKINode Title="PaymentCard.IssueNumber property" Url="html/175c382c-df12-0562-9995-14599e2a0a10.htm" />
+  <HelpKINode Title="PaymentCard.PaymentCard constructor" Url="html/2e81b565-dfa2-c72c-dff5-4d931fd9c869.htm" />
+  <HelpKINode Title="PaymentCard.StartDate property" Url="html/1077d042-428c-0886-dbbd-a9a0f01da745.htm" />
+  <HelpKINode Title="PaymentGateway class" Url="html/b4042e83-4115-284d-d0b3-03796e4efc78.htm" />
+  <HelpKINode Title="PaymentGateway class" Url="html/d18bfd0a-c816-b505-3462-10324a602dbb.htm" />
+  <HelpKINode Title="PaymentGateway class">
+    <HelpKINode Title="about PaymentGateway class" Url="html/b4042e83-4115-284d-d0b3-03796e4efc78.htm" />
+    <HelpKINode Title="all members" Url="html/d18bfd0a-c816-b505-3462-10324a602dbb.htm" />
+    <HelpKINode Title="constructor" Url="html/ed967b49-6305-94f3-b1bd-6e444949adcf.htm" />
+    <HelpKINode Title="methods" Url="html/77f6759a-da68-f6f8-8af6-3d05739e55ef.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PaymentGateway.PaymentGateway constructor" Url="html/ed967b49-6305-94f3-b1bd-6e444949adcf.htm" />
+  <HelpKINode Title="PaymentGateway.Purchase method" Url="html/b61a4880-a49c-f5a8-863a-4876fcdb7524.htm" />
+  <HelpKINode Title="PaymentResponse class" Url="html/6d863258-3693-47d5-1d82-dd9cce24d4e4.htm" />
+  <HelpKINode Title="PaymentResponse class" Url="html/8e48659a-aaa9-308f-24e5-396bfac5ff69.htm" />
+  <HelpKINode Title="PaymentResponse class">
+    <HelpKINode Title="about PaymentResponse class" Url="html/6d863258-3693-47d5-1d82-dd9cce24d4e4.htm" />
+    <HelpKINode Title="all members" Url="html/8e48659a-aaa9-308f-24e5-396bfac5ff69.htm" />
+    <HelpKINode Title="constructor" Url="html/2be312d1-0d5d-d406-9d16-403e2e981286.htm" />
+    <HelpKINode Title="methods" Url="html/82b6638b-2c94-0314-1073-8bb3d0865868.htm" />
+    <HelpKINode Title="properties" Url="html/26332420-f04e-1a7c-7943-6cd49da5413d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PaymentResponse.PaymentResponse constructor" Url="html/2be312d1-0d5d-d406-9d16-403e2e981286.htm" />
+  <HelpKINode Title="PaymentResponse.Reason property" Url="html/e4bb8239-91b6-fabf-b0e9-2e80cd172250.htm" />
+  <HelpKINode Title="PaymentResponse.Status property" Url="html/42ca2387-3a09-9601-66e6-08a69e74591e.htm" />
+  <HelpKINode Title="PaymentStatus enumeration" Url="html/8207e927-08d7-049a-276c-e608ff714e45.htm" />
+  <HelpKINode Title="PayPalCredentials class" Url="html/230922c9-2c16-dcb5-c729-e5c6d6a42b75.htm" />
+  <HelpKINode Title="PayPalCredentials class" Url="html/c3a887e5-98ca-9785-5641-e7d18f840f32.htm" />
+  <HelpKINode Title="PayPalCredentials class">
+    <HelpKINode Title="about PayPalCredentials class" Url="html/230922c9-2c16-dcb5-c729-e5c6d6a42b75.htm" />
+    <HelpKINode Title="all members" Url="html/c3a887e5-98ca-9785-5641-e7d18f840f32.htm" />
+    <HelpKINode Title="constructor" Url="html/2fcebef1-fbce-a5b2-ba99-312ce29fbbc0.htm" />
+    <HelpKINode Title="methods" Url="html/83c740eb-372f-abee-d5ae-9c86c8413fec.htm" />
+    <HelpKINode Title="properties" Url="html/c0a2e35d-629b-b993-324c-bb1fb3fbb10b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PayPalCredentials.CreateSampleCredentials method" Url="html/1c8790ce-4384-ab78-ebde-484e3e7c8b6b.htm" />
+  <HelpKINode Title="PayPalCredentials.Password property" Url="html/3ee1c0f3-bb60-b3fb-0d3e-9e2e79da9641.htm" />
+  <HelpKINode Title="PayPalCredentials.PayPalCredentials constructor" Url="html/2fcebef1-fbce-a5b2-ba99-312ce29fbbc0.htm" />
+  <HelpKINode Title="PayPalCredentials.Signature property" Url="html/3ae0eb69-0b93-6e48-b562-316c14ffe044.htm" />
+  <HelpKINode Title="PayPalCredentials.Username property" Url="html/784562a0-2d1d-b875-686c-9928440abb3e.htm" />
+  <HelpKINode Title="PayPalDirectPaymentGateway class" Url="html/e7e49c26-e97b-9a84-8979-d8bf301f4d10.htm" />
+  <HelpKINode Title="PayPalDirectPaymentGateway class" Url="html/f2d342a6-4f75-3d00-3b21-6dfe5cb7171c.htm" />
+  <HelpKINode Title="PayPalDirectPaymentGateway class">
+    <HelpKINode Title="about PayPalDirectPaymentGateway class" Url="html/e7e49c26-e97b-9a84-8979-d8bf301f4d10.htm" />
+    <HelpKINode Title="all members" Url="html/f2d342a6-4f75-3d00-3b21-6dfe5cb7171c.htm" />
+    <HelpKINode Title="constructor" Url="html/8db3bf12-a6a2-2cd9-538d-28ffe4356e06.htm" />
+    <HelpKINode Title="methods" Url="html/7b0f6dad-3819-4a34-b0b3-f162676b4e19.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PayPalDirectPaymentGateway.PayPalDirectPaymentGateway constructor" Url="html/8db3bf12-a6a2-2cd9-538d-28ffe4356e06.htm" />
+  <HelpKINode Title="PayPalDirectPaymentGateway.Purchase method" Url="html/3f4025e7-ae25-f0e2-901b-b9de87d914a2.htm" />
+  <HelpKINode Title="Post method" Url="html/9431de64-5dcd-2582-b11e-46ded056c71c.htm" />
+  <HelpKINode Title="Post method" Url="html/bc5e1ecb-b528-5835-bebc-318b7918f3d0.htm" />
+  <HelpKINode Title="Purchase method" Url="html/20958e47-fd41-d5ef-8854-4450844d2384.htm" />
+  <HelpKINode Title="Purchase method" Url="html/3f4025e7-ae25-f0e2-901b-b9de87d914a2.htm" />
+  <HelpKINode Title="Purchase method" Url="html/4b0f723e-31d3-aa03-6fc9-e75838814960.htm" />
+  <HelpKINode Title="Purchase method" Url="html/b61a4880-a49c-f5a8-863a-4876fcdb7524.htm" />
+  <HelpKINode Title="Purchase method" Url="html/e03ed871-cbf2-0ab2-2cc1-7ea200b03cfd.htm" />
+  <HelpKINode Title="Reason property" Url="html/e4bb8239-91b6-fabf-b0e9-2e80cd172250.htm" />
+  <HelpKINode Title="SagePayPaymentGateway class" Url="html/0d73d2ff-3986-0da0-8b69-285736e798af.htm" />
+  <HelpKINode Title="SagePayPaymentGateway class" Url="html/7d68a7ea-f70d-75e9-f87f-3e8b1dbef260.htm" />
+  <HelpKINode Title="SagePayPaymentGateway class">
+    <HelpKINode Title="about SagePayPaymentGateway class" Url="html/0d73d2ff-3986-0da0-8b69-285736e798af.htm" />
+    <HelpKINode Title="all members" Url="html/7d68a7ea-f70d-75e9-f87f-3e8b1dbef260.htm" />
+    <HelpKINode Title="constructor" Url="html/d2ee7ba5-be98-1d63-6822-b78be3aefff6.htm" />
+    <HelpKINode Title="methods" Url="html/8621540c-c057-d67a-429b-6a31c068e04d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SagePayPaymentGateway.Purchase method" Url="html/e03ed871-cbf2-0ab2-2cc1-7ea200b03cfd.htm" />
+  <HelpKINode Title="SagePayPaymentGateway.SagePayPaymentGateway constructor" Url="html/d2ee7ba5-be98-1d63-6822-b78be3aefff6.htm" />
+  <HelpKINode Title="Signature property" Url="html/3ae0eb69-0b93-6e48-b562-316c14ffe044.htm" />
+  <HelpKINode Title="Simulator enumeration member" Url="html/7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm" />
+  <HelpKINode Title="StartDate property" Url="html/1077d042-428c-0886-dbbd-a9a0f01da745.htm" />
+  <HelpKINode Title="Status property" Url="html/42ca2387-3a09-9601-66e6-08a69e74591e.htm" />
+  <HelpKINode Title="String to CardDate conversion" Url="html/04bd6f7e-e973-8120-a62b-65b9eb4bf7cd.htm" />
+  <HelpKINode Title="Test enumeration member" Url="html/7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm" />
+  <HelpKINode Title="Threshold property" Url="html/947c57c8-a963-e15b-2d85-36ae2f5ec685.htm" />
+  <HelpKINode Title="ToString method" Url="html/ff22ce55-969c-9c2d-809e-862b2445108c.htm" />
+  <HelpKINode Title="TwoDigitMonth property" Url="html/836819e1-61b4-5104-356e-78a6ea1eacd5.htm" />
+  <HelpKINode Title="TwoDigitYear property" Url="html/9cc1a16c-b198-a1f8-4735-85ace866e650.htm" />
+  <HelpKINode Title="Username property" Url="html/784562a0-2d1d-b875-686c-9928440abb3e.htm" />
+  <HelpKINode Title="Visa enumeration member" Url="html/0429ca8a-35c6-5e07-6f96-04c225fe16b1.htm" />
+  <HelpKINode Title="Year property" Url="html/cc574f7d-316c-90c6-35fd-3e9b72f0d8e9.htm" />
+</HelpKI>

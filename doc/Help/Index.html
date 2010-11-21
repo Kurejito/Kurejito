@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<title>Kurejito. Write your app now. Choose your bank later. - Table of Content</title>
+<link rel="stylesheet" href="TOC.css">
+<link rel="shortcut icon" href="favicon.ico"/>
+<script type="text/javascript" src="TOC.js"></script>
+</head>
+
+<body onload="javascript: Initialize();" onresize="javascript: ResizeTree();">
+<form id="IndexForm" runat="server">
+
+<div id="TOCDiv" class="TOCDiv">
+
+<div id="divSearchOpts" class="SearchOpts" style="height: 100px; display: none;">
+<img class="TOCLink" onclick="javascript: ShowHideSearch(false);"
+    src="CloseSearch.png" height="16" width="16" alt="Hide search" style="float: right;"/>
+Keyword(s) for which to search:
+<input id="txtSearchText" type="text" style="width: 100%;"
+  onkeypress="javascript: return OnSearchTextKeyPress(event);" /><br />
+<input id="chkSortByTitle" type="checkbox" /><label for="chkSortByTitle">&nbsp;Sort results by title</label><br />
+<input type="button" value="Search" onclick="javascript: return PerformSearch();" />
+</div>
+
+<div id="divIndexOpts" class="IndexOpts" style="height: 25px; display: none;">
+<img class="TOCLink" onclick="javascript: ShowHideIndex(false);"
+    src="CloseSearch.png" height="17" width="17" alt="Hide index" style="float: right;"/>
+Keyword Index
+</div>
+
+<div id="divNavOpts" class="NavOpts" style="height: 20px;">
+    <img class="TOCLink" onclick="javascript: SyncTOC();" src="SyncTOC.gif"
+        height="16" width="16" alt="Sync to TOC"/>
+    <img class="TOCLink" onclick="javascript: ExpandOrCollapseAll(true);"
+        src="ExpandAll.bmp" height="16" width="16" alt="Expand all "/>
+    <img class="TOCLink" onclick="javascript: ExpandOrCollapseAll(false);"
+        src="CollapseAll.bmp" height="16" width="16" alt="Collapse all" />
+</div>
+
+<div class="Tree" id="divSearchResults" style="display: none;"
+    onselectstart="javascript: return false;">
+</div>
+
+<div class="Tree" id="divIndexResults" style="display: none;"
+    onselectstart="javascript: return false;">
+</div>
+
+<div class="Tree" id="divTree" onselectstart="javascript: return false;">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/e924dda2-89a2-ea49-0d11-fc5ed44ec29b.htm" target="TopicContent">Kurejito Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/d52fed0b-74c1-843c-c718-8b045961cd35.htm" target="TopicContent">IPurchaseGateway Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/7d9917a8-c4a1-0233-027b-9f966447d619.htm" target="TopicContent">IPurchaseGateway Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/23fb35b3-8604-bfdc-4527-20910dc1445f.htm" target="TopicContent">IPurchaseGateway Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/4b0f723e-31d3-aa03-6fc9-e75838814960.htm" target="TopicContent">Purchase Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/6d863258-3693-47d5-1d82-dd9cce24d4e4.htm" target="TopicContent">PaymentResponse Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/8e48659a-aaa9-308f-24e5-396bfac5ff69.htm" target="TopicContent">PaymentResponse Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/2be312d1-0d5d-d406-9d16-403e2e981286.htm" target="TopicContent">PaymentResponse Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/82b6638b-2c94-0314-1073-8bb3d0865868.htm" target="TopicContent">PaymentResponse Methods</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/26332420-f04e-1a7c-7943-6cd49da5413d.htm" target="TopicContent">PaymentResponse Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/e4bb8239-91b6-fabf-b0e9-2e80cd172250.htm" target="TopicContent">Reason Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/42ca2387-3a09-9601-66e6-08a69e74591e.htm" target="TopicContent">Status Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/8207e927-08d7-049a-276c-e608ff714e45.htm" target="TopicContent">PaymentStatus Enumeration</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/0ba39c1a-2ebd-0d37-7af4-f31040028d8c.htm" target="TopicContent">Kurejito.Gateways.DataCash Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/5e3b4644-ed76-baa8-eb6e-a8632bf399a1.htm" target="TopicContent">DataCashPaymentGateway Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/0c2de53b-77f2-6b5b-8e28-bb5aea2a0d81.htm" target="TopicContent">DataCashPaymentGateway Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/1d8a2580-4a99-766e-90f5-aa56833ad747.htm" target="TopicContent">DataCashPaymentGateway Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/56578177-f3b5-fdb8-9017-5bb9758d4fd4.htm" target="TopicContent">DataCashPaymentGateway Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/20958e47-fd41-d5ef-8854-4450844d2384.htm" target="TopicContent">Purchase Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/bf5abae8-8d99-7b76-884a-b5d36b2c878e.htm" target="TopicContent">Kurejito.Gateways.FakeBank Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/b4042e83-4115-284d-d0b3-03796e4efc78.htm" target="TopicContent">PaymentGateway Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/d18bfd0a-c816-b505-3462-10324a602dbb.htm" target="TopicContent">PaymentGateway Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/ed967b49-6305-94f3-b1bd-6e444949adcf.htm" target="TopicContent">PaymentGateway Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/77f6759a-da68-f6f8-8af6-3d05739e55ef.htm" target="TopicContent">PaymentGateway Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/b61a4880-a49c-f5a8-863a-4876fcdb7524.htm" target="TopicContent">Purchase Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/5c6a366e-3c79-f80c-6c27-9e08da81dc46.htm" target="TopicContent">Kurejito.Gateways.PayPal Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/230922c9-2c16-dcb5-c729-e5c6d6a42b75.htm" target="TopicContent">PayPalCredentials Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/c3a887e5-98ca-9785-5641-e7d18f840f32.htm" target="TopicContent">PayPalCredentials Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/2fcebef1-fbce-a5b2-ba99-312ce29fbbc0.htm" target="TopicContent">PayPalCredentials Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/83c740eb-372f-abee-d5ae-9c86c8413fec.htm" target="TopicContent">PayPalCredentials Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/1c8790ce-4384-ab78-ebde-484e3e7c8b6b.htm" target="TopicContent">CreateSampleCredentials Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/c0a2e35d-629b-b993-324c-bb1fb3fbb10b.htm" target="TopicContent">PayPalCredentials Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/3ee1c0f3-bb60-b3fb-0d3e-9e2e79da9641.htm" target="TopicContent">Password Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/3ae0eb69-0b93-6e48-b562-316c14ffe044.htm" target="TopicContent">Signature Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/784562a0-2d1d-b875-686c-9928440abb3e.htm" target="TopicContent">Username Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/d1ef3813-dd53-a3c7-e58d-fef1f84332e2.htm" target="TopicContent">Kurejito.Gateways.PayPal.DirectPayment Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/e7e49c26-e97b-9a84-8979-d8bf301f4d10.htm" target="TopicContent">PayPalDirectPaymentGateway Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/f2d342a6-4f75-3d00-3b21-6dfe5cb7171c.htm" target="TopicContent">PayPalDirectPaymentGateway Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/8db3bf12-a6a2-2cd9-538d-28ffe4356e06.htm" target="TopicContent">PayPalDirectPaymentGateway Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/7b0f6dad-3819-4a34-b0b3-f162676b4e19.htm" target="TopicContent">PayPalDirectPaymentGateway Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/3f4025e7-ae25-f0e2-901b-b9de87d914a2.htm" target="TopicContent">Purchase Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/c42ece63-cda8-cb06-57ef-b5622e94f3d0.htm" target="TopicContent">Kurejito.Gateways.SagePay.VspDirect Namespace</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm" target="TopicContent">GatewayMode Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/0d73d2ff-3986-0da0-8b69-285736e798af.htm" target="TopicContent">SagePayPaymentGateway Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/7d68a7ea-f70d-75e9-f87f-3e8b1dbef260.htm" target="TopicContent">SagePayPaymentGateway Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/d2ee7ba5-be98-1d63-6822-b78be3aefff6.htm" target="TopicContent">SagePayPaymentGateway Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/8621540c-c057-d67a-429b-6a31c068e04d.htm" target="TopicContent">SagePayPaymentGateway Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/e03ed871-cbf2-0ab2-2cc1-7ea200b03cfd.htm" target="TopicContent">Purchase Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/15500825-00cc-d62e-c216-fb79b8a7000d.htm" target="TopicContent">Kurejito.Payments Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/24670669-122d-715e-9a0a-b3dba6dfe119.htm" target="TopicContent">CardDate Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/a3c1f0ce-8a26-47a2-627d-ae58a8e4dab7.htm" target="TopicContent">CardDate Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/b8a553c2-9981-523e-4549-8543bf4532cc.htm" target="TopicContent">CardDate Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/3c06b216-7c4f-a11f-75ef-d167b75a6c1e.htm" target="TopicContent">CardDate Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/051ec602-f35e-f68b-1437-05df758884cd.htm" target="TopicContent">Parse Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/ff22ce55-969c-9c2d-809e-862b2445108c.htm" target="TopicContent">ToString Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/8289419d-b6f2-62d8-aa92-9123de4b0684.htm" target="TopicContent">ToString Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/da192f3b-55ac-1a81-3781-e43f6d82058d.htm" target="TopicContent">ToString Method (String)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/33e0475e-2199-b14a-32a5-bf07dd068ce9.htm" target="TopicContent">CardDate Type Conversions</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/04bd6f7e-e973-8120-a62b-65b9eb4bf7cd.htm" target="TopicContent">Implicit Conversion (String to CardDate)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/e8e12507-5331-db9e-3253-47b4a4fdd06c.htm" target="TopicContent">CardDate Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/f6f9e893-5e6f-e679-4b8e-2f4eb7bf9ef0.htm" target="TopicContent">HasValue Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/5aa06dcf-6eee-0613-ba4e-292ac23af4eb.htm" target="TopicContent">MM_YY Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/73c9bb00-0888-c693-6ae0-40641f7be89f.htm" target="TopicContent">MMYY Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/ec0a59e1-d223-27be-a231-2ed49e1b351a.htm" target="TopicContent">Month Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/947c57c8-a963-e15b-2d85-36ae2f5ec685.htm" target="TopicContent">Threshold Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/836819e1-61b4-5104-356e-78a6ea1eacd5.htm" target="TopicContent">TwoDigitMonth Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/9cc1a16c-b198-a1f8-4735-85ace866e650.htm" target="TopicContent">TwoDigitYear Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/cc574f7d-316c-90c6-35fd-3e9b72f0d8e9.htm" target="TopicContent">Year Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/0429ca8a-35c6-5e07-6f96-04c225fe16b1.htm" target="TopicContent">CardType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/29817606-6e21-855e-7bb4-11f89b59cc93.htm" target="TopicContent">PaymentCard Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/4f03d9c8-f44e-2805-4056-41656588a2a4.htm" target="TopicContent">PaymentCard Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/2e81b565-dfa2-c72c-dff5-4d931fd9c869.htm" target="TopicContent">PaymentCard Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/ddd1dc56-f3ca-423e-5edf-3a943f0809b3.htm" target="TopicContent">PaymentCard Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/9b8cd628-bc39-6411-ad10-b61f60528b36.htm" target="TopicContent">PaymentCard Constructor (String, String, CardDate, String, CardType)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/32e826bd-cb4c-a22d-c85b-d8e3b7740dac.htm" target="TopicContent">PaymentCard Methods</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/cb9e2f9d-4b60-9a71-7d6a-a0fc9f92fce8.htm" target="TopicContent">PaymentCard Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/98a8d766-a702-deab-abd1-459c5698a2b9.htm" target="TopicContent">CardHolder Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/8bd4ee2f-0edb-e2c0-ebd0-8f6104beab95.htm" target="TopicContent">CardNumber Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/8d32d2d4-7b6d-a5e6-cc08-9a4a1cdd0e29.htm" target="TopicContent">CardType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/7a6e7730-77f7-6368-5ede-90f9e75554b4.htm" target="TopicContent">CV2 Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/69288f9a-8c08-9b76-bed6-5fdb12133163.htm" target="TopicContent">ExpiryDate Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/0588ad54-09cd-1627-37be-afd35ddeabf5.htm" target="TopicContent">HasIssueNumber Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/7ddf763a-9c84-c342-4f67-b0edafe0d54e.htm" target="TopicContent">HasStartDate Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/175c382c-df12-0562-9995-14599e2a0a10.htm" target="TopicContent">IssueNumber Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/1077d042-428c-0886-dbbd-a9a0f01da745.htm" target="TopicContent">StartDate Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/06961d74-5431-c98e-d90a-9163e70d6816.htm" target="TopicContent">Kurejito.Transport Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/a344c87e-3c03-82b0-9c9e-13b3854e7c11.htm" target="TopicContent">HttpTransport Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/035045ca-aefa-560a-b753-ced3e994ea32.htm" target="TopicContent">HttpTransport Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/7d59a64b-27a2-018f-e3a8-705ec86b9b69.htm" target="TopicContent">HttpTransport Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/66802b84-ca7d-96ab-8447-67f44e7c412c.htm" target="TopicContent">HttpTransport Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/46af91c5-22ae-0165-0f83-11386a4f8b17.htm" target="TopicContent">HttpTransport Constructor (IWebProxy)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/cea9a9fa-4fa4-61de-0d66-a2222920bbae.htm" target="TopicContent">HttpTransport Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/9431de64-5dcd-2582-b11e-46ded056c71c.htm" target="TopicContent">Post Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/6b3223e7-405d-55b5-6b9b-d5a1ae25ac09.htm" target="TopicContent">IHttpPostTransport Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/7f761642-9e51-7375-de40-9d6bdf845523.htm" target="TopicContent">IHttpPostTransport Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/d6a2f0e6-352c-d6c8-7eed-62f3001eb7d6.htm" target="TopicContent">IHttpPostTransport Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/bc5e1ecb-b528-5835-bebc-318b7918f3d0.htm" target="TopicContent">Post Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div id="TOCSizer" class="TOCSizer" onmousedown="OnMouseDown(event)" onselectstart="javascript: return false;"></div>
+
+<iframe id="TopicContent" name="TopicContent" class="TopicContent" src="html/e924dda2-89a2-ea49-0d11-fc5ed44ec29b.htm">
+This page uses an IFRAME but your browser does not support it.
+</iframe>
+
+</form>
+
+</body>
+
+</html>

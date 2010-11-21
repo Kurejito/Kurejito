@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="07792610-0557-4968-ab36-f9e8756622b1" Title="Kurejito Namespace" Url="html/e924dda2-89a2-ea49-0d11-fc5ed44ec29b.htm">
+    <HelpTOCNode Id="674b430b-9bb9-4cb6-936b-55ed7a32f6c5" Title="IPurchaseGateway Interface" Url="html/d52fed0b-74c1-843c-c718-8b045961cd35.htm">
+      <HelpTOCNode Title="IPurchaseGateway Members" Url="html/7d9917a8-c4a1-0233-027b-9f966447d619.htm" />
+      <HelpTOCNode Id="9fe741cd-4ff1-4c51-9313-58bc3611204b" Title="IPurchaseGateway Methods" Url="html/23fb35b3-8604-bfdc-4527-20910dc1445f.htm">
+        <HelpTOCNode Title="Purchase Method " Url="html/4b0f723e-31d3-aa03-6fc9-e75838814960.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="016e06b4-7551-4faa-9620-3478c2ca3e18" Title="PaymentResponse Class" Url="html/6d863258-3693-47d5-1d82-dd9cce24d4e4.htm">
+      <HelpTOCNode Title="PaymentResponse Members" Url="html/8e48659a-aaa9-308f-24e5-396bfac5ff69.htm" />
+      <HelpTOCNode Title="PaymentResponse Constructor " Url="html/2be312d1-0d5d-d406-9d16-403e2e981286.htm" />
+      <HelpTOCNode Title="PaymentResponse Methods" Url="html/82b6638b-2c94-0314-1073-8bb3d0865868.htm" />
+      <HelpTOCNode Id="cced03c6-37a7-4dfe-b065-fd19283a850c" Title="PaymentResponse Properties" Url="html/26332420-f04e-1a7c-7943-6cd49da5413d.htm">
+        <HelpTOCNode Title="Reason Property " Url="html/e4bb8239-91b6-fabf-b0e9-2e80cd172250.htm" />
+        <HelpTOCNode Title="Status Property " Url="html/42ca2387-3a09-9601-66e6-08a69e74591e.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="PaymentStatus Enumeration" Url="html/8207e927-08d7-049a-276c-e608ff714e45.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="77fb6bfe-a999-4c18-ab23-d945d06a97bd" Title="Kurejito.Gateways.DataCash Namespace" Url="html/0ba39c1a-2ebd-0d37-7af4-f31040028d8c.htm">
+    <HelpTOCNode Id="0aa16377-12af-4e4c-9e11-8ea5ea43f968" Title="DataCashPaymentGateway Class" Url="html/5e3b4644-ed76-baa8-eb6e-a8632bf399a1.htm">
+      <HelpTOCNode Title="DataCashPaymentGateway Members" Url="html/0c2de53b-77f2-6b5b-8e28-bb5aea2a0d81.htm" />
+      <HelpTOCNode Title="DataCashPaymentGateway Constructor " Url="html/1d8a2580-4a99-766e-90f5-aa56833ad747.htm" />
+      <HelpTOCNode Id="484ddc41-9b3f-4de4-92a7-87c723eab5de" Title="DataCashPaymentGateway Methods" Url="html/56578177-f3b5-fdb8-9017-5bb9758d4fd4.htm">
+        <HelpTOCNode Title="Purchase Method " Url="html/20958e47-fd41-d5ef-8854-4450844d2384.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="3bd77c6e-7ecc-46d5-80d4-73bc3bb726d8" Title="Kurejito.Gateways.FakeBank Namespace" Url="html/bf5abae8-8d99-7b76-884a-b5d36b2c878e.htm">
+    <HelpTOCNode Id="4371e3f1-867f-4eeb-ac3e-2510974cf16c" Title="PaymentGateway Class" Url="html/b4042e83-4115-284d-d0b3-03796e4efc78.htm">
+      <HelpTOCNode Title="PaymentGateway Members" Url="html/d18bfd0a-c816-b505-3462-10324a602dbb.htm" />
+      <HelpTOCNode Title="PaymentGateway Constructor " Url="html/ed967b49-6305-94f3-b1bd-6e444949adcf.htm" />
+      <HelpTOCNode Id="abc76647-b7eb-4a36-9132-93514d572071" Title="PaymentGateway Methods" Url="html/77f6759a-da68-f6f8-8af6-3d05739e55ef.htm">
+        <HelpTOCNode Title="Purchase Method " Url="html/b61a4880-a49c-f5a8-863a-4876fcdb7524.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="d89e4864-7dae-4d2a-922b-b58b9f28577c" Title="Kurejito.Gateways.PayPal Namespace" Url="html/5c6a366e-3c79-f80c-6c27-9e08da81dc46.htm">
+    <HelpTOCNode Id="4c6e1ea1-f1c1-49c4-b274-c3bee0e69c89" Title="PayPalCredentials Class" Url="html/230922c9-2c16-dcb5-c729-e5c6d6a42b75.htm">
+      <HelpTOCNode Title="PayPalCredentials Members" Url="html/c3a887e5-98ca-9785-5641-e7d18f840f32.htm" />
+      <HelpTOCNode Title="PayPalCredentials Constructor " Url="html/2fcebef1-fbce-a5b2-ba99-312ce29fbbc0.htm" />
+      <HelpTOCNode Id="34810e79-0181-445e-9614-a21078a69200" Title="PayPalCredentials Methods" Url="html/83c740eb-372f-abee-d5ae-9c86c8413fec.htm">
+        <HelpTOCNode Title="CreateSampleCredentials Method " Url="html/1c8790ce-4384-ab78-ebde-484e3e7c8b6b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f640d45f-f2c5-4b29-a364-65d3b08d32b8" Title="PayPalCredentials Properties" Url="html/c0a2e35d-629b-b993-324c-bb1fb3fbb10b.htm">
+        <HelpTOCNode Title="Password Property " Url="html/3ee1c0f3-bb60-b3fb-0d3e-9e2e79da9641.htm" />
+        <HelpTOCNode Title="Signature Property " Url="html/3ae0eb69-0b93-6e48-b562-316c14ffe044.htm" />
+        <HelpTOCNode Title="Username Property " Url="html/784562a0-2d1d-b875-686c-9928440abb3e.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="caa2b5e5-7d70-4ff2-a6be-b677a94b025d" Title="Kurejito.Gateways.PayPal.DirectPayment Namespace" Url="html/d1ef3813-dd53-a3c7-e58d-fef1f84332e2.htm">
+    <HelpTOCNode Id="85e0a9a8-9a9a-4517-bd21-229f601619ff" Title="PayPalDirectPaymentGateway Class" Url="html/e7e49c26-e97b-9a84-8979-d8bf301f4d10.htm">
+      <HelpTOCNode Title="PayPalDirectPaymentGateway Members" Url="html/f2d342a6-4f75-3d00-3b21-6dfe5cb7171c.htm" />
+      <HelpTOCNode Title="PayPalDirectPaymentGateway Constructor " Url="html/8db3bf12-a6a2-2cd9-538d-28ffe4356e06.htm" />
+      <HelpTOCNode Id="58773e54-2a99-47ae-892f-72533093cfba" Title="PayPalDirectPaymentGateway Methods" Url="html/7b0f6dad-3819-4a34-b0b3-f162676b4e19.htm">
+        <HelpTOCNode Title="Purchase Method " Url="html/3f4025e7-ae25-f0e2-901b-b9de87d914a2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="0cf792e7-e854-4568-a26b-fe17d36f76a2" Title="Kurejito.Gateways.SagePay.VspDirect Namespace" Url="html/c42ece63-cda8-cb06-57ef-b5622e94f3d0.htm">
+    <HelpTOCNode Title="GatewayMode Enumeration" Url="html/7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm" />
+    <HelpTOCNode Id="8e05244b-4536-481a-9226-ea055e9ae55f" Title="SagePayPaymentGateway Class" Url="html/0d73d2ff-3986-0da0-8b69-285736e798af.htm">
+      <HelpTOCNode Title="SagePayPaymentGateway Members" Url="html/7d68a7ea-f70d-75e9-f87f-3e8b1dbef260.htm" />
+      <HelpTOCNode Title="SagePayPaymentGateway Constructor " Url="html/d2ee7ba5-be98-1d63-6822-b78be3aefff6.htm" />
+      <HelpTOCNode Id="d865e4da-c123-4564-9be1-ecbcf5065cc4" Title="SagePayPaymentGateway Methods" Url="html/8621540c-c057-d67a-429b-6a31c068e04d.htm">
+        <HelpTOCNode Title="Purchase Method " Url="html/e03ed871-cbf2-0ab2-2cc1-7ea200b03cfd.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="f9a11912-5ea4-434b-88e6-30aaa421f93e" Title="Kurejito.Payments Namespace" Url="html/15500825-00cc-d62e-c216-fb79b8a7000d.htm">
+    <HelpTOCNode Id="baa836c4-98a8-4ce1-a31f-3fdbdd11a6aa" Title="CardDate Class" Url="html/24670669-122d-715e-9a0a-b3dba6dfe119.htm">
+      <HelpTOCNode Title="CardDate Members" Url="html/a3c1f0ce-8a26-47a2-627d-ae58a8e4dab7.htm" />
+      <HelpTOCNode Title="CardDate Constructor " Url="html/b8a553c2-9981-523e-4549-8543bf4532cc.htm" />
+      <HelpTOCNode Id="51ef8ab1-4c40-4bc3-83d2-448c9aa5fd1d" Title="CardDate Methods" Url="html/3c06b216-7c4f-a11f-75ef-d167b75a6c1e.htm">
+        <HelpTOCNode Title="Parse Method " Url="html/051ec602-f35e-f68b-1437-05df758884cd.htm" />
+        <HelpTOCNode Id="f6789d7f-7e55-419d-9010-339491f44f14" Title="ToString Method " Url="html/ff22ce55-969c-9c2d-809e-862b2445108c.htm">
+          <HelpTOCNode Title="ToString Method " Url="html/8289419d-b6f2-62d8-aa92-9123de4b0684.htm" />
+          <HelpTOCNode Title="ToString Method (String)" Url="html/da192f3b-55ac-1a81-3781-e43f6d82058d.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f7e03fc8-ae1e-4ef1-8d1d-1788af22cc53" Title="CardDate Type Conversions" Url="html/33e0475e-2199-b14a-32a5-bf07dd068ce9.htm">
+        <HelpTOCNode Title="Implicit Conversion (String to CardDate)" Url="html/04bd6f7e-e973-8120-a62b-65b9eb4bf7cd.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9493775a-f780-4705-b473-f39d6ed52c01" Title="CardDate Properties" Url="html/e8e12507-5331-db9e-3253-47b4a4fdd06c.htm">
+        <HelpTOCNode Title="HasValue Property " Url="html/f6f9e893-5e6f-e679-4b8e-2f4eb7bf9ef0.htm" />
+        <HelpTOCNode Title="MM_YY Property " Url="html/5aa06dcf-6eee-0613-ba4e-292ac23af4eb.htm" />
+        <HelpTOCNode Title="MMYY Property " Url="html/73c9bb00-0888-c693-6ae0-40641f7be89f.htm" />
+        <HelpTOCNode Title="Month Property " Url="html/ec0a59e1-d223-27be-a231-2ed49e1b351a.htm" />
+        <HelpTOCNode Title="Threshold Property " Url="html/947c57c8-a963-e15b-2d85-36ae2f5ec685.htm" />
+        <HelpTOCNode Title="TwoDigitMonth Property " Url="html/836819e1-61b4-5104-356e-78a6ea1eacd5.htm" />
+        <HelpTOCNode Title="TwoDigitYear Property " Url="html/9cc1a16c-b198-a1f8-4735-85ace866e650.htm" />
+        <HelpTOCNode Title="Year Property " Url="html/cc574f7d-316c-90c6-35fd-3e9b72f0d8e9.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="CardType Enumeration" Url="html/0429ca8a-35c6-5e07-6f96-04c225fe16b1.htm" />
+    <HelpTOCNode Id="90f8257d-ddc6-4ac0-b400-b9bacdc843ca" Title="PaymentCard Class" Url="html/29817606-6e21-855e-7bb4-11f89b59cc93.htm">
+      <HelpTOCNode Title="PaymentCard Members" Url="html/4f03d9c8-f44e-2805-4056-41656588a2a4.htm" />
+      <HelpTOCNode Id="cc7d6773-baeb-4558-b60c-2829f64753d8" Title="PaymentCard Constructor " Url="html/2e81b565-dfa2-c72c-dff5-4d931fd9c869.htm">
+        <HelpTOCNode Title="PaymentCard Constructor " Url="html/ddd1dc56-f3ca-423e-5edf-3a943f0809b3.htm" />
+        <HelpTOCNode Title="PaymentCard Constructor (String, String, CardDate, String, CardType)" Url="html/9b8cd628-bc39-6411-ad10-b61f60528b36.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PaymentCard Methods" Url="html/32e826bd-cb4c-a22d-c85b-d8e3b7740dac.htm" />
+      <HelpTOCNode Id="109ab953-afb0-47eb-be46-e16c2ba6e82a" Title="PaymentCard Properties" Url="html/cb9e2f9d-4b60-9a71-7d6a-a0fc9f92fce8.htm">
+        <HelpTOCNode Title="CardHolder Property " Url="html/98a8d766-a702-deab-abd1-459c5698a2b9.htm" />
+        <HelpTOCNode Title="CardNumber Property " Url="html/8bd4ee2f-0edb-e2c0-ebd0-8f6104beab95.htm" />
+        <HelpTOCNode Title="CardType Property " Url="html/8d32d2d4-7b6d-a5e6-cc08-9a4a1cdd0e29.htm" />
+        <HelpTOCNode Title="CV2 Property " Url="html/7a6e7730-77f7-6368-5ede-90f9e75554b4.htm" />
+        <HelpTOCNode Title="ExpiryDate Property " Url="html/69288f9a-8c08-9b76-bed6-5fdb12133163.htm" />
+        <HelpTOCNode Title="HasIssueNumber Property " Url="html/0588ad54-09cd-1627-37be-afd35ddeabf5.htm" />
+        <HelpTOCNode Title="HasStartDate Property " Url="html/7ddf763a-9c84-c342-4f67-b0edafe0d54e.htm" />
+        <HelpTOCNode Title="IssueNumber Property " Url="html/175c382c-df12-0562-9995-14599e2a0a10.htm" />
+        <HelpTOCNode Title="StartDate Property " Url="html/1077d042-428c-0886-dbbd-a9a0f01da745.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="8a90c112-cfcc-4d2a-b11c-ad04eba0355d" Title="Kurejito.Transport Namespace" Url="html/06961d74-5431-c98e-d90a-9163e70d6816.htm">
+    <HelpTOCNode Id="91114bed-08c7-4d95-904b-2714b07836f1" Title="HttpTransport Class" Url="html/a344c87e-3c03-82b0-9c9e-13b3854e7c11.htm">
+      <HelpTOCNode Title="HttpTransport Members" Url="html/035045ca-aefa-560a-b753-ced3e994ea32.htm" />
+      <HelpTOCNode Id="0f4df5e6-f10d-4ee0-8c3f-eb1332b2c984" Title="HttpTransport Constructor " Url="html/7d59a64b-27a2-018f-e3a8-705ec86b9b69.htm">
+        <HelpTOCNode Title="HttpTransport Constructor " Url="html/66802b84-ca7d-96ab-8447-67f44e7c412c.htm" />
+        <HelpTOCNode Title="HttpTransport Constructor (IWebProxy)" Url="html/46af91c5-22ae-0165-0f83-11386a4f8b17.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="fe8a1b33-8aad-41ff-aadb-f6c8836333f6" Title="HttpTransport Methods" Url="html/cea9a9fa-4fa4-61de-0d66-a2222920bbae.htm">
+        <HelpTOCNode Title="Post Method " Url="html/9431de64-5dcd-2582-b11e-46ded056c71c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9fad0587-2db5-4d3d-9df6-8d307de2ef3f" Title="IHttpPostTransport Interface" Url="html/6b3223e7-405d-55b5-6b9b-d5a1ae25ac09.htm">
+      <HelpTOCNode Title="IHttpPostTransport Members" Url="html/7f761642-9e51-7375-de40-9d6bdf845523.htm" />
+      <HelpTOCNode Id="d08d2760-5608-4118-8b6a-23379dc0f42f" Title="IHttpPostTransport Methods" Url="html/d6a2f0e6-352c-d6c8-7eed-62f3001eb7d6.htm">
+        <HelpTOCNode Title="Post Method " Url="html/bc5e1ecb-b528-5835-bebc-318b7918f3d0.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

@@ -15,11 +15,15 @@
     <Name>Documentation</Name>
     <!-- SHFB properties -->
     <OutputPath>.\Help\</OutputPath>
-    <HtmlHelpName>Documentation</HtmlHelpName>
+    <HtmlHelpName>Kurejito</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
       <DocumentationSource sourceFile="..\src\Kurejito\bin\Debug\Kurejito.dll" xmlns="" />
-<DocumentationSource sourceFile="..\src\Kurejito\bin\Debug\Kurejito.XML" xmlns="" /></DocumentationSources>
+      <DocumentationSource sourceFile="..\src\Kurejito\bin\Debug\Kurejito.XML" xmlns="" />
+    </DocumentationSources>
+    <HelpTitle>Kurejito. Write your app now. Choose your bank later.</HelpTitle>
+    <Preliminary>True</Preliminary>
+    <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in
        order for Visual Studio to perform the build.  The others are optional
