@@ -43,7 +43,16 @@ namespace Kurejito.Payments {
 			this.Year = year;
 		}
 
-		/// <summary>Gets the month part of this card date as a two-digit string (e.g. "05" representing May)</summary>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CardDate"/> class based on the provided <paramref name="dateTime"/>.
+        /// </summary>
+        /// <param name="dateTime">The date time.</param>
+	    public CardDate(DateTime dateTime) {
+	        Month = dateTime.Month;
+	        Year = dateTime.Year;
+	    }
+
+	    /// <summary>Gets the month part of this card date as a two-digit string (e.g. "05" representing May)</summary>
 		public string TwoDigitMonth { get { return ("05"); } }
 
 		/// <summary>Gets the year part of this card date as a two-digit string (e.g. "07" representing the year 2007)</summary>

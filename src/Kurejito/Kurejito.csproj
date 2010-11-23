@@ -66,18 +66,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Gateways\DataCash\DataCashPaymentGateway.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
     <Compile Include="Gateways\PayPal\PayPalCredentials.cs" />
     <Compile Include="Gateways\PayPal\DirectPayment\PayPalDirectPaymentGateway.cs" />
     <Compile Include="Gateways\SagePay\VspDirect\GatewayMode.cs" />
     <Compile Include="Gateways\SagePay\VspDirect\SagePayPaymentGateway.cs" />
+    <Compile Include="Kurejito.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kurejito.resx</DependentUpon>
+    </Compile>
     <Compile Include="PaymentResponse.cs" />
     <Compile Include="PaymentStatus.cs" />
     <Compile Include="Payments\PaymentCard.cs" />
     <Compile Include="IPurchaseGateway.cs" />
     <Compile Include="Payments\CardDate.cs" />
     <Compile Include="Payments\CardType.cs" />
+    <Compile Include="Payments\ValidationResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transport\HttpTransport.cs" />
     <Compile Include="Transport\IHttpPostTransport.cs" />
@@ -104,7 +111,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Kurejito.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Kurejito.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

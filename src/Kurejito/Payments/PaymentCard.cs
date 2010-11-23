@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Kurejito.Extensions;
+
 namespace Kurejito.Payments {
 	/// <summary>Represents a credit or debit card used for online payments</summary>
 	public class PaymentCard {
-		/// <summary>The card holder's name, as it appears on the payment card.</summary>
+        
+        /// <summary>The card holder's name, as it appears on the payment card.</summary>
 		public string CardHolder { get; set; }
 
 		/// <summary>The PAN, or Personal Account Number - normally the long number across the front of the payment card.</summary>
@@ -37,6 +39,22 @@ namespace Kurejito.Payments {
 
 		}
 
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public ValidationResult Validate()
+        {
+            var validationResult = new ValidationResult();
+
+            if (CardNumber.IsNullOrWhiteSpace()) validationResult.AddFailure(Kurejito.Validation_BlankCardNumber);
+            if(CardHolder.IsNullOrWhiteSpace()) validationResult.AddFailure(Kurejito.Validaion_BlankCardHolder);
+            if (CV2.IsNullOrWhiteSpace()) validationResult.AddFailure(Kurejito.Validaion_BlankCV2); 
+            //if(ExpiryDate < new CardDate(DateTime.Now)) validationFailures.Add(new ValidationFailure()););
+
+            return validationResult;
+        }
+
 		/// <summary>The type of payment card (Visa, Mastercard, etc).</summary>
 		public CardType CardType { get; set; }
 
@@ -44,4 +62,6 @@ namespace Kurejito.Payments {
 
 		public bool HasIssueNumber { get { return (this.IssueNumber.HasValue); } }
 	}
+
+   
 }
