@@ -38,13 +38,13 @@ We'd love to get as many people involved as possible.  Right now it is early day
 ### What Goes Where
 
     /src
-        /Kurejito.sln			Visual Studio 2010 solution file
-        /Kurejito.5.1.ReSharper	Resharper project settings
-        /Kurejito			Core project source code
-        /Kurejio.Tests		Unit and integration tests for Kurejito
-    /lib				Libraries and binaries (Moq, xUnit, &c) used by Kurejito
-    /doc				Project documentation intended for eventual distribution
-    /etc				All the rest - notes, artwork, specs, legalities, and so on.
+        /Kurejito.sln                  Visual Studio 2010 solution file
+        /Kurejito.5.1.ReSharper	       Resharper project settings
+        /Kurejito                      Core project source code
+        /Kurejio.Tests                 Unit and integration tests for Kurejito
+    /lib                               Libraries and binaries (Moq, xUnit, &c) used by Kurejito
+    /doc                               Project documentation intended for eventual distribution
+    /etc                               All the rest - notes, artwork, specs, legalities, and so on.
 
 
 
