@@ -40,7 +40,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment
         }
 
         #region IPurchaseGateway Members
-
+        
+        /// <summary>
+        /// </summary>
         public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card)
         {
             if (merchantReference == null) throw new ArgumentNullException("merchantReference");

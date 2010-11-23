@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Kurejito.Payments {
 	/// <summary>Represents the month/year date format used to encode payment card start dates and expiry dates.</summary>
@@ -16,21 +13,26 @@ namespace Kurejito.Payments {
 
 		private int month;
 		private int year;
+
+		///<summary>
+		///</summary>
 		public int Month {
 			get { return month; }
 			set { month = value; }
 		}
 
+		///<summary>
+		///</summary>
 		public int Year {
 			get { return year; }
 			set {
 				if (value >= 100) {
-					this.year = value;
+					year = value;
 				} else {
 					var thisYear = DateTime.Now.Year;
 					var baseline = (thisYear - (thisYear % 100));
 					if (value > threshold) baseline -= 100;
-					this.year = baseline + value;
+					year = baseline + value;
 				}
 			}
 		}
@@ -39,8 +41,8 @@ namespace Kurejito.Payments {
 		/// <param name="month">The month, as a number between 1 (January) and 12 (December)</param>
 		/// <param name="year">The year. Values below <see cref="CardDate.Threshold"/> are in the current century; values above this threshold are in the previous century.</param>
 		public CardDate(int month, int year) {
-			this.Month = month;
-			this.Year = year;
+			Month = month;
+			Year = year;
 		}
 
         /// <summary>
@@ -86,15 +88,35 @@ namespace Kurejito.Payments {
 			throw (new ArgumentException("dateString must contain a valid expiry date, in the format MMYY or MM/YY", "dateString"));
 		}
 
-		public override string ToString() {
-			return (this.ToString(String.Empty));
-		}
+	    /// <summary>
+	    /// Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+	    /// </summary>
+	    /// <returns>
+	    /// A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+	    /// </returns>
+	    /// <filterpriority>2</filterpriority>
+        public override string ToString()
+        {
+            return (this.ToString(String.Empty));
+        }
 
-		public string ToString(string separator) {
-			return(String.Format("{0:00}{1}{2:00}", this.Month, separator, (this.Year % 100)));
-		}
+        /// <summary>
+        /// Returns a <see cref="System.String"/> that represents this instance, formatted with the <paramref name="separator"/>.
+        /// </summary>
+        /// <param name="separator">The separator.</param>
+        /// <returns>
+        /// A <see cref="System.String"/> that represents this instance.
+        /// </returns>
+        public string ToString(string separator)
+        {
+            return (String.Format("{0:00}{1}{2:00}", this.Month, separator, (this.Year % 100)));
+        }
 
-		public static implicit operator CardDate(string dateString) {
+		///<summary>
+		///</summary>
+		///<param name="dateString"></param>
+		///<returns></returns>
+		public static implicit operator CardDate(string	dateString) {
 			return (CardDate.Parse(dateString));
 		}
 
