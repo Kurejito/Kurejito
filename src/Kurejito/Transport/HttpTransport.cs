@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Net;
 
 namespace Kurejito.Transport {
+
+	///<summary>
+	///</summary>
 	public class HttpTransport : IHttpPostTransport {
 
-		private IWebProxy proxy;
+		private readonly IWebProxy proxy;
 
 		/// <summary>Initialize a new HTTP transport.</summary>
 		/// <remarks>This implementation is based on <see cref="System.Net.WebClient" />.</remarks>
@@ -20,7 +21,7 @@ namespace Kurejito.Transport {
 
 		/// <summary>POSTs the supplied data to the specified URL using the application/x-www-form-urlencoded content type, 
 		/// and return the response as an ASCII-encoded string.</summary>
-		/// <param name="url">A string containing the full URL including protocol of the remote resource.</param>
+		/// <param name="uri">A string containing the full URL including protocol of the remote resource.</param>
 		/// <param name="postData">A string containing the data to be submitted, encoded as HTTP POST form data.</param>
 		/// <returns>The response body from the remote server as an ASCII-encoded string.</returns>
 		public string Post(Uri uri, string postData) {

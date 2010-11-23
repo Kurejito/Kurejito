@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Kurejito.Payments {
+﻿namespace Kurejito.Payments {
+	///<summary>
+	///</summary>
 	public enum CardType {
 		/// <summary>Visa credit card.</summary>
 		Visa,

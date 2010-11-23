@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿namespace Kurejito.Gateways.SagePay.VspDirect {
 
-namespace Kurejito.Gateways.SagePay.VspDirect {
+	///<summary>
+	///</summary>
 	public enum GatewayMode {
 		/// <summary>Specifies that transactions should be sent to the SagePay simulator service.</summary>
 		Simulator,

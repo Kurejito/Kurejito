@@ -1,4 +1,6 @@
 ﻿namespace Kurejito {
+	///<summary>
+	///</summary>
 	public enum PaymentStatus {
 		///<summary>The default value </summary>
 		UNDEFINED,
