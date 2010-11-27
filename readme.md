@@ -8,7 +8,7 @@ Kurejito is a standard API for incorporating card payments into your .NET or Mon
 * Deploy your app against any supported payment provider with minimal code changes - or write your own provider.
 * Switch providers easily if your current payment provider goes under, goes offline, or just plain lets you down.
 
-_Kurejito is Japanese for "credit" - or rather, it's the English word as pronounced when written in Kanji._  [@dylanbeattie](http://twitter.com/dylanbeattie/status/4526129926901760)
+_Kurejito is Japanese for "credit" - or rather, it's the English word as pronounced when written in katakana._  [@dylanbeattie](http://twitter.com/dylanbeattie/status/4526129926901760)
 
 Sparked by this [tweet](http://twitter.com/dylanbeattie/status/4143251615383552) and galvanised by the existence of [Active Merchant](http://www.activemerchant.org/).
 
@@ -34,6 +34,20 @@ We'd love to get as many people involved as possible.  Right now it is early day
 * Follow the [#kurejito hashtag](http://twitter.com/#search?q=%23kurejito)
 * Tell us about good code with a friendly license that we might want to look at.
 * Anything else you can think of that will make this a success!
+
+### What Goes Where
+
+    /src
+        /Kurejito.sln                  Visual Studio 2010 solution file
+        /Kurejito.5.1.ReSharper	       Resharper project settings
+        /Kurejito                      Core project source code
+        /Kurejio.Tests                 Unit and integration tests for Kurejito
+    /lib                               Libraries and binaries (Moq, xUnit, &c) used by Kurejito
+    /doc                               Project documentation intended for eventual distribution
+    /etc                               All the rest - notes, artwork, specs, legalities, and so on.
+
+
+
 
 
 
