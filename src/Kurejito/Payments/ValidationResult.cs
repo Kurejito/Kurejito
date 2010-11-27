@@ -1,37 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+using Kurejito.Extensions;
 
-namespace Kurejito.Payments
-{
+namespace Kurejito.Payments {
     /// <summary>
     /// Describes whether a validation operation was successful or not.  Gives additional details where relevant.
     /// </summary>
-    public class ValidationResult
-    {
-        readonly IList<ValidationFailure> validationFailures = new List<ValidationFailure>();
+    public class ValidationResult {
+        private readonly List<ValidationFailure> validationFailures = new List<ValidationFailure>();
 
         /// <summary>
-        /// Adds the specified validation failure.
+        /// Initializes a new instance of the <see cref="ValidationResult"/> class.
         /// </summary>
-        /// <param name="validationFailure">The validation failure.</param>
-        internal void AddFailure(string validationFailure)
-        {
-            if (validationFailure == null) throw new ArgumentNullException("validationFailure");
-            validationFailures.Add(validationFailure);
+        /// <param name="validationFailures">The validation failures.</param>
+        public ValidationResult(params ValidationFailure[] validationFailures) {
+            if (validationFailures == null)
+                return;
+            this.validationFailures.AddRange(validationFailures.Where(f => f != null));
         }
     }
 
     /// <summary>
     /// Describes a specific validation failure that forms part of a <see cref="ValidationResult"/>.
     /// </summary>
-    public class ValidationFailure
-    {
-        public string Message { get; set; }
+    public abstract class ValidationFailure {
+   
+    }
 
-        public ValidationFailure(string message)
-        {
-            Message = message;
-            throw new NotImplementedException();
+    /// <summary>
+    /// 
+    /// </summary>
+    public class BlankPropertyValidationFailure : ValidationFailure {
+        /// <summary>
+        /// Tries the fail.
+        /// </summary>
+        /// <param name="propertyAccessor">The property accessor.</param>
+        /// <returns></returns>
+        public static ValidationFailure TryFail(Func<string> propertyAccessor) {
+            if (propertyAccessor().IsNullOrWhiteSpace())
+                return new BlankPropertyValidationFailure(propertyAccessor.GetMember())
         }
     }
 }

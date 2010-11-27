@@ -46,14 +46,10 @@ namespace Kurejito.Payments {
         /// <returns></returns>
         public ValidationResult Validate()
         {
-            var validationResult = new ValidationResult();
-
-            if (CardNumber.IsNullOrWhiteSpace()) validationResult.AddFailure(Kurejito.Validation_BlankCardNumber);
-            if(CardHolder.IsNullOrWhiteSpace()) validationResult.AddFailure(Kurejito.Validaion_BlankCardHolder);
-            if (CV2.IsNullOrWhiteSpace()) validationResult.AddFailure(Kurejito.Validaion_BlankCV2); 
-            //if(ExpiryDate < new CardDate(DateTime.Now)) validationFailures.Add(new ValidationFailure()););
-
-            return validationResult;
+            return new ValidationResult(
+                BlankPropertyValidationFailure.TryFail(() => CardHolder),
+                BlankPropertyValidationFailure.TryFail(() => CardNumber),
+                BlankPropertyValidationFailure.TryFail(() => CV2));
         }
 
 		/// <summary>The type of payment card (Visa, Mastercard, etc).</summary>
@@ -70,5 +66,11 @@ namespace Kurejito.Payments {
 		public bool HasIssueNumber { get { return (this.IssueNumber.HasValue); } }
 	}
 
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum PaymentCardValidationFailures {
+        
+    }
    
 }

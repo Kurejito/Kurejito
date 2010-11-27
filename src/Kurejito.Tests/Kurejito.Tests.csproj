@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gateways\DataCash\DataCashHttpMockTests.cs" />
+    <Compile Include="Payments\PaymentCardTests.cs" />
     <Compile Include="Purchase\DataCash\DataCashPurchaseTests.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGatewayTests.cs" />
     <Compile Include="Gateways\PayPal\DirectPayment\PayPalDirectPaymentSandboxTests.cs" />
