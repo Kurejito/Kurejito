@@ -85,7 +85,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transport\HttpTransport.cs" />
     <Compile Include="Transport\IHttpPostTransport.cs" />
-    <Compile Include="Validation\Validators.cs" />
+    <Compile Include="Validation\IValidate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

@@ -7,7 +7,6 @@ namespace Kurejito.Validation {
     ///<summary>
     ///</summary>
     public interface IValidate<T> {
-        
         /// <summary>
         /// Validates the specified t.
         /// </summary>
@@ -20,16 +19,14 @@ namespace Kurejito.Validation {
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    internal class RequiredValidator<T> : IValidate<T>
-    {
+    internal class RequiredValidator<T> : IValidate<T> {
         //TODO put these fiels and the construction in their own object so validators can share.
+        private readonly Func<string> messageGetter;
         private readonly Func<T, object> propertyGetter;
         private readonly MemberInfo propertyMemberName;
         private readonly MemberInfo resourceMemberName;
-        private readonly Func<string> messageGetter;
 
-        public RequiredValidator(Expression<Func<T, object>> expression, Expression<Func<string>> msgGetter)
-        {
+        public RequiredValidator(Expression<Func<T, object>> expression, Expression<Func<string>> msgGetter) {
             if (expression == null) throw new ArgumentNullException("expression");
             if (msgGetter == null) throw new ArgumentNullException("msgGetter");
             this.propertyGetter = expression.Compile();
@@ -37,9 +34,18 @@ namespace Kurejito.Validation {
             this.resourceMemberName = msgGetter.GetMember();
             this.messageGetter = msgGetter.Compile();
         }
-   
+
+        #region IValidate<T> Members
+
         public ValidationFailure TryFail(T t) {
-            return this.propertyGetter(t).ToString().IsNullOrWhiteSpace() ? new ValidationFailure(propertyMemberName.Name, resourceMemberName.Name, String.Format(messageGetter(), propertyMemberName.Name)) : null;
+            object value = this.propertyGetter(t);
+
+            if (value == null || value.ToString().IsNullOrWhiteSpace())
+                return new ValidationFailure(this.propertyMemberName.Name, this.resourceMemberName.Name, String.Format(this.messageGetter(), this.propertyMemberName.Name));
+
+            return null;
         }
+
+        #endregion
     }
 }

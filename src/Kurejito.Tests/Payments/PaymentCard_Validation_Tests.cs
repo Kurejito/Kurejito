@@ -3,9 +3,9 @@ using Should;
 using Xunit;
 
 namespace Kurejito.Tests.Payments {
-    public class PaymentCardTests {
+    public class PaymentCard_Validation_Tests {
         [Fact]
-        public void TestName() {
+        public void With_No_Data_IsValid_Should_Be_False() {
             new PaymentCard().Validate().IsValid.ShouldBeFalse();
         }
 
