@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ShouldExtensions.cs" />
     <Compile Include="Gateways\DataCash\DataCashHttpMockTests.cs" />
     <Compile Include="Payments\PaymentCardTests.cs" />
     <Compile Include="Purchase\DataCash\DataCashPurchaseTests.cs" />

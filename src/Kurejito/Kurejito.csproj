@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
@@ -74,10 +75,17 @@
     <Compile Include="IPurchaseGateway.cs" />
     <Compile Include="Payments\CardDate.cs" />
     <Compile Include="Payments\CardType.cs" />
-    <Compile Include="Payments\ValidationResult.cs" />
+    <Compile Include="Payments\Payments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Payments.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\ValidationFailure.cs" />
+    <Compile Include="Validation\ValidationResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transport\HttpTransport.cs" />
     <Compile Include="Transport\IHttpPostTransport.cs" />
+    <Compile Include="Validation\Validators.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -100,6 +108,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Payments\Payments.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Payments.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
