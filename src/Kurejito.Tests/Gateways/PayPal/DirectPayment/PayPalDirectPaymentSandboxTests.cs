@@ -10,7 +10,7 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         [Fact]
         public void Purchase_Successful_Against_Sandbox() {
             var payPalNvpPaymentGateway = new PayPalDirectPaymentGateway(new HttpTransport(), PayPalCredentials.CreateSampleCredentials());
-            payPalNvpPaymentGateway.Purchase("REF", 100m, "GBP", new PaymentCard("BEN TAYLOR", "4716034283508634", new CardDate(10, 2015), "123", CardType.Visa)).Status.ShouldEqual(PaymentStatus.OK);
+            payPalNvpPaymentGateway.Purchase("REF", 100m, "GBP", new PaymentCard("BEN TAYLOR", "4716034283508634", new CardDate(10, 2015), "123", CardType.Visa)).Status.ShouldEqual(PaymentStatus.Ok);
         }
     }
 }

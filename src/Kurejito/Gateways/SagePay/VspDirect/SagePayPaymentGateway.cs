@@ -67,7 +67,30 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 			var postData = FormatPostData(data);
 			var uri = postUris[this.mode];
 			var httpResponse = http.Post(uri, postData);
-			return (new PaymentResponse() { Reason = httpResponse });
+			var status = this.ExtractStatus(httpResponse);
+			return (new PaymentResponse() {
+			                              	Status = status,
+			                              	Reason = httpResponse
+			                              });
+		}
+
+		private PaymentStatus ExtractStatus (string postResponse) {
+			var pairs = postResponse.Split('\r', '\n');
+			foreach(var pair in pairs) {
+				var tokens = pair.Split(new char[] {'='}, 2);
+				if (tokens.Length == 2 && tokens[0] == "Status") {
+					switch(tokens[1].ToUpper()) {
+						case "OK":
+							return (PaymentStatus.Ok);
+						case "MALFORMED":
+						case "INVALID":
+							return (PaymentStatus.Invalid);
+						case "NOTAUTHED":
+							return (PaymentStatus.Declined);
+					}
+				}
+			}
+			return (PaymentStatus.Error);
 		}
 	}
 }

@@ -11,15 +11,8 @@ using Kurejito.Gateways.DataCash;
 using Kurejito.Payments;
 
 namespace Kurejito.Tests.Gateways.DataCash {
-	public class DataCashHttpMockTests {
-		private string clientId = "99002005";
-		private string password = "AAm9YtKK";
-		private static class Purchase {
-			public static string MerchantReference = Guid.NewGuid().ToString();
-			public static decimal Amount = 123.45m;
-			public static string Currency = "GBP";
-			public static PaymentCard Card = new PaymentCard("I M LOADED", "1234123413241234", "1212", "123", CardType.Visa);
-		}
+	// ReSharper disable InconsistentNaming
+	public class DataCashHttpMockTests : DataCashTestBase {
 
 		private void Verify_Purchase_Xml_Element(string xpath, string expectedValue) {
 			var http = new Mock<IHttpPostTransport>();
@@ -34,45 +27,47 @@ namespace Kurejito.Tests.Gateways.DataCash {
 					} else if (element is XAttribute) {
 						Assert.Equal(expectedValue, ((XAttribute)element).Value);
 					}
-				});
-			var gw = new DataCashPaymentGateway(http.Object, clientId, password);
-			gw.Purchase(Purchase.MerchantReference, Purchase.Amount, Purchase.Currency, Purchase.Card);
+				}).Returns(MakeXmlResponse(1, "Success result from HTTP mock"));
+			var gw = new DataCashPaymentGateway(http.Object, CLIENT_ID, PASSWORD, GATEWAY_URI);
+			gw.Purchase(TestData.MerchantReference, TestData.Amount, TestData.Currency, TestData.Card);
 			http.VerifyAll();
 		}
 
 		[Fact]
 		public void DataCash_Purchase_XML_Contains_Correct_Authentication_Client() {
-			Verify_Purchase_Xml_Element("Request/Authentication/client", clientId);
+			Verify_Purchase_Xml_Element("Request/Authentication/client", CLIENT_ID);
 		}
 
 		[Fact]
 		public void DataCash_Purchase_XML_Contains_Correct_Authentication_Password() {
-			Verify_Purchase_Xml_Element("Request/Authentication/password", password);
+			Verify_Purchase_Xml_Element("Request/Authentication/password", PASSWORD);
 		}
 
 		[Fact]
 		public void DataCash_Purchase_XML_Contains_Correct_CardNumber() {
-			Verify_Purchase_Xml_Element("Request/Transaction/CardTxn/Card/pan", Purchase.Card.CardNumber);
+			Verify_Purchase_Xml_Element("Request/Transaction/CardTxn/Card/pan", TestData.Card.CardNumber);
 		}
 
 		[Fact]
 		public void DataCash_Purchase_XML_Contains_Correct_ExpiryDate() {
-			Verify_Purchase_Xml_Element("Request/Transaction/CardTxn/Card/expirydate", Purchase.Card.ExpiryDate.MM_YY);
+			Verify_Purchase_Xml_Element("Request/Transaction/CardTxn/Card/expirydate", TestData.Card.ExpiryDate.MM_YY);
 		}
 
 		[Fact]
 		public void DataCash_Purchase_XML_Contains_Correct_MerchantReference() {
-			Verify_Purchase_Xml_Element("Request/Transaction/TxnDetails/merchantreference", Purchase.MerchantReference);
+			Verify_Purchase_Xml_Element("Request/Transaction/TxnDetails/merchantreference", TestData.MerchantReference);
 		}
 
 		[Fact]
 		public void DataCash_Purchase_XML_Contains_Correct_Amount() {
-			Verify_Purchase_Xml_Element("Request/Transaction/TxnDetails/amount", Purchase.Amount.ToString("0.00"));
+			Verify_Purchase_Xml_Element("Request/Transaction/TxnDetails/amount", TestData.Amount.ToString("0.00"));
 		}
 
 		[Fact]
 		public void DataCash_Purchase_XML_Contains_Correct_Currency() {
-			Verify_Purchase_Xml_Element("Request/Transaction/TxnDetails/amount/@currency", Purchase.Currency);
+			Verify_Purchase_Xml_Element("Request/Transaction/TxnDetails/amount/@currency", TestData.Currency);
 		}
 	}
 }
+
+

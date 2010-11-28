@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurejito", "Kurejito\Kureji
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurejito.Tests", "Kurejito.Tests\Kurejito.Tests.csproj", "{84120395-C28D-4432-940A-920BB914219F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kurejito.ProviderTests", "Kurejito.ProviderTests\Kurejito.ProviderTests.csproj", "{17764259-3E93-4BD9-B3B5-B0E1F9F8004F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{84120395-C28D-4432-940A-920BB914219F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84120395-C28D-4432-940A-920BB914219F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84120395-C28D-4432-940A-920BB914219F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17764259-3E93-4BD9-B3B5-B0E1F9F8004F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17764259-3E93-4BD9-B3B5-B0E1F9F8004F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17764259-3E93-4BD9-B3B5-B0E1F9F8004F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17764259-3E93-4BD9-B3B5-B0E1F9F8004F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

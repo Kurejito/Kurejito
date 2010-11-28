@@ -8,10 +8,26 @@ using Kurejito.Gateways.SagePay.VspDirect;
 using Kurejito.Payments;
 
 namespace Kurejito.Tests.Gateways.SagePay {
-	public abstract class SagePayTestBase  {
+	public abstract class SagePayTestBase {
 		//protected Mock<IHttpPostTransport> http;
 		//protected SagePayPaymentGateway gateway;
-		//protected const string VENDOR_NAME = "rockshop";
-		//protected const decimal VPS_PROTOCOL = 2.23m;
+		protected const string VENDOR_NAME = "rockshop";
+		protected const decimal VPS_PROTOCOL = 2.23m;
+
+		private const string POST_RESPONSE_FORMAT = @"VPSProtocol=2.23
+Status={0}
+StatusDetail=Simulated result from HTTP transport mock
+VPSTxId={{00000000-1111-2222-3333-444455556666}}
+SecurityKey=1234567890
+TxAuthNo=1234
+AVSCV2=NO DATA MATCHES
+AddressResult=NOTMATCHED
+PostCodeResult=NOTMATCHED
+CV2Result=NOTMATCHED
+";
+
+		protected string MakePostResponse(string status) {
+			return (String.Format(POST_RESPONSE_FORMAT, status));
+		}
 	}
 }

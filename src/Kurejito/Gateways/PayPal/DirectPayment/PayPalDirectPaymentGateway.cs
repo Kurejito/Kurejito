@@ -74,7 +74,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             return new PaymentResponse {
                                            Reason = post,
                                            Status =
-                                               post.Contains("ACK=Success") ? PaymentStatus.OK : PaymentStatus.Error
+                                               post.Contains("ACK=Success") ? PaymentStatus.Ok : PaymentStatus.Error
                                        };
         }
 

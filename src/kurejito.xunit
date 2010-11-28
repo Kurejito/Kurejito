@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xunit>
+  <assemblies>
+    <assembly filename="Kurejito.IntegrationTests\bin\Debug\Kurejito.IntegrationTests.dll" shadow-copy="true" />
+    <assembly filename="Kurejito.IntegrationTests\bin\Debug\Kurejito.Tests.dll" shadow-copy="true" />
+  </assemblies>
+</xunit>

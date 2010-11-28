@@ -11,7 +11,7 @@ using System.Web;
 using System.Collections.Specialized;
 
 namespace Kurejito.Tests.Gateways.SagePay {
-	public class SagePayUnitTests {
+	public class SagePayUnitTests : SagePayTestBase {
 
 		private Mock<IHttpPostTransport> http;
 
@@ -28,12 +28,12 @@ namespace Kurejito.Tests.Gateways.SagePay {
 		}
 
 		private void VerifyPurchasePostUrl(GatewayMode mode, string postUri) {
-			http.Setup(h => h.Post(new Uri(postUri), It.IsAny<string>()));
+			http.Setup(h => h.Post(new Uri(postUri), It.IsAny<string>())).Returns(MakePostResponse("OK"));
 			var sagePay = new SagePayPaymentGateway(http.Object, "myVendor", 2.23m, mode);
 			sagePay.Purchase("123", 123.45m, "GBP", card);
 			http.VerifyAll();
 		}
-		
+
 		[Fact]
 		public void SagePay_Purchase_In_Simulator_Mode_POSTs_To_Correct_Url() {
 			VerifyPurchasePostUrl(GatewayMode.Simulator, "https://test.sagepay.com/Simulator/VSPDirectGateway.asp");
@@ -55,13 +55,13 @@ namespace Kurejito.Tests.Gateways.SagePay {
 				.Callback((Uri uri, string postData) => {
 					var values = HttpUtility.ParseQueryString(postData);
 					verify(values);
-				});
+				}).Returns(MakePostResponse("OK"));
 		}
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_VendorName_In_PostData() {
 
-			SetupPostData(data => { 
-				Assert.Equal(VENDOR_NAME, data["Vendor"]); 
+			SetupPostData(data => {
+				Assert.Equal(VENDOR_NAME, data["Vendor"]);
 			});
 
 			gateway.Purchase("123", 123.45m, "GBP", card);
