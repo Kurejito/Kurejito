@@ -20,7 +20,7 @@ namespace Kurejito.Gateways.FakeBank {
 				});
 			}
 			return (new PaymentResponse() {
-				Status = PaymentStatus.OK,
+				Status = PaymentStatus.Ok,
 				Reason = "Payment successful"
 			});
 		}

@@ -29,8 +29,12 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         /// <param name="httpTransport">The transport for PayPal communication.</param>
         /// <param name="credentials">The pay pal credentials.</param>
         public PayPalDirectPaymentGateway(IHttpPostTransport httpTransport, PayPalCredentials credentials) {
-            if (httpTransport == null) throw new ArgumentNullException("httpTransport");
-            if (credentials == null) throw new ArgumentNullException("credentials");
+            if (httpTransport == null) {
+                throw new ArgumentNullException("httpTransport");
+            }
+            if (credentials == null) {
+                throw new ArgumentNullException("credentials");
+            }
             this.httpTransport = httpTransport;
             this.credentials = credentials;
         }
@@ -40,9 +44,15 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         /// <summary>
         /// </summary>
         public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card) {
-            if (merchantReference == null) throw new ArgumentNullException("merchantReference");
-            if (currency == null) throw new ArgumentNullException("currency");
-            if (card == null) throw new ArgumentNullException("card");
+            if (merchantReference == null) {
+                throw new ArgumentNullException("merchantReference");
+            }
+            if (currency == null) {
+                throw new ArgumentNullException("currency");
+            }
+            if (card == null) {
+                throw new ArgumentNullException("card");
+            }
 
             ThrowIfAmountZeroOrLess(amount);
 
@@ -54,7 +64,8 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             //TODO support payment response and not the hack below.
             return new PaymentResponse {
                                            Reason = post,
-                                           Status = post.Contains("ACK=Success") ? PaymentStatus.OK : PaymentStatus.Error
+                                           Status =
+                                               post.Contains("ACK=Success") ? PaymentStatus.Ok : PaymentStatus.Error
                                        };
         }
 

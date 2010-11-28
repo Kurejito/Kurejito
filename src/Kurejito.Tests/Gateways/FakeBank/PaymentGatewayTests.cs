@@ -16,7 +16,7 @@ namespace Kurejito.Tests.Gateways.FakeBank {
 		public void FakeBank_Approves_Payments_Under_Ten_Pounds() {
 			var gw = new PaymentGateway();
 			var response = gw.Purchase("pay001", 9.99m, "GBP", new PaymentCard());
-			Assert.Equal(PaymentStatus.OK, response.Status);
+			Assert.Equal(PaymentStatus.Ok, response.Status);
 		}
 	}
 }

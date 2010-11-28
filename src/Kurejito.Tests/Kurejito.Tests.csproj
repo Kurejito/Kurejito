@@ -66,12 +66,12 @@
     <Compile Include="Extensions\ShouldExtensions.cs" />
     <Compile Include="Gateways\DataCash\DataCashHttpMockTests.cs" />
     <Compile Include="Payments\PaymentCard_Validation_Tests.cs" />
-    <Compile Include="Purchase\DataCash\DataCashPurchaseTests.cs" />
+    <Compile Include="Encoding\Base32Url.cs" />
+    <Compile Include="Gateways\DataCash\DataCashResponseStatusTests.cs" />
+    <Compile Include="Gateways\DataCash\DataCashTestBase.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGatewayTests.cs" />
     <Compile Include="Gateways\PayPal\DirectPayment\PayPalDirectPaymentSandboxTests.cs" />
-    <Compile Include="Purchase\PayPal\PayPalPurchaseTests.cs" />
-    <Compile Include="Purchase\PurchaseGatewayTests.cs" />
-    <Compile Include="Purchase\SagePay\SagePayPurchaseTests.cs" />
+    <Compile Include="Gateways\SagePay\SagePayResponseStatusTests.cs" />
     <Compile Include="Gateways\SagePay\SagePayTestBase.cs" />
     <Compile Include="Gateways\SagePay\SagePayUnitTests.cs" />
     <Compile Include="Payments\CardDateTests.cs" />
