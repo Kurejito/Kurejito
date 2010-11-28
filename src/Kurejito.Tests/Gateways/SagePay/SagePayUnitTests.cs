@@ -18,9 +18,6 @@ namespace Kurejito.Tests.Gateways.SagePay {
 		private SagePayPaymentGateway gateway;
 		private PaymentCard card;
 
-		const string VENDOR_NAME = "rockshop";
-		const decimal VPS_PROTOCOL = 2.23m;
-
 		public SagePayUnitTests() {
 			http = new Mock<IHttpPostTransport>();
 			gateway = new SagePayPaymentGateway(http.Object, VENDOR_NAME, VPS_PROTOCOL, GatewayMode.Simulator);
