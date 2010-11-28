@@ -8,17 +8,16 @@ namespace Kurejito.Validation {
     ///</summary>
     public interface IValidate<T> {
         /// <summary>
-        /// Validates the specified t.
+        ///   Validates the specified t.
         /// </summary>
-        /// <param name="t">The t.</param>
+        /// <param name = "t">The t.</param>
         /// <returns></returns>
-        ValidationFailure TryFail(T t);
+        ValidationFailure TryFail(T t);//TODO this method name on this interface sucks.
     }
 
     /// <summary>
-    /// 
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name = "T"></typeparam>
     internal class RequiredValidator<T> : IValidate<T> {
         //TODO put these fiels and the construction in their own object so validators can share.
         private readonly Func<string> messageGetter;
@@ -38,7 +37,7 @@ namespace Kurejito.Validation {
         #region IValidate<T> Members
 
         public ValidationFailure TryFail(T t) {
-            object value = this.propertyGetter(t);
+            var value = this.propertyGetter(t);
 
             if (value == null || value.ToString().IsNullOrWhiteSpace())
                 return new ValidationFailure(this.propertyMemberName.Name, this.resourceMemberName.Name, String.Format(this.messageGetter(), this.propertyMemberName.Name));

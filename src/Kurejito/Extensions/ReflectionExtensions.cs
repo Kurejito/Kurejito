@@ -3,15 +3,17 @@ using System.Linq.Expressions;
 using System.Reflection;
 
 namespace Kurejito.Extensions {
+    /// <summary>
+    /// //TODO credit Jeremy Skinner for this code (it's from Fluent Validation).
+    /// </summary>
     internal static class ReflectionExtensions {
         public static MemberInfo GetMember(this LambdaExpression expression) {
-            MemberExpression memberExp = RemoveUnary(expression.Body);
-
+            var memberExp = RemoveUnary(expression.Body);
             return memberExp == null ? null : memberExp.Member;
         }
 
         public static MemberInfo GetMember<T, TProperty>(this Expression<Func<T, TProperty>> expression) {
-            MemberExpression memberExp = RemoveUnary(expression.Body);
+            var memberExp = RemoveUnary(expression.Body);
 
             return memberExp == null ? null : memberExp.Member;
         }

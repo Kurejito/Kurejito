@@ -1,4 +1,5 @@
 using Kurejito.Payments;
+using Kurejito.Tests.Extensions;
 using Should;
 using Xunit;
 
@@ -11,7 +12,7 @@ namespace Kurejito.Tests.Payments {
 
         [Fact]
         public void CardHolder_Cannot_Be_Blank() {
-            new PaymentCard().Validate().Failures.Count.ShouldEqual(3);
+            new PaymentCard().Validate().Failures.ShouldContainFailure<PaymentCard>(pc => pc.CardHolder, () => Kurejito.Payments.Payments.PaymentCard_BlankProperty);
         }
     }
 }
