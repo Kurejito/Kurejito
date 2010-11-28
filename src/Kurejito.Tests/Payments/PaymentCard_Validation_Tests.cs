@@ -14,5 +14,18 @@ namespace Kurejito.Tests.Payments {
         public void CardHolder_Cannot_Be_Blank() {
             new PaymentCard().Validate().Failures.ShouldContainFailure<PaymentCard>(pc => pc.CardHolder, () => Kurejito.Payments.Payments.PaymentCard_BlankProperty);
         }
+
+        [Fact]
+        public void CV2_Cannot_Be_Blank()
+        {
+            new PaymentCard().Validate().Failures.ShouldContainFailure<PaymentCard>(pc => pc.CV2, () => Kurejito.Payments.Payments.PaymentCard_BlankProperty);
+        }
+
+        [Fact]
+        public void ExpiryDate_Cannot_Be_Blank()
+        {
+            new PaymentCard().Validate().Failures.ShouldContainFailure<PaymentCard>(pc => pc.ExpiryDate, () => Kurejito.Payments.Payments.PaymentCard_BlankProperty);
+        }
+
     }
 }
