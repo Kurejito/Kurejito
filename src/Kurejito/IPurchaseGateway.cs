@@ -1,8 +1,9 @@
 ﻿using Kurejito.Payments;
-
+///<summary>The root-level namespace for the Kurejito payment gateway API and for provider-specific modules
+/// that implement this API against various commercial internet payment providers.</summary>
 namespace Kurejito {
 
-	/// <summary>Defines behaviour of gateways that support purchase transactions, where the card is debited immediately.</summary>
+	/// <summary>Providers that support purchases - straightforward payments where the money is debited immediately - should implement this interface.</summary>
 	public interface IPurchaseGateway {
 		/// <summary>Attempts to debit the specified amount from the supplied payment card.</summary>
 		/// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>

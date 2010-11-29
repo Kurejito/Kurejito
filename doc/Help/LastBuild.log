@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder Utilities" version="1.9.1.0" projectFile="D:\Projects\Kurejito\doc\Kurejito.shfbproj" started="21/11/2010 02:19:42">
+<shfbBuild product="Sandcastle Help File Builder Utilities" version="1.9.1.0" projectFile="D:\Projects\Kurejito\doc\kurejito.shfbproj" started="28/11/2010 02:46:44">
 <buildStep step="Initializing">
+</buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
 </buildStep>
 <buildStep step="FindingTools">
 Finding tools...
@@ -12,18 +15,18 @@ Found HTML Help 1 compiler in 'C:\Program Files (x86)\HTML Help Workshop\'
 Validating and copying documentation source information
 Source: D:\Projects\Kurejito\src\Kurejito\bin\Debug\Kurejito.dll
     Found assembly 'D:\Projects\Kurejito\src\Kurejito\bin\Debug\Kurejito.dll'
-Source: D:\Projects\Kurejito\src\Kurejito\bin\Debug\Kurejito.XML
+Source: D:\Projects\Kurejito\src\Kurejito\bin\Debug\Kurejito.xml
 
 Copying XML comments files
     D:\Projects\Kurejito\src\Kurejito\bin\Debug\Kurejito.XML -&gt; D:\Projects\Kurejito\doc\Help\Working\Kurejito.XML
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.0039
+    Last step completed in 00:00:00.0049
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0020
+    Last step completed in 00:00:00.0029
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
@@ -32,23 +35,23 @@ GenerateRefInfo:
   MrefBuilder (v2.6.10621.1)
   Copyright &#184; Microsoft 2006
   Info: Loaded 1 assemblies for reflection and 0 dependency assemblies.
-  Info: Wrote information on 8 namespaces, 14 types, and 54 members
+  Info: Wrote information on 8 namespaces, 14 types, and 56 members
   XslTransform (v2.6.10621.1)
   Copyright &#184; Microsoft 2005-2006
   Info: Applying XSL transformation 'C:\Program Files (x86)\Sandcastle\ProductionTransforms\MergeDuplicates.xsl'.
   reflection.all -&gt; reflection.org
-    Last step completed in 00:00:02.4549
+    Last step completed in 00:00:02.5088
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0020
+    Last step completed in 00:00:00.0029
 </buildStep>
 <buildStep step="ApplyVisibilityProperties">
 Applying visibility properties to reflection information file
     0 attribute nodes removed
     0 explicit interface implementations removed
     0 local and base class EII elements removed
-    Last step completed in 00:00:00.0225
+    Last step completed in 00:00:00.0205
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
@@ -57,19 +60,21 @@ TransformManifest:
   XslTransform (v2.6.10621.1)
   Copyright &#184; Microsoft 2005-2006
   Info: Applying XSL transformation 'C:\Program Files (x86)\Sandcastle\ProductionTransforms\ApplyVSDocModel.xsl'.
-  reflection.org -&gt; C:\Users\dylan.beattie\AppData\Local\Temp\tmp78D9.tmp
+  reflection.org -&gt; C:\Users\dylan.beattie\AppData\Local\Temp\tmp1F6B.tmp
   Info: Applying XSL transformation 'C:\Program Files (x86)\Sandcastle\ProductionTransforms\AddGuidFilenames.xsl'.
-  C:\Users\dylan.beattie\AppData\Local\Temp\tmp78D9.tmp -&gt; reflection.xml
+  C:\Users\dylan.beattie\AppData\Local\Temp\tmp1F6B.tmp -&gt; reflection.xml
   XslTransform (v2.6.10621.1)
   Copyright &#184; Microsoft 2005-2006
   Info: Applying XSL transformation 'C:\Program Files (x86)\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl'.
   reflection.xml -&gt; manifest.xml
-    Last step completed in 00:00:01.7470
+    Last step completed in 00:00:02.0752
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
-    No changes required
-    Last step completed in 00:00:00.0186
+    Unique name M_Kurejito_Payments_CardDate_ToString_1 generated for M:Kurejito.Payments.CardDate.ToString(System.String)
+    Unique name M_Kurejito_Payments_PaymentCard__ctor_1 generated for M:Kurejito.Payments.PaymentCard.#ctor(System.String,System.String,Kurejito.Payments.CardDate,System.String,Kurejito.Payments.CardType)
+    Unique name M_Kurejito_Transport_HttpTransport__ctor_1 generated for M:Kurejito.Transport.HttpTransport.#ctor(System.Net.IWebProxy)
+    Last step completed in 00:00:00.0244
 </buildStep>
 <buildStep step="CopyStandardContent">
 Copying standard help content...
@@ -180,119 +185,12 @@ C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\script_manifold.js
 C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\SplitScreen.js -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\HtmlHelp1\scripts\SplitScreen.js
 C:\Program Files (x86)\Sandcastle\Presentation\vs2005\styles\Presentation.css -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\HtmlHelp1\styles\Presentation.css
 C:\Program Files (x86)\Sandcastle\Presentation\vs2005\styles\Whidbey\presentation.css -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\HtmlHelp1\styles\Whidbey\presentation.css
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\adm.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\adm.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\adm_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\adm_arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\adm_dev.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\adm_dev.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\adm_dev_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\adm_dev_arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\alert_caution.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\alert_caution.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\alert_note.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\alert_note.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\alert_security.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\alert_security.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\big_adm.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\big_adm.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\big_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\big_arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\big_dev.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\big_dev.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\big_kw.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\big_kw.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\box.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\box.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\Caution.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\Caution.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\CFW.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\CFW.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\collall.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\collall.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\collapse.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\collapse.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\collapse_all.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\collapse_all.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\copycode.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\copycode.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\copycodeHighlight.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\copycodeHighlight.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\dev.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\dev.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\dev_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\dev_arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\dropdown.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\dropdown.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\dropdownHover.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\dropdownHover.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\drpdown.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\drpdown.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\drpdown_orange.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\drpdown_orange.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\drpdown_orange_up.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\drpdown_orange_up.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\drpup.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\drpup.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\exp.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\exp.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\expall.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\expall.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\expand_all.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\expand_all.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\filter1a.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\filter1a.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\filter1c.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\filter1c.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\footer.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\footer.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\gradient.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\gradient.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\greencheck.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\greencheck.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\greychck.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\greychck.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\header_prev_next.jpg -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\header_prev_next.jpg
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\header_sql_tutorial_blank.jpg -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\header_sql_tutorial_blank.jpg
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\header_sql_tutorial_logo.GIF -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\header_sql_tutorial_logo.GIF
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\kw.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\kw_adm.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_adm.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\kw_adm_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_adm_arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\kw_adm_dev.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_adm_dev.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\kw_adm_dev_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_adm_dev_arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\kw_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\kw_dev.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_dev.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\kw_dev_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_dev_arch.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\LastChild.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\LastChild.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\load.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\load.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\load_hover.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\load_hover.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\note.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\note.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pencil.GIF -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pencil.GIF
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privclass.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privclass.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privdelegate.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privdelegate.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privenum.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privenum.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privenumeration.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privenumeration.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privevent.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privevent.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privextension.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privextension.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privfield.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privfield.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privinterface.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privinterface.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privmethod.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privmethod.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privproperty.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privproperty.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\privstructure.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privstructure.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protclass.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protclass.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protdelegate.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protdelegate.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protenum.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protenum.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protenumeration.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protenumeration.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protevent.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protevent.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protextension.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protextension.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protfield.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protfield.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protinterface.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protinterface.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protmethod.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protmethod.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protoperator.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protoperator.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protproperty.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protproperty.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\protstructure.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protstructure.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubclass.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubclass.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubdelegate.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubdelegate.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubenum.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubenum.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubenumeration.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubenumeration.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubevent.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubevent.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubextension.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubextension.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubfield.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubfield.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubinterface.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubinterface.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubmethod.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubmethod.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\puboperator.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\puboperator.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubproperty.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubproperty.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\pubstructure.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubstructure.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\requirements1a.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\requirements1a.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\requirements1c.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\requirements1c.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\save.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\save.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\save_hover.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\save_hover.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\security.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\security.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\seealso1a.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\seealso1a.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\seealso1c.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\seealso1c.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\slMobile.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\slMobile.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\static.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\static.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\icons\xna.gif -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\xna.gif
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\CheckboxMenu.js -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\CheckboxMenu.js
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\CommonUtilities.js -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\CommonUtilities.js
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\Dropdown.js -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\Dropdown.js
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\EventUtilities.js -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\EventUtilities.js
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\script_feedBack.js -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\script_feedBack.js
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\script_manifold.js -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\script_manifold.js
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\scripts\SplitScreen.js -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\SplitScreen.js
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\styles\Presentation.css -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\styles\Presentation.css
-C:\Program Files (x86)\Sandcastle\Presentation\vs2005\styles\Whidbey\presentation.css -&gt; D:\Projects\Kurejito\doc\Help\Working\Output\Website\styles\Whidbey\presentation.css
-    Last step completed in 00:00:00.5615
+    Last step completed in 00:00:00.5020
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 No additional content to copy
-    Last step completed in 00:00:00.0020
+    Last step completed in 00:00:00.0029
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
@@ -307,17 +205,17 @@ GenerateIntermediateTOC:
   Info: Applying XSL transformation 'C:\Program Files (x86)\Sandcastle\ProductionTransforms\CreateVSToc.xsl'.
   reflection.xml -&gt; toc.xml
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.6045
+    Last step completed in 00:00:00.6221
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.0146
+    Last step completed in 00:00:00.0195
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 D:\Projects\Kurejito\doc\Help\Working\sandcastle.config
-    Last step completed in 00:00:00.0273
+    Last step completed in 00:00:00.0361
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
@@ -330,7 +228,7 @@ BuildReferenceTopics:
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Searching for files that match '*.xml'.
   Info: CopyFromIndexComponent: Searching for files that match 'reflection.xml'.
-  Info: CopyFromIndexComponent: Indexed 202850 elements in 409 files.
+  Info: CopyFromIndexComponent: Indexed 202852 elements in 409 files.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
@@ -371,7 +269,7 @@ BuildReferenceTopics:
   Info: ForEachComponent: Loaded 1 subcomponents.
   Info: IfThenComponent: Instantiating component.
   Info: SyntaxComponent: Instantiating component.
-  Info: SyntaxComponent: Loaded 3 syntax generators.
+  Info: SyntaxComponent: Loaded 1 syntax generators.
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Searching for files that match 'C:\Windows\Microsoft.NET\Framework\v2.0.50727\en\*.xml'.
   Info: CopyFromIndexComponent: Searching for files that match 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\en\*.xml'.
@@ -983,7 +881,7 @@ BuildReferenceTopics:
   Warn: CopyFromIndexComponent: Entries for the key 'M:System.Data.TypedTableBase`1.GetEnumerator' occur in both 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.xml' and 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Entity.xml'. The last entry will be used.
   Warn: CopyFromIndexComponent: Entries for the key 'M:System.Data.TypedTableBase`1.System#Collections#IEnumerable#GetEnumerator' occur in both 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.xml' and 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Entity.xml'. The last entry will be used.
   Info: CopyFromIndexComponent: Searching for files that match 'D:\Projects\Kurejito\doc\Help\Working\Kurejito.XML'.
-  Info: CopyFromIndexComponent: Indexed 131037 elements in 118 files.
+  Info: CopyFromIndexComponent: Indexed 131062 elements in 118 files.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
   Info: ForEachComponent: Instantiating component.
   Info: ForEachComponent: Loading subcomponents.
@@ -1064,67 +962,14 @@ BuildReferenceTopics:
   Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
   Info: ResolveReferenceLinksComponent2: Searching directory 'C:\Program Files (x86)\Sandcastle\Data\Reflection' for targets files of the form '*.xml'.
   Info: ResolveReferenceLinksComponent2: Searching directory 'D:\Projects\Kurejito\doc\Help\Working' for targets files of the form 'reflection.xml'.
-  Info: ResolveReferenceLinksComponent2: Loaded 202850 reference targets.
-  Info: SaveComponent: Instantiating component.
-  Info: MultiFormatOutputComponent: Loading components for Website format
-  Info: SharedContentComponent: Instantiating component.
-  Info: SharedContentComponent: Searching for files that match 'C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\shared_content.xml'.
-  Info: SharedContentComponent: Loading shared content file 'C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\shared_content.xml'.
-  Info: SharedContentComponent: Found 1 files in C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\shared_content.xml.
-  Info: SharedContentComponent: Searching for files that match 'C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\reference_content.xml'.
-  Info: SharedContentComponent: Loading shared content file 'C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\reference_content.xml'.
-  Info: SharedContentComponent: Found 1 files in C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\reference_content.xml.
-  Info: SharedContentComponent: Searching for files that match 'C:\Program Files (x86)\Sandcastle\Presentation\shared\content\syntax_content.xml'.
-  Info: SharedContentComponent: Loading shared content file 'C:\Program Files (x86)\Sandcastle\Presentation\shared\content\syntax_content.xml'.
-  Info: SharedContentComponent: Found 1 files in C:\Program Files (x86)\Sandcastle\Presentation\shared\content\syntax_content.xml.
-  Info: SharedContentComponent: Searching for files that match 'C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\feedback_content.xml'.
-  Info: SharedContentComponent: Loading shared content file 'C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\feedBack_content.xml'.
-  Info: SharedContentComponent: Found 1 files in C:\Program Files (x86)\Sandcastle\Presentation\vs2005\content\feedback_content.xml.
-  Info: SharedContentComponent: Searching for files that match 'SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Loading shared content file 'D:\Projects\Kurejito\doc\Help\Working\SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'roottopictitle' with value in file 'D:\Projects\Kurejito\doc\Help\Working\SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'rootlink' with value in file 'D:\Projects\Kurejito\doc\Help\Working\SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'runningheadertext' with value in file 'D:\Projects\Kurejito\doc\Help\Working\SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'locationinformation' with value in file 'D:\Projects\Kurejito\doc\Help\Working\SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'assemblynameandmodule' with value in file 'D:\Projects\Kurejito\doc\Help\Working\SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'copycode' with value in file 'D:\Projects\Kurejito\doc\Help\Working\SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'locale' with value in file 'D:\Projects\Kurejito\doc\Help\Working\SharedBuilderContent.xml'.
-  Info: SharedContentComponent: Found 1 files in SharedBuilderContent.xml.
-  Info: SharedContentComponent: Searching for files that match 'PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Loading shared content file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'header' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'footer' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'fb_alias' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'fb_product' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'fb_body' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'fb_send' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'fb_headerfeedback' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'feedback_alias' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'feedback_product' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Overriding shared content item 'feedback_body' with value in file 'D:\Projects\Kurejito\doc\Help\Working\PresentationStyleBuilderContent.xml'.
-  Info: SharedContentComponent: Found 1 files in PresentationStyleBuilderContent.xml.
-  Info: SharedContentComponent: Loaded 631 shared content items.
-  Info: ResolveReferenceLinksComponent2: Instantiating component.
-  Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
-  Info: ResolveReferenceLinksComponent2: Searching directory 'C:\Program Files (x86)\Sandcastle\Data\Reflection' for targets files of the form '*.xml'.
-  Info: ResolveReferenceLinksComponent2: Searching directory 'D:\Projects\Kurejito\doc\Help\Working' for targets files of the form 'reflection.xml'.
-  Info: ResolveReferenceLinksComponent2: Loaded 202850 reference targets.
+  Info: ResolveReferenceLinksComponent2: Loaded 202852 reference targets.
   Info: SaveComponent: Instantiating component.
   Info: BuildAssembler: Building topic N:Kurejito
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:Kurejito
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Invalid reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Invalid reference link target '!:IPaymentGateway'.
   Info: BuildAssembler: Building topic T:Kurejito.IPurchaseGateway
   Info: BuildAssembler: Building topic AllMembers.T:Kurejito.IPurchaseGateway
   Info: BuildAssembler: Building topic Methods.T:Kurejito.IPurchaseGateway
   Info: BuildAssembler: Building topic M:Kurejito.IPurchaseGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
   Info: BuildAssembler: Building topic T:Kurejito.PaymentResponse
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Invalid reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Invalid reference link target '!:IPaymentGateway'.
   Info: BuildAssembler: Building topic AllMembers.T:Kurejito.PaymentResponse
   Info: ShowMissingComponent: Auto-documenting constructor M:Kurejito.PaymentResponse.#ctor
   Info: BuildAssembler: Building topic Methods.T:Kurejito.PaymentResponse
@@ -1134,15 +979,11 @@ BuildReferenceTopics:
   Info: BuildAssembler: Building topic P:Kurejito.PaymentResponse.Reason
   Info: BuildAssembler: Building topic P:Kurejito.PaymentResponse.Status
   Info: BuildAssembler: Building topic T:Kurejito.PaymentStatus
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:Kurejito.PaymentStatus
   Info: BuildAssembler: Building topic N:Kurejito.Gateways.DataCash
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:Kurejito.Gateways.DataCash
   Info: BuildAssembler: Building topic T:Kurejito.Gateways.DataCash.DataCashPaymentGateway
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:Kurejito.Gateways.DataCash.DataCashPaymentGateway
   Info: BuildAssembler: Building topic AllMembers.T:Kurejito.Gateways.DataCash.DataCashPaymentGateway
   Info: BuildAssembler: Building topic Methods.T:Kurejito.Gateways.DataCash.DataCashPaymentGateway
-  Info: BuildAssembler: Building topic M:Kurejito.Gateways.DataCash.DataCashPaymentGateway.#ctor(Kurejito.Transport.IHttpPostTransport,System.String,System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;http&quot;/&gt; documentation for M:Kurejito.Gateways.DataCash.DataCashPaymentGateway.#ctor(Kurejito.Transport.IHttpPostTransport,System.String,System.String)
+  Info: BuildAssembler: Building topic M:Kurejito.Gateways.DataCash.DataCashPaymentGateway.#ctor(Kurejito.Transport.IHttpPostTransport,System.String,System.String,System.String)
   Info: BuildAssembler: Building topic M:Kurejito.Gateways.DataCash.DataCashPaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:Kurejito.Gateways.DataCash.DataCashPaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
   Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:Kurejito.Gateways.DataCash.DataCashPaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
@@ -1151,41 +992,19 @@ BuildReferenceTopics:
   Warn: ShowMissingComponent: Missing &lt;param name=&quot;currency&quot;/&gt; documentation for M:Kurejito.Gateways.DataCash.DataCashPaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
   Warn: ShowMissingComponent: Missing &lt;param name=&quot;card&quot;/&gt; documentation for M:Kurejito.Gateways.DataCash.DataCashPaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
   Info: BuildAssembler: Building topic N:Kurejito.Gateways.FakeBank
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:Kurejito.Gateways.FakeBank
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Invalid reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Invalid reference link target '!:IPaymentGateway'.
   Info: BuildAssembler: Building topic T:Kurejito.Gateways.FakeBank.PaymentGateway
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Invalid reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target '!:IPaymentGateway'.
-  Warn: ResolveReferenceLinksComponent2: Invalid reference link target '!:IPaymentGateway'.
   Info: BuildAssembler: Building topic AllMembers.T:Kurejito.Gateways.FakeBank.PaymentGateway
   Info: ShowMissingComponent: Auto-documenting constructor M:Kurejito.Gateways.FakeBank.PaymentGateway.#ctor
   Info: BuildAssembler: Building topic Methods.T:Kurejito.Gateways.FakeBank.PaymentGateway
   Info: BuildAssembler: Building topic M:Kurejito.Gateways.FakeBank.PaymentGateway.#ctor
   Info: ShowMissingComponent: Auto-documenting constructor M:Kurejito.Gateways.FakeBank.PaymentGateway.#ctor
   Info: BuildAssembler: Building topic M:Kurejito.Gateways.FakeBank.PaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:Kurejito.Gateways.FakeBank.PaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:Kurejito.Gateways.FakeBank.PaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;merchantReference&quot;/&gt; documentation for M:Kurejito.Gateways.FakeBank.PaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;amount&quot;/&gt; documentation for M:Kurejito.Gateways.FakeBank.PaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;currency&quot;/&gt; documentation for M:Kurejito.Gateways.FakeBank.PaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;card&quot;/&gt; documentation for M:Kurejito.Gateways.FakeBank.PaymentGateway.Purchase(System.String,System.Decimal,System.String,Kurejito.Payments.PaymentCard)
   Info: BuildAssembler: Building topic N:Kurejito.Gateways.PayPal
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:Kurejito.Gateways.PayPal
   Info: BuildAssembler: Building topic T:Kurejito.Gateways.PayPal.PayPalCredentials
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:Kurejito.Gateways.PayPal.PayPalCredentials
   Info: BuildAssembler: Building topic AllMembers.T:Kurejito.Gateways.PayPal.PayPalCredentials
-  Info: ShowMissingComponent: Auto-documenting constructor M:Kurejito.Gateways.PayPal.PayPalCredentials.#ctor
   Info: BuildAssembler: Building topic Methods.T:Kurejito.Gateways.PayPal.PayPalCredentials
   Info: BuildAssembler: Building topic Properties.T:Kurejito.Gateways.PayPal.PayPalCredentials
   Info: BuildAssembler: Building topic M:Kurejito.Gateways.PayPal.PayPalCredentials.#ctor(System.String,System.String,System.String)
-  Info: ShowMissingComponent: Auto-documenting constructor M:Kurejito.Gateways.PayPal.PayPalCredentials.#ctor(System.String,System.String,System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;username&quot;/&gt; documentation for M:Kurejito.Gateways.PayPal.PayPalCredentials.#ctor(System.String,System.String,System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;password&quot;/&gt; documentation for M:Kurejito.Gateways.PayPal.PayPalCredentials.#ctor(System.String,System.String,System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;signature&quot;/&gt; documentation for M:Kurejito.Gateways.PayPal.PayPalCredentials.#ctor(System.String,System.String,System.String)
   Info: BuildAssembler: Building topic M:Kurejito.Gateways.PayPal.PayPalCredentials.CreateSampleCredentials
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:Kurejito.Gateways.PayPal.PayPalCredentials.CreateSampleCredentials
   Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:Kurejito.Gateways.PayPal.PayPalCredentials.CreateSampleCredentials
@@ -1244,12 +1063,7 @@ BuildReferenceTopics:
   Info: BuildAssembler: Building topic M:Kurejito.Payments.CardDate.Parse(System.String)
   Info: BuildAssembler: Building topic P:Kurejito.Payments.CardDate.Threshold
   Info: BuildAssembler: Building topic M:Kurejito.Payments.CardDate.ToString
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:Kurejito.Payments.CardDate.ToString
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:Kurejito.Payments.CardDate.ToString
   Info: BuildAssembler: Building topic M:Kurejito.Payments.CardDate.ToString(System.String)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:Kurejito.Payments.CardDate.ToString(System.String)
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:Kurejito.Payments.CardDate.ToString(System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;separator&quot;/&gt; documentation for M:Kurejito.Payments.CardDate.ToString(System.String)
   Info: BuildAssembler: Building topic P:Kurejito.Payments.CardDate.TwoDigitMonth
   Info: BuildAssembler: Building topic P:Kurejito.Payments.CardDate.TwoDigitYear
   Info: BuildAssembler: Building topic P:Kurejito.Payments.CardDate.Year
@@ -1270,9 +1084,7 @@ BuildReferenceTopics:
   Info: BuildAssembler: Building topic P:Kurejito.Payments.PaymentCard.CV2
   Info: BuildAssembler: Building topic P:Kurejito.Payments.PaymentCard.ExpiryDate
   Info: BuildAssembler: Building topic P:Kurejito.Payments.PaymentCard.HasIssueNumber
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:Kurejito.Payments.PaymentCard.HasIssueNumber
   Info: BuildAssembler: Building topic P:Kurejito.Payments.PaymentCard.HasStartDate
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:Kurejito.Payments.PaymentCard.HasStartDate
   Info: BuildAssembler: Building topic P:Kurejito.Payments.PaymentCard.IssueNumber
   Info: BuildAssembler: Building topic P:Kurejito.Payments.PaymentCard.StartDate
   Info: BuildAssembler: Building topic N:Kurejito.Transport
@@ -1286,19 +1098,16 @@ BuildReferenceTopics:
   Info: BuildAssembler: Building topic M:Kurejito.Transport.HttpTransport.#ctor(System.Net.IWebProxy)
   Warn: ShowMissingComponent: Missing &lt;param name=&quot;proxy&quot;/&gt; documentation for M:Kurejito.Transport.HttpTransport.#ctor(System.Net.IWebProxy)
   Info: BuildAssembler: Building topic M:Kurejito.Transport.HttpTransport.Post(System.Uri,System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;uri&quot;/&gt; documentation for M:Kurejito.Transport.HttpTransport.Post(System.Uri,System.String)
   Info: BuildAssembler: Building topic T:Kurejito.Transport.IHttpPostTransport
   Info: BuildAssembler: Building topic AllMembers.T:Kurejito.Transport.IHttpPostTransport
   Info: BuildAssembler: Building topic Methods.T:Kurejito.Transport.IHttpPostTransport
   Info: BuildAssembler: Building topic M:Kurejito.Transport.IHttpPostTransport.Post(System.Uri,System.String)
   Info: Processed 97 topics
-    Last step completed in 00:01:39.8286
+    Last step completed in 00:00:57.4629
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-
-Clearing any prior web output
-    Last step completed in 00:00:00.0088
+    Last step completed in 00:00:00.0039
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -1312,19 +1121,13 @@ Using LCID '1033', code page '65001', encoding charset 'UTF-8'.
 Processing Help 1 files in D:\Projects\Kurejito\doc\Help\Working\Output\HtmlHelp1
 Processed 97 HTML files
 Sorting keywords and generating See Also indices
-Saving HTML Help 1 keyword index to D:\Projects\Kurejito\doc\Help\Working\Kurejito.hhk
-Saving HTML Help 1 table of contents to D:\Projects\Kurejito\doc\Help\Working\Kurejito.hhc
-
-Processing website files in D:\Projects\Kurejito\doc\Help\Working\Output\Website
-Processed 97 HTML files
-Sorting keywords and generating See Also indices
-Saving website keyword index to D:\Projects\Kurejito\doc\Help\Working\WebKI.xml
-Saving website table of contents to D:\Projects\Kurejito\doc\Help\Working\WebTOC.xml
-    Last step completed in 00:00:01.2265
+Saving HTML Help 1 keyword index to D:\Projects\Kurejito\doc\Help\Working\KurejitoHtmlHelpName.hhk
+Saving HTML Help 1 table of contents to D:\Projects\Kurejito\doc\Help\Working\KurejitoHtmlHelpName.hhc
+    Last step completed in 00:00:00.8760
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
-    Last step completed in 00:00:00.0010
+    Last step completed in 00:00:00.0020
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1 index file...
@@ -1332,7 +1135,7 @@ Generating HTML Help 1 index file...
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
-    Last step completed in 00:00:00.0078
+    Last step completed in 00:00:00.0098
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
@@ -1342,7 +1145,7 @@ Build1xHelpFile:
   
   
   
-  Compiling d:\Projects\Kurejito\doc\Help\Working\Output\HtmlHelp1\Kurejito.chm
+  Compiling d:\Projects\Kurejito\doc\Help\Working\Output\HtmlHelp1\KurejitoHtmlHelpName.chm
   
   
   
@@ -1352,9 +1155,9 @@ Build1xHelpFile:
   
   99	Topics
   
-  1,170	Local links
+  1,117	Local links
   
-  606	Internet links
+  477	Internet links
   
   0	Graphics
   
@@ -1362,261 +1165,19 @@ Build1xHelpFile:
   
   
   
-  Created d:\Projects\Kurejito\doc\Help\Working\Output\HtmlHelp1\Kurejito.chm, 232,850 bytes
+  Created d:\Projects\Kurejito\doc\Help\Working\Output\HtmlHelp1\KurejitoHtmlHelpName.chm, 194,062 bytes
   
-  Compression decreased file by 1,240,688 bytes.
+  Compression decreased file by 1,155,378 bytes.
   
-    Last step completed in 00:00:03.3650
-</buildStep>
-<buildStep step="GenerateHelpFormatTableOfContents">
-Generating website table of contents file...
-    Last step completed in 00:00:00.0039
-</buildStep>
-<buildStep step="GenerateFullTextIndex">
-Generating full-text index for the website...
-
-    Last step completed in 00:00:00.6425
-</buildStep>
-<buildStep step="CopyingWebsiteFiles">
-Copying website files to output folder...
-
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_100.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_100.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_101.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_101.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_102.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_102.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_103.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_103.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_104.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_104.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_105.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_105.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_106.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_106.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_107.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_107.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_108.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_108.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_109.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_109.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_110.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_110.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_111.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_111.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_112.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_112.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_114.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_114.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_115.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_115.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_116.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_116.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_117.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_117.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_118.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_118.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_119.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_119.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_121.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_121.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_97.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_97.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_98.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_98.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_99.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_99.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\fti\FTI_Files.bin -&gt; D:\Projects\Kurejito\doc\Help\fti\FTI_Files.bin
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\035045ca-aefa-560a-b753-ced3e994ea32.htm -&gt; D:\Projects\Kurejito\doc\Help\html\035045ca-aefa-560a-b753-ced3e994ea32.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\0429ca8a-35c6-5e07-6f96-04c225fe16b1.htm -&gt; D:\Projects\Kurejito\doc\Help\html\0429ca8a-35c6-5e07-6f96-04c225fe16b1.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\04bd6f7e-e973-8120-a62b-65b9eb4bf7cd.htm -&gt; D:\Projects\Kurejito\doc\Help\html\04bd6f7e-e973-8120-a62b-65b9eb4bf7cd.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\051ec602-f35e-f68b-1437-05df758884cd.htm -&gt; D:\Projects\Kurejito\doc\Help\html\051ec602-f35e-f68b-1437-05df758884cd.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\0588ad54-09cd-1627-37be-afd35ddeabf5.htm -&gt; D:\Projects\Kurejito\doc\Help\html\0588ad54-09cd-1627-37be-afd35ddeabf5.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\06961d74-5431-c98e-d90a-9163e70d6816.htm -&gt; D:\Projects\Kurejito\doc\Help\html\06961d74-5431-c98e-d90a-9163e70d6816.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\0ba39c1a-2ebd-0d37-7af4-f31040028d8c.htm -&gt; D:\Projects\Kurejito\doc\Help\html\0ba39c1a-2ebd-0d37-7af4-f31040028d8c.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\0c2de53b-77f2-6b5b-8e28-bb5aea2a0d81.htm -&gt; D:\Projects\Kurejito\doc\Help\html\0c2de53b-77f2-6b5b-8e28-bb5aea2a0d81.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\0d73d2ff-3986-0da0-8b69-285736e798af.htm -&gt; D:\Projects\Kurejito\doc\Help\html\0d73d2ff-3986-0da0-8b69-285736e798af.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\1077d042-428c-0886-dbbd-a9a0f01da745.htm -&gt; D:\Projects\Kurejito\doc\Help\html\1077d042-428c-0886-dbbd-a9a0f01da745.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\15500825-00cc-d62e-c216-fb79b8a7000d.htm -&gt; D:\Projects\Kurejito\doc\Help\html\15500825-00cc-d62e-c216-fb79b8a7000d.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\175c382c-df12-0562-9995-14599e2a0a10.htm -&gt; D:\Projects\Kurejito\doc\Help\html\175c382c-df12-0562-9995-14599e2a0a10.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\1c8790ce-4384-ab78-ebde-484e3e7c8b6b.htm -&gt; D:\Projects\Kurejito\doc\Help\html\1c8790ce-4384-ab78-ebde-484e3e7c8b6b.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\1d8a2580-4a99-766e-90f5-aa56833ad747.htm -&gt; D:\Projects\Kurejito\doc\Help\html\1d8a2580-4a99-766e-90f5-aa56833ad747.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\20958e47-fd41-d5ef-8854-4450844d2384.htm -&gt; D:\Projects\Kurejito\doc\Help\html\20958e47-fd41-d5ef-8854-4450844d2384.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\230922c9-2c16-dcb5-c729-e5c6d6a42b75.htm -&gt; D:\Projects\Kurejito\doc\Help\html\230922c9-2c16-dcb5-c729-e5c6d6a42b75.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\23fb35b3-8604-bfdc-4527-20910dc1445f.htm -&gt; D:\Projects\Kurejito\doc\Help\html\23fb35b3-8604-bfdc-4527-20910dc1445f.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\24670669-122d-715e-9a0a-b3dba6dfe119.htm -&gt; D:\Projects\Kurejito\doc\Help\html\24670669-122d-715e-9a0a-b3dba6dfe119.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\26332420-f04e-1a7c-7943-6cd49da5413d.htm -&gt; D:\Projects\Kurejito\doc\Help\html\26332420-f04e-1a7c-7943-6cd49da5413d.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\29817606-6e21-855e-7bb4-11f89b59cc93.htm -&gt; D:\Projects\Kurejito\doc\Help\html\29817606-6e21-855e-7bb4-11f89b59cc93.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\2be312d1-0d5d-d406-9d16-403e2e981286.htm -&gt; D:\Projects\Kurejito\doc\Help\html\2be312d1-0d5d-d406-9d16-403e2e981286.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\2e81b565-dfa2-c72c-dff5-4d931fd9c869.htm -&gt; D:\Projects\Kurejito\doc\Help\html\2e81b565-dfa2-c72c-dff5-4d931fd9c869.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\2fcebef1-fbce-a5b2-ba99-312ce29fbbc0.htm -&gt; D:\Projects\Kurejito\doc\Help\html\2fcebef1-fbce-a5b2-ba99-312ce29fbbc0.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\32e826bd-cb4c-a22d-c85b-d8e3b7740dac.htm -&gt; D:\Projects\Kurejito\doc\Help\html\32e826bd-cb4c-a22d-c85b-d8e3b7740dac.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\33e0475e-2199-b14a-32a5-bf07dd068ce9.htm -&gt; D:\Projects\Kurejito\doc\Help\html\33e0475e-2199-b14a-32a5-bf07dd068ce9.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\3ae0eb69-0b93-6e48-b562-316c14ffe044.htm -&gt; D:\Projects\Kurejito\doc\Help\html\3ae0eb69-0b93-6e48-b562-316c14ffe044.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\3c06b216-7c4f-a11f-75ef-d167b75a6c1e.htm -&gt; D:\Projects\Kurejito\doc\Help\html\3c06b216-7c4f-a11f-75ef-d167b75a6c1e.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\3ee1c0f3-bb60-b3fb-0d3e-9e2e79da9641.htm -&gt; D:\Projects\Kurejito\doc\Help\html\3ee1c0f3-bb60-b3fb-0d3e-9e2e79da9641.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\3f4025e7-ae25-f0e2-901b-b9de87d914a2.htm -&gt; D:\Projects\Kurejito\doc\Help\html\3f4025e7-ae25-f0e2-901b-b9de87d914a2.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\42ca2387-3a09-9601-66e6-08a69e74591e.htm -&gt; D:\Projects\Kurejito\doc\Help\html\42ca2387-3a09-9601-66e6-08a69e74591e.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\46af91c5-22ae-0165-0f83-11386a4f8b17.htm -&gt; D:\Projects\Kurejito\doc\Help\html\46af91c5-22ae-0165-0f83-11386a4f8b17.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\4b0f723e-31d3-aa03-6fc9-e75838814960.htm -&gt; D:\Projects\Kurejito\doc\Help\html\4b0f723e-31d3-aa03-6fc9-e75838814960.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\4f03d9c8-f44e-2805-4056-41656588a2a4.htm -&gt; D:\Projects\Kurejito\doc\Help\html\4f03d9c8-f44e-2805-4056-41656588a2a4.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\56578177-f3b5-fdb8-9017-5bb9758d4fd4.htm -&gt; D:\Projects\Kurejito\doc\Help\html\56578177-f3b5-fdb8-9017-5bb9758d4fd4.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\5aa06dcf-6eee-0613-ba4e-292ac23af4eb.htm -&gt; D:\Projects\Kurejito\doc\Help\html\5aa06dcf-6eee-0613-ba4e-292ac23af4eb.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\5c6a366e-3c79-f80c-6c27-9e08da81dc46.htm -&gt; D:\Projects\Kurejito\doc\Help\html\5c6a366e-3c79-f80c-6c27-9e08da81dc46.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\5e3b4644-ed76-baa8-eb6e-a8632bf399a1.htm -&gt; D:\Projects\Kurejito\doc\Help\html\5e3b4644-ed76-baa8-eb6e-a8632bf399a1.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\66802b84-ca7d-96ab-8447-67f44e7c412c.htm -&gt; D:\Projects\Kurejito\doc\Help\html\66802b84-ca7d-96ab-8447-67f44e7c412c.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\69288f9a-8c08-9b76-bed6-5fdb12133163.htm -&gt; D:\Projects\Kurejito\doc\Help\html\69288f9a-8c08-9b76-bed6-5fdb12133163.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\6b3223e7-405d-55b5-6b9b-d5a1ae25ac09.htm -&gt; D:\Projects\Kurejito\doc\Help\html\6b3223e7-405d-55b5-6b9b-d5a1ae25ac09.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\6d863258-3693-47d5-1d82-dd9cce24d4e4.htm -&gt; D:\Projects\Kurejito\doc\Help\html\6d863258-3693-47d5-1d82-dd9cce24d4e4.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\73c9bb00-0888-c693-6ae0-40641f7be89f.htm -&gt; D:\Projects\Kurejito\doc\Help\html\73c9bb00-0888-c693-6ae0-40641f7be89f.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\77f6759a-da68-f6f8-8af6-3d05739e55ef.htm -&gt; D:\Projects\Kurejito\doc\Help\html\77f6759a-da68-f6f8-8af6-3d05739e55ef.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\784562a0-2d1d-b875-686c-9928440abb3e.htm -&gt; D:\Projects\Kurejito\doc\Help\html\784562a0-2d1d-b875-686c-9928440abb3e.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\7a6e7730-77f7-6368-5ede-90f9e75554b4.htm -&gt; D:\Projects\Kurejito\doc\Help\html\7a6e7730-77f7-6368-5ede-90f9e75554b4.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\7b0f6dad-3819-4a34-b0b3-f162676b4e19.htm -&gt; D:\Projects\Kurejito\doc\Help\html\7b0f6dad-3819-4a34-b0b3-f162676b4e19.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\7d59a64b-27a2-018f-e3a8-705ec86b9b69.htm -&gt; D:\Projects\Kurejito\doc\Help\html\7d59a64b-27a2-018f-e3a8-705ec86b9b69.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\7d68a7ea-f70d-75e9-f87f-3e8b1dbef260.htm -&gt; D:\Projects\Kurejito\doc\Help\html\7d68a7ea-f70d-75e9-f87f-3e8b1dbef260.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\7d9917a8-c4a1-0233-027b-9f966447d619.htm -&gt; D:\Projects\Kurejito\doc\Help\html\7d9917a8-c4a1-0233-027b-9f966447d619.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\7ddf763a-9c84-c342-4f67-b0edafe0d54e.htm -&gt; D:\Projects\Kurejito\doc\Help\html\7ddf763a-9c84-c342-4f67-b0edafe0d54e.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm -&gt; D:\Projects\Kurejito\doc\Help\html\7e3f529c-8c75-6807-53a7-4ff1edee0fd0.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\7f761642-9e51-7375-de40-9d6bdf845523.htm -&gt; D:\Projects\Kurejito\doc\Help\html\7f761642-9e51-7375-de40-9d6bdf845523.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\8207e927-08d7-049a-276c-e608ff714e45.htm -&gt; D:\Projects\Kurejito\doc\Help\html\8207e927-08d7-049a-276c-e608ff714e45.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\8289419d-b6f2-62d8-aa92-9123de4b0684.htm -&gt; D:\Projects\Kurejito\doc\Help\html\8289419d-b6f2-62d8-aa92-9123de4b0684.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\82b6638b-2c94-0314-1073-8bb3d0865868.htm -&gt; D:\Projects\Kurejito\doc\Help\html\82b6638b-2c94-0314-1073-8bb3d0865868.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\836819e1-61b4-5104-356e-78a6ea1eacd5.htm -&gt; D:\Projects\Kurejito\doc\Help\html\836819e1-61b4-5104-356e-78a6ea1eacd5.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\83c740eb-372f-abee-d5ae-9c86c8413fec.htm -&gt; D:\Projects\Kurejito\doc\Help\html\83c740eb-372f-abee-d5ae-9c86c8413fec.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\8621540c-c057-d67a-429b-6a31c068e04d.htm -&gt; D:\Projects\Kurejito\doc\Help\html\8621540c-c057-d67a-429b-6a31c068e04d.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\8bd4ee2f-0edb-e2c0-ebd0-8f6104beab95.htm -&gt; D:\Projects\Kurejito\doc\Help\html\8bd4ee2f-0edb-e2c0-ebd0-8f6104beab95.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\8d32d2d4-7b6d-a5e6-cc08-9a4a1cdd0e29.htm -&gt; D:\Projects\Kurejito\doc\Help\html\8d32d2d4-7b6d-a5e6-cc08-9a4a1cdd0e29.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\8db3bf12-a6a2-2cd9-538d-28ffe4356e06.htm -&gt; D:\Projects\Kurejito\doc\Help\html\8db3bf12-a6a2-2cd9-538d-28ffe4356e06.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\8e48659a-aaa9-308f-24e5-396bfac5ff69.htm -&gt; D:\Projects\Kurejito\doc\Help\html\8e48659a-aaa9-308f-24e5-396bfac5ff69.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\9431de64-5dcd-2582-b11e-46ded056c71c.htm -&gt; D:\Projects\Kurejito\doc\Help\html\9431de64-5dcd-2582-b11e-46ded056c71c.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\947c57c8-a963-e15b-2d85-36ae2f5ec685.htm -&gt; D:\Projects\Kurejito\doc\Help\html\947c57c8-a963-e15b-2d85-36ae2f5ec685.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\98a8d766-a702-deab-abd1-459c5698a2b9.htm -&gt; D:\Projects\Kurejito\doc\Help\html\98a8d766-a702-deab-abd1-459c5698a2b9.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\9b8cd628-bc39-6411-ad10-b61f60528b36.htm -&gt; D:\Projects\Kurejito\doc\Help\html\9b8cd628-bc39-6411-ad10-b61f60528b36.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\9cc1a16c-b198-a1f8-4735-85ace866e650.htm -&gt; D:\Projects\Kurejito\doc\Help\html\9cc1a16c-b198-a1f8-4735-85ace866e650.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\a344c87e-3c03-82b0-9c9e-13b3854e7c11.htm -&gt; D:\Projects\Kurejito\doc\Help\html\a344c87e-3c03-82b0-9c9e-13b3854e7c11.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\a3c1f0ce-8a26-47a2-627d-ae58a8e4dab7.htm -&gt; D:\Projects\Kurejito\doc\Help\html\a3c1f0ce-8a26-47a2-627d-ae58a8e4dab7.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\b4042e83-4115-284d-d0b3-03796e4efc78.htm -&gt; D:\Projects\Kurejito\doc\Help\html\b4042e83-4115-284d-d0b3-03796e4efc78.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\b61a4880-a49c-f5a8-863a-4876fcdb7524.htm -&gt; D:\Projects\Kurejito\doc\Help\html\b61a4880-a49c-f5a8-863a-4876fcdb7524.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\b8a553c2-9981-523e-4549-8543bf4532cc.htm -&gt; D:\Projects\Kurejito\doc\Help\html\b8a553c2-9981-523e-4549-8543bf4532cc.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\bc5e1ecb-b528-5835-bebc-318b7918f3d0.htm -&gt; D:\Projects\Kurejito\doc\Help\html\bc5e1ecb-b528-5835-bebc-318b7918f3d0.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\bf5abae8-8d99-7b76-884a-b5d36b2c878e.htm -&gt; D:\Projects\Kurejito\doc\Help\html\bf5abae8-8d99-7b76-884a-b5d36b2c878e.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\c0a2e35d-629b-b993-324c-bb1fb3fbb10b.htm -&gt; D:\Projects\Kurejito\doc\Help\html\c0a2e35d-629b-b993-324c-bb1fb3fbb10b.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\c3a887e5-98ca-9785-5641-e7d18f840f32.htm -&gt; D:\Projects\Kurejito\doc\Help\html\c3a887e5-98ca-9785-5641-e7d18f840f32.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\c42ece63-cda8-cb06-57ef-b5622e94f3d0.htm -&gt; D:\Projects\Kurejito\doc\Help\html\c42ece63-cda8-cb06-57ef-b5622e94f3d0.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\cb9e2f9d-4b60-9a71-7d6a-a0fc9f92fce8.htm -&gt; D:\Projects\Kurejito\doc\Help\html\cb9e2f9d-4b60-9a71-7d6a-a0fc9f92fce8.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\cc574f7d-316c-90c6-35fd-3e9b72f0d8e9.htm -&gt; D:\Projects\Kurejito\doc\Help\html\cc574f7d-316c-90c6-35fd-3e9b72f0d8e9.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\cea9a9fa-4fa4-61de-0d66-a2222920bbae.htm -&gt; D:\Projects\Kurejito\doc\Help\html\cea9a9fa-4fa4-61de-0d66-a2222920bbae.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\d18bfd0a-c816-b505-3462-10324a602dbb.htm -&gt; D:\Projects\Kurejito\doc\Help\html\d18bfd0a-c816-b505-3462-10324a602dbb.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\d1ef3813-dd53-a3c7-e58d-fef1f84332e2.htm -&gt; D:\Projects\Kurejito\doc\Help\html\d1ef3813-dd53-a3c7-e58d-fef1f84332e2.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\d2ee7ba5-be98-1d63-6822-b78be3aefff6.htm -&gt; D:\Projects\Kurejito\doc\Help\html\d2ee7ba5-be98-1d63-6822-b78be3aefff6.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\d52fed0b-74c1-843c-c718-8b045961cd35.htm -&gt; D:\Projects\Kurejito\doc\Help\html\d52fed0b-74c1-843c-c718-8b045961cd35.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\d6a2f0e6-352c-d6c8-7eed-62f3001eb7d6.htm -&gt; D:\Projects\Kurejito\doc\Help\html\d6a2f0e6-352c-d6c8-7eed-62f3001eb7d6.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\da192f3b-55ac-1a81-3781-e43f6d82058d.htm -&gt; D:\Projects\Kurejito\doc\Help\html\da192f3b-55ac-1a81-3781-e43f6d82058d.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\ddd1dc56-f3ca-423e-5edf-3a943f0809b3.htm -&gt; D:\Projects\Kurejito\doc\Help\html\ddd1dc56-f3ca-423e-5edf-3a943f0809b3.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\e03ed871-cbf2-0ab2-2cc1-7ea200b03cfd.htm -&gt; D:\Projects\Kurejito\doc\Help\html\e03ed871-cbf2-0ab2-2cc1-7ea200b03cfd.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\e4bb8239-91b6-fabf-b0e9-2e80cd172250.htm -&gt; D:\Projects\Kurejito\doc\Help\html\e4bb8239-91b6-fabf-b0e9-2e80cd172250.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\e7e49c26-e97b-9a84-8979-d8bf301f4d10.htm -&gt; D:\Projects\Kurejito\doc\Help\html\e7e49c26-e97b-9a84-8979-d8bf301f4d10.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\e8e12507-5331-db9e-3253-47b4a4fdd06c.htm -&gt; D:\Projects\Kurejito\doc\Help\html\e8e12507-5331-db9e-3253-47b4a4fdd06c.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\e924dda2-89a2-ea49-0d11-fc5ed44ec29b.htm -&gt; D:\Projects\Kurejito\doc\Help\html\e924dda2-89a2-ea49-0d11-fc5ed44ec29b.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\ec0a59e1-d223-27be-a231-2ed49e1b351a.htm -&gt; D:\Projects\Kurejito\doc\Help\html\ec0a59e1-d223-27be-a231-2ed49e1b351a.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\ed967b49-6305-94f3-b1bd-6e444949adcf.htm -&gt; D:\Projects\Kurejito\doc\Help\html\ed967b49-6305-94f3-b1bd-6e444949adcf.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\f2d342a6-4f75-3d00-3b21-6dfe5cb7171c.htm -&gt; D:\Projects\Kurejito\doc\Help\html\f2d342a6-4f75-3d00-3b21-6dfe5cb7171c.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\f6f9e893-5e6f-e679-4b8e-2f4eb7bf9ef0.htm -&gt; D:\Projects\Kurejito\doc\Help\html\f6f9e893-5e6f-e679-4b8e-2f4eb7bf9ef0.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\html\ff22ce55-969c-9c2d-809e-862b2445108c.htm -&gt; D:\Projects\Kurejito\doc\Help\html\ff22ce55-969c-9c2d-809e-862b2445108c.htm
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\adm.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\adm.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\adm_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\adm_arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\adm_dev.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\adm_dev.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\adm_dev_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\adm_dev_arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\alert_caution.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\alert_caution.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\alert_note.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\alert_note.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\alert_security.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\alert_security.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\big_adm.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\big_adm.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\big_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\big_arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\big_dev.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\big_dev.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\big_kw.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\big_kw.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\box.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\box.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\Caution.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\Caution.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\CFW.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\CFW.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\collall.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\collall.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\collapse.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\collapse.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\collapse_all.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\collapse_all.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\copycode.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\copycode.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\copycodeHighlight.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\copycodeHighlight.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\dev.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\dev.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\dev_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\dev_arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\dropdown.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\dropdown.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\dropdownHover.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\dropdownHover.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\drpdown.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\drpdown.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\drpdown_orange.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\drpdown_orange.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\drpdown_orange_up.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\drpdown_orange_up.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\drpup.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\drpup.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\exp.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\exp.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\expall.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\expall.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\expand_all.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\expand_all.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\filter1a.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\filter1a.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\filter1c.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\filter1c.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\footer.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\footer.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\gradient.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\gradient.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\greencheck.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\greencheck.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\greychck.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\greychck.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\header_prev_next.jpg -&gt; D:\Projects\Kurejito\doc\Help\icons\header_prev_next.jpg
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\header_sql_tutorial_blank.jpg -&gt; D:\Projects\Kurejito\doc\Help\icons\header_sql_tutorial_blank.jpg
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\header_sql_tutorial_logo.GIF -&gt; D:\Projects\Kurejito\doc\Help\icons\header_sql_tutorial_logo.GIF
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\kw.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_adm.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\kw_adm.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_adm_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\kw_adm_arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_adm_dev.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\kw_adm_dev.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_adm_dev_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\kw_adm_dev_arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\kw_arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_dev.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\kw_dev.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\kw_dev_arch.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\kw_dev_arch.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\LastChild.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\LastChild.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\load.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\load.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\load_hover.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\load_hover.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\note.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\note.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pencil.GIF -&gt; D:\Projects\Kurejito\doc\Help\icons\pencil.GIF
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privclass.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privclass.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privdelegate.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privdelegate.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privenum.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privenum.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privenumeration.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privenumeration.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privevent.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privevent.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privextension.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privextension.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privfield.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privfield.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privinterface.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privinterface.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privmethod.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privmethod.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privproperty.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privproperty.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\privstructure.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\privstructure.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protclass.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protclass.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protdelegate.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protdelegate.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protenum.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protenum.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protenumeration.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protenumeration.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protevent.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protevent.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protextension.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protextension.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protfield.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protfield.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protinterface.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protinterface.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protmethod.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protmethod.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protoperator.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protoperator.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protproperty.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protproperty.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\protstructure.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\protstructure.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubclass.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubclass.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubdelegate.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubdelegate.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubenum.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubenum.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubenumeration.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubenumeration.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubevent.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubevent.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubextension.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubextension.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubfield.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubfield.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubinterface.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubinterface.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubmethod.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubmethod.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\puboperator.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\puboperator.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubproperty.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubproperty.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\pubstructure.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\pubstructure.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\requirements1a.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\requirements1a.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\requirements1c.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\requirements1c.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\save.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\save.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\save_hover.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\save_hover.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\security.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\security.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\seealso1a.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\seealso1a.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\seealso1c.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\seealso1c.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\slMobile.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\slMobile.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\static.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\static.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\icons\xna.gif -&gt; D:\Projects\Kurejito\doc\Help\icons\xna.gif
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\CheckboxMenu.js -&gt; D:\Projects\Kurejito\doc\Help\scripts\CheckboxMenu.js
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\CommonUtilities.js -&gt; D:\Projects\Kurejito\doc\Help\scripts\CommonUtilities.js
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\Dropdown.js -&gt; D:\Projects\Kurejito\doc\Help\scripts\Dropdown.js
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\EventUtilities.js -&gt; D:\Projects\Kurejito\doc\Help\scripts\EventUtilities.js
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\script_feedBack.js -&gt; D:\Projects\Kurejito\doc\Help\scripts\script_feedBack.js
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\script_manifold.js -&gt; D:\Projects\Kurejito\doc\Help\scripts\script_manifold.js
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\scripts\SplitScreen.js -&gt; D:\Projects\Kurejito\doc\Help\scripts\SplitScreen.js
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\styles\Presentation.css -&gt; D:\Projects\Kurejito\doc\Help\styles\Presentation.css
-D:\Projects\Kurejito\doc\Help\Working\Output\Website\styles\Whidbey\presentation.css -&gt; D:\Projects\Kurejito\doc\Help\styles\Whidbey\presentation.css
-    Last step completed in 00:00:00.7285
+    Last step completed in 00:00:03.2129
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.0947
+    Last step completed in 00:00:00.0518
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 11/21/2010 02:21 AM.  Total time: 00:01:51.4558
+Build completed successfully at 11/28/2010 02:47 AM.  Total time: 00:01:07.5615
 
 </buildStep>
 </shfbBuild>

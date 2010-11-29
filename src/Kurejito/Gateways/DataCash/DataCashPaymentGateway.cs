@@ -4,21 +4,23 @@ using System.Xml.XPath;
 using Kurejito.Payments;
 using Kurejito.Transport;
 
+///<summary>Classes that implement the Kurejito API on top of the payment gateway supplied by <a href="DataCash">DataCash</a></summary>
 namespace Kurejito.Gateways.DataCash {
-	/// <summary>
-	/// </summary>
+	/// <summary>Implements the <see cref="IPurchaseGateway" /> interface to provide purchase and immediate payment 
+	/// capabilities when using DataCash as your payment provider.</summary>
 	public class DataCashPaymentGateway : IPurchaseGateway {
 		private readonly string client;
 		private readonly IHttpPostTransport http;
 		private readonly string password;
 
-		private string gatewayUri;
+		private readonly string gatewayUri;
 		/// <summary>
 		/// Construct a new instance of the <see cref="DataCashPaymentGateway"/>.
 		/// </summary>
 		/// <param name="http">The Http transport provider for communication with DataCash.</param>
 		/// <param name="client">The client code for your payment gateway, as supplied by DataCash.</param>
 		/// <param name="password">The password for your payment gateway, as supplised by DataCash.</param>
+		/// <param name="gatewayUri">The endpoint URI of the DataCash payment system.</param>
 		public DataCashPaymentGateway(IHttpPostTransport http, string client, string password, string gatewayUri) {
 			this.http = http;
 			this.client = client;
