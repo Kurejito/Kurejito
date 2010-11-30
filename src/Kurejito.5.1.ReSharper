@@ -103,4 +103,15 @@
       <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AaBb" ElementKind="Other" />
     </Naming2>
   </CodeStyleSettings>
+  <SharedSolutionTemplateManager>
+    <LiveTemplates>
+      <Template uid="fa1418e2-9d91-4af8-9141-414d1e29126b" shortcut="ut" description="Basic empty xUnit test method" text="[Fact]&#xD;&#xA;public void $Test_Name$() {&#xD;&#xA;	&#xD;&#xA;}" reformat="False" shortenQualifiedReferences="True">
+        <Categories />
+        <Variables>
+          <Variable name="Test_Name" expression="" initialRange="0" />
+        </Variables>
+        <CustomProperties />
+      </Template>
+    </LiveTemplates>
+  </SharedSolutionTemplateManager>
 </Configuration>

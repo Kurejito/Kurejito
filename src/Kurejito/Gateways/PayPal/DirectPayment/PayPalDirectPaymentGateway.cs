@@ -12,18 +12,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     /// </summary>
     public class PayPalDirectPaymentGateway : IPurchaseGateway {
         private static readonly IDictionary<CardType, string> SupportedCards = new Dictionary<CardType, string> {
+                                                                                                                    {CardType.Visa, "Visa"},
                                                                                                                     {
-                                                                                                                        CardType
-                                                                                                                        .
-                                                                                                                        Visa
-                                                                                                                        ,
-                                                                                                                        "Visa"
-                                                                                                                        },
-                                                                                                                    {
-                                                                                                                        CardType
-                                                                                                                        .
-                                                                                                                        Mastercard
-                                                                                                                        ,
+                                                                                                                        CardType.Mastercard,
                                                                                                                         "MasterCard"
                                                                                                                         },
                                                                                                                     //TODO Other, Switch, Solo?
@@ -68,7 +59,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             ThrowIfUnSupportedCardType(card);
 
             string post = this.httpTransport.Post(new Uri("https://api-3t.sandbox.paypal.com/nvp"),
-                                                   this.CreatePurchaseUri(card, amount, currency));
+                                                  this.BuildPurchaseQueryString(card, amount, currency));
 
             //TODO support payment response and not the hack below.
             return new PaymentResponse {
@@ -80,7 +71,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
         #endregion
 
-        private string CreatePurchaseUri(PaymentCard card, decimal amount, string currency) {
+        private string BuildPurchaseQueryString(PaymentCard card, decimal amount, string currency) {
             var pairs = new Dictionary<string, string> {
                                                            {"VERSION", "56.0"},
                                                            {"SIGNATURE", this.credentials.Signature},
@@ -92,10 +83,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                            {"AMT", amount.ToString("0.00")},
                                                            {"CREDITCARDTYPE", SupportedCards[card.CardType]},
                                                            {"ACCT", card.CardNumber},
-                                                           {
-                                                               "EXPDATE",
-                                                               card.ExpiryDate.TwoDigitMonth + card.ExpiryDate.Year
-                                                               },
+                                                           {"EXPDATE", card.ExpiryDate.TwoDigitMonth + card.ExpiryDate.Year},
                                                            {"CVV2", card.CV2},
                                                            {"FIRSTNAME", "Bob"},
                                                            {"LASTNAME", "Le Builder"},
@@ -116,18 +104,16 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
         private static void ThrowIfUnSupportedCardType(PaymentCard card) {
             string ppCreditCardType;
-            if (!SupportedCards.TryGetValue(card.CardType, out ppCreditCardType)) {
+            if (!SupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
                 throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}",
                                                           String.Join(" ",
                                                                       SupportedCards.Keys.Select(e => e.ToString()).
                                                                           ToArray())));
-            }
         }
 
         private static void ThrowIfAmountZeroOrLess(decimal amount) {
-            if (amount <= 0) {
+            if (amount <= 0)
                 throw new ArgumentException("Purchase amount must be greater than zero.", "amount");
-            }
         }
     }
 }

@@ -63,8 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Encoding\Base32Url.cs" />
+    <Compile Include="Extensions\ShouldExtensions.cs" />
     <Compile Include="Gateways\DataCash\DataCashHttpMockTests.cs" />
+    <Compile Include="Payments\PaymentCard_Validation_Tests.cs" />
+    <Compile Include="Encoding\Base32Url.cs" />
     <Compile Include="Gateways\DataCash\DataCashResponseStatusTests.cs" />
     <Compile Include="Gateways\DataCash\DataCashTestBase.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGatewayTests.cs" />
