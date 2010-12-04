@@ -13,17 +13,6 @@ using System.Collections.Specialized;
 namespace Kurejito.Tests.Gateways.SagePay {
 	public class SagePayUnitTests : SagePayTestBase {
 
-		private Mock<IHttpPostTransport> http;
-
-		private SagePayPaymentGateway gateway;
-		private PaymentCard card;
-
-		public SagePayUnitTests() {
-			http = new Mock<IHttpPostTransport>();
-			gateway = new SagePayPaymentGateway(http.Object, VENDOR_NAME, VPS_PROTOCOL, GatewayMode.Simulator);
-			card = new PaymentCard("I M LOADED", "13412341341234", "1212", "123", CardType.Visa);
-		}
-
 		private void VerifyPurchasePostUrl(GatewayMode mode, string postUri) {
 			http.Setup(h => h.Post(new Uri(postUri), It.IsAny<string>())).Returns(MakePostResponse("OK"));
 			var sagePay = new SagePayPaymentGateway(http.Object, "myVendor", 2.23m, mode);
@@ -57,9 +46,7 @@ namespace Kurejito.Tests.Gateways.SagePay {
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_VendorName_In_PostData() {
 
-			SetupPostData(data => {
-				Assert.Equal(VENDOR_NAME, data["Vendor"]);
-			});
+			SetupPostData(data => Assert.Equal(VENDOR_NAME, data["Vendor"]));
 
 			gateway.Purchase("123", 123.45m, "GBP", card);
 

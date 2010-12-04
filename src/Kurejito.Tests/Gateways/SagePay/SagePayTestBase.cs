@@ -26,6 +26,18 @@ PostCodeResult=NOTMATCHED
 CV2Result=NOTMATCHED
 ";
 
+		protected Mock<IHttpPostTransport> http;
+
+		protected SagePayPaymentGateway gateway;
+		protected PaymentCard card;
+
+		protected SagePayTestBase() {
+			http = new Mock<IHttpPostTransport>();
+			gateway = new SagePayPaymentGateway(http.Object, VENDOR_NAME, VPS_PROTOCOL, GatewayMode.Simulator);
+			card = new PaymentCard("I M LOADED", "13412341341234", "1212", "123", CardType.Visa);
+		}
+
+
 		protected string MakePostResponse(string status) {
 			return (String.Format(POST_RESPONSE_FORMAT, status));
 		}

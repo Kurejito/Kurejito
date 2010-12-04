@@ -54,7 +54,24 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 		}
 
 		/// <summary>Attempts to debit the specified amount from the supplied payment card.</summary>
+		/// <remarks>Because the SagePay gateway requires a shopping basket, this overload will create
+		///  a simple basket containing a single line item whose description is auto-generated from the 
+		/// supplied order details.</remarks>
 		public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card) {
+			var lineItem = new LineItem(String.Format("Transaction ref {0}", merchantReference), amount);
+			var basket = new Basket(lineItem);
+			return (this.Purchase(merchantReference, amount, currency, card, basket));
+		}
+
+
+		/// <summary>Attempt to take the specified payment amount from the supplied payment card.</summary>
+		/// <param name="merchantReference">The merchant reference.</param>
+		/// <param name="amount">The amount.</param>
+		/// <param name="currency">The currency.</param>
+		/// <param name="card">The card.</param>
+		/// <param name="basket">The basket.</param>
+		/// <returns></returns>
+		public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card, Basket basket) {
 			var data = MakePostData();
 			data.Add("TxType", "PAYMENT");
 			data.Add("VendorTxCode", merchantReference);
@@ -64,6 +81,8 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 			data.Add("CardNumber", card.CardNumber);
 			data.Add("CardType", TranslateCardType(card.CardType));
 			data.Add("ExpiryDate", card.ExpiryDate.ToString());
+			data.Add("Basket", basket.ToSagePayBasketFormat());
+			data.Add("Description", "DUMMY DESCRIPTION");
 			var postData = FormatPostData(data);
 			var uri = postUris[this.mode];
 			var httpResponse = http.Post(uri, postData);
