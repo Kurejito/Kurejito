@@ -8,8 +8,8 @@
     <ProjectGuid>{17764259-3E93-4BD9-B3B5-B0E1F9F8004F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kurejito.IntegrationTests</RootNamespace>
-    <AssemblyName>Kurejito.IntegrationTests</AssemblyName>
+    <RootNamespace>Kurejito.ProviderTests</RootNamespace>
+    <AssemblyName>Kurejito.ProviderTests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

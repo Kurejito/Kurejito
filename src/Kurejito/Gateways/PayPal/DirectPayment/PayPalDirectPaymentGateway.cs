@@ -7,8 +7,8 @@ using Kurejito.Transport;
 
 namespace Kurejito.Gateways.PayPal.DirectPayment {
     /// <summary>
-    /// Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
-    /// See https://www.x.com/community/ppx/documentation#wpp 
+    ///   Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
+    ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
     public class PayPalDirectPaymentGateway : IPurchaseGateway {
         private static readonly IDictionary<CardType, string> SupportedCards = new Dictionary<CardType, string> {
@@ -20,69 +20,65 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                                                                                     //TODO Other, Switch, Solo?
                                                                                                                 };
 
-        private readonly PayPalCredentials credentials;
+        private readonly PayPalEnvironment environment;
         private readonly IHttpPostTransport httpTransport;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PayPalDirectPaymentGateway"/> class.
+        ///   Initializes a new instance of the <see cref = "PayPalDirectPaymentGateway" /> class.
         /// </summary>
-        /// <param name="httpTransport">The transport for PayPal communication.</param>
-        /// <param name="credentials">The pay pal credentials.</param>
-        public PayPalDirectPaymentGateway(IHttpPostTransport httpTransport, PayPalCredentials credentials) {
+        /// <param name = "httpTransport">The transport for PayPal communication.</param>
+        /// <param name = "environment">The pay pal environment.</param>
+        public PayPalDirectPaymentGateway(IHttpPostTransport httpTransport, PayPalEnvironment environment) {
             if (httpTransport == null) {
                 throw new ArgumentNullException("httpTransport");
             }
-            if (credentials == null) {
-                throw new ArgumentNullException("credentials");
+            if (environment == null) {
+                throw new ArgumentNullException("environment");
             }
             this.httpTransport = httpTransport;
-            this.credentials = credentials;
+            this.environment = environment;
         }
 
         #region IPurchaseGateway Members
 
-		/// <summary>
-		/// Attempts to debit the specified amount from the supplied payment card.
-		/// </summary>
-		/// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
-		/// <param name="amount">The amount of money to be debited from the payment card</param>
-		/// <param name="currency">The ISO4217 currency code of the currency to be used for this transaction.</param>
-		/// <param name="card">An instance of <see cref="PaymentCard"/> containing the customer's payment card details.</param>
-		/// <returns>
-		/// A <see cref="PaymentResponse"/> indicating whether the transaction succeeded.
-		/// </returns>
-    	public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card) {
-    		return Purchase(merchantReference, amount, currency, card, null);
-    	}
+        /// <summary>
+        ///   Attempts to debit the specified amount from the supplied payment card.
+        /// </summary>
+        /// <param name = "merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
+        /// <param name = "amount">The amount of money to be debited from the payment card</param>
+        /// <param name = "currency">The ISO4217 currency code of the currency to be used for this transaction.</param>
+        /// <param name = "card">An instance of <see cref = "PaymentCard" /> containing the customer's payment card details.</param>
+        /// <returns>
+        ///   A <see cref = "PaymentResponse" /> indicating whether the transaction succeeded.
+        /// </returns>
+        public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card) {
+            return this.Purchase(merchantReference, amount, currency, card, null);
+        }
 
-		/// <summary>
-		/// Attempts to debit the specified amount from the supplied payment card.
-		/// </summary>
-		/// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
-		/// <param name="amount">The amount of money to be debited from the payment card</param>
-		/// <param name="currency">The ISO4217 currency code of the currency to be used for this transaction.</param>
-		/// <param name="card">An instance of <see cref="PaymentCard"/> containing the customer's payment card details.</param>
-		/// <param name="basket">An instance of <see cref="Basket">Basket</see> containing descriptions of the items included in this transaction.</param>
-		/// <returns>
-		/// A <see cref="PaymentResponse"/> indicating whether the transaction succeeded.
-		/// </returns>
+        /// <summary>
+        ///   Attempts to debit the specified amount from the supplied payment card.
+        /// </summary>
+        /// <param name = "merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
+        /// <param name = "amount">The amount of money to be debited from the payment card</param>
+        /// <param name = "currency">The ISO4217 currency code of the currency to be used for this transaction.</param>
+        /// <param name = "card">An instance of <see cref = "PaymentCard" /> containing the customer's payment card details.</param>
+        /// <param name = "basket">An instance of <see cref = "Basket">Basket</see> containing descriptions of the items included in this transaction.</param>
+        /// <returns>
+        ///   A <see cref = "PaymentResponse" /> indicating whether the transaction succeeded.
+        /// </returns>
         public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card, Basket basket) {
-            if (merchantReference == null) {
+            if (merchantReference == null)
                 throw new ArgumentNullException("merchantReference");
-            }
-            if (currency == null) {
+            if (currency == null)
                 throw new ArgumentNullException("currency");
-            }
-            if (card == null) {
+            if (card == null)
                 throw new ArgumentNullException("card");
-            }
 
             ThrowIfAmountZeroOrLess(amount);
 
             ThrowIfUnSupportedCardType(card);
 
-            string post = this.httpTransport.Post(new Uri("https://api-3t.sandbox.paypal.com/nvp"),
-                                                  this.BuildPurchaseQueryString(card, amount, currency));
+            var post = this.httpTransport.Post(new Uri("https://api-3t.sandbox.paypal.com/nvp"), this.BuildPurchaseQueryString(card, amount, currency));
 
             //TODO support payment response and not the hack below.
             return new PaymentResponse {
@@ -97,9 +93,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         private string BuildPurchaseQueryString(PaymentCard card, decimal amount, string currency) {
             var pairs = new Dictionary<string, string> {
                                                            {"VERSION", "56.0"},
-                                                           {"SIGNATURE", this.credentials.Signature},
-                                                           {"USER", this.credentials.Username},
-                                                           {"PWD", this.credentials.Password},
+                                                           {"SIGNATURE", this.environment.Signature},
+                                                           {"USER", this.environment.Username},
+                                                           {"PWD", this.environment.Password},
                                                            {"METHOD", "DoDirectPayment"},
                                                            {"PAYMENTACTION", "Sale"},
                                                            {"IPADDRESS", "192.168.1.1"},
@@ -120,7 +116,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                            {"CURRENCYCODE", currency}
                                                        };
 
-            IEnumerable<string> values =
+            var values =
                 pairs.Select(pair => String.Format("{0}={1}", pair.Key, HttpUtility.UrlEncode(pair.Value)));
             return (String.Join("&", values.ToArray()));
         }
