@@ -38,7 +38,7 @@ namespace Kurejito.Gateways.PayPal {
 
         /// <summary>
         /// </summary>
-        internal static PayPalEnvironment KurejitoSandboxEnvironment() {
+        internal static PayPalEnvironment NegativeTestAccountSandboxEnvironment() {
             //TODO should probably remove this to prevent reflectoring people messing in our sandbox :)
             return new PayPalEnvironment("usguy_1290197714_biz_api1.bentaylor.org", "1290197724",
                                          "AFcWxV21C7fd0v3bYYYRCpSSRl31ArACdUVW.OGiJn8.H3UIaPI36X97", new Uri("https://api-3t.sandbox.paypal.com/nvp"));
