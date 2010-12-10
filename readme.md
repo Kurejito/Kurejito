@@ -22,11 +22,7 @@ _Keep it simple.  One assembly, basic functionality, no dependencies. Build, dis
 * TBC @you-yes-you-know-you-want-to-get-involved
 
 ### Tech
-* .NET 3.5
-* C#
-* Moq
-* xUnit
-* Visual Studio 2010 sln.
+.NET 3.5, C#, Moq, Should, xUnit, Visual Studio 2010 sln.
 
 ### What can you do?
 We'd love to get as many people involved as possible.  Right now it is early days and we're just hacking the basics, so it's difficult to divvy up tasks.  Suggestions would be:
@@ -34,6 +30,11 @@ We'd love to get as many people involved as possible.  Right now it is early day
 * Follow the [#kurejito hashtag](http://twitter.com/#search?q=%23kurejito)
 * Tell us about good code with a friendly license that we might want to look at.
 * Anything else you can think of that will make this a success!
+
+### For Kurejito developers
+
+* [http://groups.google.com/group/kurejito](Kurejito Developers Google Group)
+* [http://webchat.freenode.net/](Kurejito IRC channel on Freenode)
 
 ### What Goes Where
 
