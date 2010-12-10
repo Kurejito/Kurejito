@@ -76,9 +76,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
             ThrowIfAmountZeroOrLess(amount);
 
-            ThrowIfUnSupportedCardType(card);
+            ThrowIfCardNotSupportedByPayPal(card);
 
-            var post = this.httpTransport.Post(new Uri("https://api-3t.sandbox.paypal.com/nvp"), this.BuildPurchaseQueryString(card, amount, currency));
+            var post = this.httpTransport.Post(this.environment.Uri, this.BuildPurchaseQueryString(card, amount, currency));
 
             //TODO support payment response and not the hack below.
             return new PaymentResponse {
@@ -96,9 +96,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                            {"SIGNATURE", this.environment.Signature},
                                                            {"USER", this.environment.Username},
                                                            {"PWD", this.environment.Password},
-                                                           {"METHOD", "DoDirectPayment"},
-                                                           {"PAYMENTACTION", "Sale"},
-                                                           {"IPADDRESS", "192.168.1.1"},
+                                                           {"METHOD", "DoDirectPayment"},//Required
+                                                           {"PAYMENTACTION", "Sale"},//Other option is Authorization. Use when we do Auth and capture.
+                                                           {"IPADDRESS", "192.168.1.1"},//TODO Required for fraud purposes.
                                                            {"AMT", amount.ToString("0.00")},
                                                            {"CREDITCARDTYPE", SupportedCards[card.CardType]},
                                                            {"ACCT", card.CardNumber},
@@ -121,7 +121,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             return (String.Join("&", values.ToArray()));
         }
 
-        private static void ThrowIfUnSupportedCardType(PaymentCard card) {
+        private static void ThrowIfCardNotSupportedByPayPal(PaymentCard card) {
             string ppCreditCardType;
             if (!SupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
                 throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}",

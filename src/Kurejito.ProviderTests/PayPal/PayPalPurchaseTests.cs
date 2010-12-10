@@ -3,12 +3,13 @@ using Kurejito.Gateways.PayPal;
 using Kurejito.Gateways.PayPal.DirectPayment;
 using Kurejito.Payments;
 using Kurejito.Transport;
+using Xunit;
 
 namespace Kurejito.ProviderTests.PayPal {
     public class PayPalPurchaseTests : PurchaseGatewayTests {
         protected override IPurchaseGateway CreateGateway() {
             var http = new HttpTransport();
-            return (new PayPalDirectPaymentGateway(new HttpTransport(), PayPalEnvironment.CreateSampleCredentials()));
+            return (new PayPalDirectPaymentGateway(new HttpTransport(), PayPalEnvironment.KurejitoSandboxEnvironment()));
         }
 
         protected override PaymentCard GetMagicCard(PaymentStatus status) {

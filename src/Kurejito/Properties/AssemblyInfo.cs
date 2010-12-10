@@ -23,6 +23,7 @@ using System.Runtime.InteropServices;
 [assembly: Guid("aebd98d2-6d56-453e-9543-74437c7c85b6")]
 
 [assembly: InternalsVisibleTo("Kurejito.Tests")]
+[assembly: InternalsVisibleTo("Kurejito.ProviderTests")]
 
 // Version information for an assembly consists of the following four values:
 //
