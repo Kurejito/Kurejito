@@ -6,18 +6,21 @@ namespace Kurejito.Gateways.PayPal {
     /// </summary>
     public class PayPalEnvironment {
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "PayPalEnvironment" /> class.
+        /// Initializes a new instance of the <see cref="PayPalEnvironment"/> class.
         /// </summary>
-        /// <param name = "username">The username.</param>
-        /// <param name = "password">The password.</param>
-        /// <param name = "signature">The signature.</param>
+        /// <param name="username">The username.</param>
+        /// <param name="password">The password.</param>
+        /// <param name="signature">The signature.</param>
+        /// <param name="uri">The URI.</param>
         public PayPalEnvironment(string username, string password, string signature, Uri uri) {
             if (username == null) throw new ArgumentNullException("username");
             if (password == null) throw new ArgumentNullException("password");
             if (signature == null) throw new ArgumentNullException("signature");
+            if (uri == null) throw new ArgumentNullException("uri");
             this.Username = username;
             this.Password = password;
             this.Signature = signature;
+            Uri = uri;
         }
 
         ///<summary>
