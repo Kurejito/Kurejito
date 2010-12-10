@@ -33,8 +33,8 @@ We'd love to get as many people involved as possible.  Right now it is early day
 
 ### For Kurejito developers
 
-* [http://groups.google.com/group/kurejito](Kurejito Developers Google Group)
-* [http://webchat.freenode.net/](Kurejito IRC channel on Freenode)
+* [Kurejito Developers Google Group](http://groups.google.com/group/kurejito)
+* [Kurejito IRC channel on Freenode](http://webchat.freenode.net/)
 
 ### What Goes Where
 
