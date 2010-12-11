@@ -19,7 +19,7 @@ namespace Kurejito.ProviderTests.PayPal {
 
         [Theory]
         [ExcelData(@"PayPal\PayPalDirectPaymentApiErrorCodes.xls", "select * from DirectPaymentApiErrorCodes")]
-        public void PayPal_Error_Code_CorrectlyTranslates_To_Kurejito_Code(double code, string shortMessage, string longMessage, string correctiveAction, string kurejitoErrorCode) {
+        public void PayPal_Error_Code_CorrectlyTranslates_To_Kurejito_Code(double code, string kurejitoErrorCode, string shortMessage, string longMessage, string correctiveAction) {
             //https://cms.paypal.com/uk/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_testing_SBTestErrorConditions
 
             var payPalNvpPaymentGateway = new PayPalDirectPaymentGateway(new HttpTransport(), PayPalEnvironment.NegativeTestAccountSandboxEnvironment());

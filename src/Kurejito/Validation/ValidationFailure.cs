@@ -30,7 +30,8 @@ namespace Kurejito.Validation {
         /// Gets or sets the name of the message resource.
         /// </summary>
         /// <value>The name of the message resource.</value>
-        public string MessageResourceName { get; private set; }
+        //REVIEW BT This is internal as we are using it in tests.  Not sure I like it.
+        internal string MessageResourceName { get; private set; }
 
         /// <summary>
         /// Gets or sets the message.

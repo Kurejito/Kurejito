@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Kurejito.Validation {
@@ -6,6 +7,7 @@ namespace Kurejito.Validation {
     ///   Describes whether a validation operation was successful or not.  Gives additional details where relevant.
     /// </summary>
     public class ValidationResult {
+        private static readonly ValidationResult SuccessResult = new ValidationResult();
         private readonly List<ValidationFailure> validationFailures = new List<ValidationFailure>();
 
         /// <summary>
@@ -17,6 +19,20 @@ namespace Kurejito.Validation {
                 return;
             this.validationFailures.AddRange(validationFailures.Where(f => f != null));
         }
+
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "ValidationResult" /> class.
+        /// </summary>
+        /// <param name = "validationFailure">The validation failure.</param>
+        public ValidationResult(ValidationFailure validationFailure) {
+            if (validationFailure == null) throw new ArgumentNullException("validationFailure");
+            this.validationFailures.Add(validationFailure);
+        }
+
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "ValidationResult" /> class.
+        /// </summary>
+        private ValidationResult() {}
 
         /// <summary>
         ///   Gets a value indicating whether this instance is valid.
@@ -33,6 +49,14 @@ namespace Kurejito.Validation {
         }
 
         /// <summary>
+        ///   Gets the success.
+        /// </summary>
+        /// <value>The success.</value>
+        public static ValidationResult Success {
+            get { return SuccessResult; }
+        }
+
+        /// <summary>
         ///   Froms the running.
         /// </summary>
         /// <typeparam name = "T"></typeparam>
@@ -40,7 +64,7 @@ namespace Kurejito.Validation {
         /// <param name = "validators">The validators.</param>
         /// <returns></returns>
         public static ValidationResult FromRunning<T>(T paymentCard, IList<IValidate<T>> validators) {
-            return new ValidationResult(validators.Select(v => v.TryFail(paymentCard)).Where(f => f != null));
+            return new ValidationResult(validators.Select(v => v.Validate(paymentCard)).SelectMany(vr => vr.Failures));
         }
     }
 }
