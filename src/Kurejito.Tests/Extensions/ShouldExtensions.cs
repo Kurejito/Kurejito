@@ -14,7 +14,7 @@ namespace Kurejito.Tests.Extensions
         public static void ShouldContainFailure<T>(this IEnumerable<ValidationFailure> failures, Expression<Func<T, object>> propName, Expression<Func<string>> resourceName) {
             if (propName == null) throw new ArgumentNullException("propName");
             if (resourceName == null) throw new ArgumentNullException("resourceName");
-            var match = failures.Where(f => f.PropertyName.Equals(propName.GetMember().Name) && f.MessageResourceName.Equals(resourceName.GetMember().Name));
+            var match = failures.Where(f => f.PropertyName.Equals(propName.GetMember().Name) && f.MessagePropertyName.Equals(resourceName.GetMember().Name));
             Assert.NotNull(match, String.Format("No failure found or property {0} with resource named {1}.", propName.GetMember().Name, resourceName.GetMember().Name));
         }
     }

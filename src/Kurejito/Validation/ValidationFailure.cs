@@ -16,7 +16,7 @@ namespace Kurejito.Validation {
             if (resourceMemberName == null) throw new ArgumentNullException("resourceMemberName");
             if (message == null) throw new ArgumentNullException("message");
             this.PropertyName = propertyName;
-            this.MessageResourceName = resourceMemberName;
+            this.MessagePropertyName = resourceMemberName;
             this.Message = message;
         }
 
@@ -31,7 +31,7 @@ namespace Kurejito.Validation {
         /// </summary>
         /// <value>The name of the message resource.</value>
         //REVIEW BT This is internal as we are using it in tests.  Not sure I like it.
-        internal string MessageResourceName { get; private set; }
+        internal string MessagePropertyName { get; private set; }
 
         /// <summary>
         /// Gets or sets the message.
