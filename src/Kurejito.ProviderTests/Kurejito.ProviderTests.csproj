@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataCash\DataCashPurchaseTests.cs" />
-    <Compile Include="PayPal\PayPalPurchaseTests.cs" />
+    <Compile Include="PayPal\DirectPayment\PayPalDirectPaymentPurchaseTests.cs" />
     <Compile Include="PurchaseGatewayTests.cs" />
     <Compile Include="SagePay\SagePayPurchaseTests.cs" />
   </ItemGroup>

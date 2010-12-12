@@ -78,13 +78,13 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
             ThrowIfCardNotSupportedByPayPal(card);
 
-            var post = this.httpTransport.Post(this.environment.Uri, this.BuildPurchaseQueryString(card, amount, currency));
+            var response = this.httpTransport.Post(this.environment.Uri, this.BuildPurchaseQueryString(card, amount, currency));
 
             //TODO support payment response and not the hack below.
+            //TODO response.Contains("ACK=Success") will also match ACK=SuccessWithWarning (which is OK for now but will need work).
             return new PaymentResponse {
-                                           Reason = post,
-                                           Status =
-                                               post.Contains("ACK=Success") ? PaymentStatus.Ok : PaymentStatus.Error
+                                           Reason = response,
+                                           Status = response.Contains("ACK=Success") ? PaymentStatus.Ok : PaymentStatus.Error
                                        };
         }
 
@@ -96,9 +96,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                            {"SIGNATURE", this.environment.Signature},
                                                            {"USER", this.environment.Username},
                                                            {"PWD", this.environment.Password},
-                                                           {"METHOD", "DoDirectPayment"},//Required
-                                                           {"PAYMENTACTION", "Sale"},//Other option is Authorization. Use when we do Auth and capture.
-                                                           {"IPADDRESS", "192.168.1.1"},//TODO Required for fraud purposes.
+                                                           {"METHOD", "DoDirectPayment"}, //Required
+                                                           {"PAYMENTACTION", "Sale"}, //Other option is Authorization. Use when we do Auth and capture.
+                                                           {"IPADDRESS", "192.168.1.1"}, //TODO Required for fraud purposes.
                                                            {"AMT", amount.ToString("0.00")},
                                                            {"CREDITCARDTYPE", SupportedCards[card.CardType]},
                                                            {"ACCT", card.CardNumber},
@@ -124,15 +124,13 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         private static void ThrowIfCardNotSupportedByPayPal(PaymentCard card) {
             string ppCreditCardType;
             if (!SupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
-                throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}",
-                                                          String.Join(" ",
-                                                                      SupportedCards.Keys.Select(e => e.ToString()).
-                                                                          ToArray())));
+                throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}", String.Join(" ", SupportedCards.Keys.Select(e => e.ToString()).
+                                                                                                                                         ToArray())));
         }
 
         private static void ThrowIfAmountZeroOrLess(decimal amount) {
             if (amount <= 0)
-                throw new ArgumentException("Purchase amount must be greater than zero.", "amount");
+                throw new ArgumentException(@"Purchase amount must be greater than zero.", "amount");
         }
     }
 }
