@@ -7,17 +7,9 @@ using Should;
 using Xunit.Extensions;
 
 namespace Kurejito.ProviderTests.PayPal {
-    public class PayPalPurchaseTests : PurchaseGatewayTests {
-        protected override IPurchaseGateway CreateGateway() {
-            var http = new HttpTransport();
-            return (new PayPalDirectPaymentGateway(new HttpTransport(), PayPalEnvironment.NegativeTestAccountSandboxEnvironment()));
-        }
+    public class PayPalPurchaseTests {
 
-        protected override PaymentCard GetMagicCard(PaymentStatus status) {
-            throw new NotImplementedException();
-        }
-
-        [Theory]
+        [Theory(Skip="Make this a unit test and fake the PayPal response as _way_ too slow")]
         [ExcelData(@"PayPal\PayPalDirectPaymentApiErrorCodes.xls", "select * from DirectPaymentApiErrorCodes")]
         public void PayPal_Error_Code_CorrectlyTranslates_To_Kurejito_Code(double code, string kurejitoErrorCode, string shortMessage, string longMessage, string correctiveAction) {
             //https://cms.paypal.com/uk/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_testing_SBTestErrorConditions
