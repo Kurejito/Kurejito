@@ -18,8 +18,8 @@ _Keep it simple.  One assembly, basic functionality, no dependencies. Build, dis
 ### Build the minimum viable implementation
 * Datacash [@dylanbeattie](http://twitter.com/dylanbeattie)
 * SagePay [@dylanbeattie](http://twitter.com/dylanbeattie)
-* PayPal NVP [@bentayloruk](http://twitter.com/bentayloruk)
-* TBC @you-yes-you-know-you-want-to-get-involved
+* [PayPal Direct Payment](https://www.paypal.com/uk/cgi-bin/webscr?cmd=xpt/Merchant/merchant/DCCIntro-outside) [@bentayloruk](http://twitter.com/bentayloruk)
+* TBC @your-name-here?
 
 ### Tech
 .NET 3.5, C#, Moq, Should, xUnit, Visual Studio 2010 sln.
