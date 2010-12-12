@@ -26,13 +26,13 @@ namespace Kurejito.Validation {
         private readonly MemberInfo propertyMemberName;
         private readonly MemberInfo resourceMemberName;
 
-        public RequiredValidator(Expression<Func<T, object>> valueFunc, Expression<Func<string>> failMessageFunc) {
-            if (valueFunc == null) throw new ArgumentNullException("valueFunc");
-            if (failMessageFunc == null) throw new ArgumentNullException("failMessageFunc");
-            this.propertyGetter = valueFunc.Compile();
-            this.propertyMemberName = valueFunc.GetMember();
-            this.resourceMemberName = failMessageFunc.GetMember();
-            this.messageGetter = failMessageFunc.Compile();
+        public RequiredValidator(Expression<Func<T, object>> validationValueFunc, Expression<Func<string>> failureMessageFunc) {
+            if (validationValueFunc == null) throw new ArgumentNullException("validationValueFunc");
+            if (failureMessageFunc == null) throw new ArgumentNullException("failureMessageFunc");
+            this.propertyGetter = validationValueFunc.Compile();
+            this.propertyMemberName = validationValueFunc.GetMember();
+            this.resourceMemberName = failureMessageFunc.GetMember();
+            this.messageGetter = failureMessageFunc.Compile();
         }
 
         #region IValidate<T> Members
