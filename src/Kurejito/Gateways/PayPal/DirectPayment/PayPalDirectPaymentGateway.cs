@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
 using Kurejito.Payments;
@@ -11,6 +12,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
     public class PayPalDirectPaymentGateway : IPurchaseGateway {
+        //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
         private static readonly IDictionary<CardType, string> SupportedCards = new Dictionary<CardType, string> {
                                                                                                                     {CardType.Visa, "Visa"},
                                                                                                                     {
@@ -29,12 +31,8 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         /// <param name = "httpTransport">The transport for PayPal communication.</param>
         /// <param name = "environment">The pay pal environment.</param>
         public PayPalDirectPaymentGateway(IHttpPostTransport httpTransport, PayPalEnvironment environment) {
-            if (httpTransport == null) {
-                throw new ArgumentNullException("httpTransport");
-            }
-            if (environment == null) {
-                throw new ArgumentNullException("environment");
-            }
+            if (httpTransport == null) throw new ArgumentNullException("httpTransport");
+            if (environment == null) throw new ArgumentNullException("environment");
             this.httpTransport = httpTransport;
             this.environment = environment;
         }
@@ -67,28 +65,51 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         ///   A <see cref = "PaymentResponse" /> indicating whether the transaction succeeded.
         /// </returns>
         public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card, Basket basket) {
-            if (merchantReference == null)
-                throw new ArgumentNullException("merchantReference");
-            if (currency == null)
-                throw new ArgumentNullException("currency");
-            if (card == null)
-                throw new ArgumentNullException("card");
+            if (merchantReference == null) throw new ArgumentNullException("merchantReference");
+            if (currency == null) throw new ArgumentNullException("currency");
+            if (card == null) throw new ArgumentNullException("card");
 
             ThrowIfAmountZeroOrLess(amount);
 
-            ThrowIfCardNotSupportedByPayPal(card);
+            ThrowIfCardNotSupportedByPayPal(card); //TODO the supported cards stuff could be SRP'd for reuse.
 
             var response = this.httpTransport.Post(this.environment.Uri, this.BuildPurchaseQueryString(card, amount, currency));
 
-            //TODO support payment response and not the hack below.
-            //TODO response.Contains("ACK=Success") will also match ACK=SuccessWithWarning (which is OK for now but will need work).
-            return new PaymentResponse {
-                                           Reason = response,
-                                           Status = response.Contains("ACK=Success") ? PaymentStatus.Ok : PaymentStatus.Error
-                                       };
+            return ProcessResponse(HttpUtility.ParseQueryString(response));
         }
 
         #endregion
+
+        private static PaymentResponse ProcessResponse(NameValueCollection nameValueCollection) {
+            var ack = nameValueCollection["ACK"];
+
+            if (ack.Equals("Success"))
+                return new PaymentResponse {
+                                               Status = PaymentStatus.Ok,
+                                               Reason = String.Empty
+                                           };
+
+            if (ack.Equals("SuccessWithWarning"))
+                throw new NotImplementedException("SuccessWithWarning PayPal responses not implemented yet.");
+
+            if (ack.Equals("PartialSuccess"))
+                throw new NotSupportedException("Received PartialSuccess Ack from PayPal.  This should only be returned for parallel payments (which we don't support).");
+
+            if (ack.Equals("Failure") || ack.Equals("FailureWithWarning") || ack.Equals("Warning"))
+                return new PaymentResponse {
+                                               Reason = String.Empty,
+                                               //TODO look at if we need to handle more than one L_SHORTMESSAGE
+                                               Status = StatusFromShortMessage(nameValueCollection["L_SHORTMESSAGE0"])
+                                           };
+
+            throw new InvalidOperationException(string.Format("Unknown Ack {0} received from PayPal.", ack));
+        }
+
+        private static PaymentStatus StatusFromShortMessage(string shortMessage) {
+            if (shortMessage.Equals("Gateway Decline"))
+                return PaymentStatus.Declined;
+            throw new NotImplementedException(string.Format("We have not implemented status for L_SHORTMESSAGE0 of {0}.", shortMessage));
+        }
 
         private string BuildPurchaseQueryString(PaymentCard card, decimal amount, string currency) {
             var pairs = new Dictionary<string, string> {
