@@ -134,7 +134,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                            {"ZIP", "N1 3JS"},
                                                            //TODO check how values for currency relate to PayPal currency codes
                                                            //https://cms.paypal.com/uk/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_country_codes
-                                                           {"COUNTRYCODE", "GB"},
+                                                           {"COUNTRYCODE", "GB"},//TODO
                                                            {"CURRENCYCODE", currency}
                                                        };
 
