@@ -11,7 +11,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     ///   Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
     ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
-    public class PayPalDirectPaymentGateway : IPurchaseGateway {
+    public class PayPalDirectPaymentGateway : IPurchaseGateway, IAuthorise, ICapture {
         //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
         private static readonly IDictionary<CardType, string> SupportedCards = new Dictionary<CardType, string> {
                                                                                                                     {CardType.Visa, "Visa"},

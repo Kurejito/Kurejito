@@ -71,6 +71,8 @@
     <Compile Include="Gateways\SagePay\SagePayStringExtensions.cs" />
     <Compile Include="Gateways\SagePay\VspDirect\GatewayMode.cs" />
     <Compile Include="Gateways\SagePay\VspDirect\SagePayPaymentGateway.cs" />
+    <Compile Include="IAuthorise.cs" />
+    <Compile Include="ICapture.cs" />
     <Compile Include="PaymentResponse.cs" />
     <Compile Include="PaymentStatus.cs" />
     <Compile Include="Payments\Basket.cs" />
