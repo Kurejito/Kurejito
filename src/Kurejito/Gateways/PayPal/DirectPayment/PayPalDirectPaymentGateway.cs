@@ -112,8 +112,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         }
 
         private string BuildPurchaseQueryString(PaymentCard card, decimal amount, string currency) {
+            
             var pairs = new Dictionary<string, string> {
-                                                           {"VERSION", "56.0"},
+                                                           {"VERSION", this.environment.Version},
                                                            {"SIGNATURE", this.environment.Signature},
                                                            {"USER", this.environment.Username},
                                                            {"PWD", this.environment.Password},

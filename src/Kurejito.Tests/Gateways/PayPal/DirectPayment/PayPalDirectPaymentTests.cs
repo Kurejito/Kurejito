@@ -2,6 +2,7 @@
 using Kurejito.Gateways.PayPal;
 using Kurejito.Gateways.PayPal.DirectPayment;
 using Kurejito.Payments;
+using Kurejito.Tests.Payments;
 using Kurejito.Transport;
 using Moq;
 using Should;
@@ -25,6 +26,15 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
             payPalNvpPaymentGateway.Purchase("REF", amount, "GBP", paymentCard).Status.ShouldEqual(expectedStatus);
         }
 
+        [Fact]
+        public void Post_Should_Contain_Version_Number_From_Environment() {
+            var httpTransport = new Mock<IHttpPostTransport>();
+            httpTransport.Setup(t => t.Post(It.IsAny<Uri>(), It.IsAny<string>())).Returns(FakePayPalResponse.Success.ToString());
+            var payPalNvpPaymentGateway = new PayPalDirectPaymentGateway(httpTransport.Object, PayPalEnvironment.NegativeTestAccountSandboxEnvironment());
+            payPalNvpPaymentGateway.Purchase("", 100m, "GBP", TestPaymentCards.VisaValid);
+            httpTransport.Verify(t => t.Post(It.IsAny<Uri>(), It.Is<string>(s => s.Contains("VERSION=56.0"))));
+        }
+
         [Theory]
         [InlineData("10505")]
         [InlineData("10546")]
@@ -37,22 +47,20 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
 
         [Fact]
         public void Purchase_With_Partial_Success_Response_Should_Throw_NotSupportedException_As_Only_For_Parrallel_Payments() {
-            Assert.Throws(typeof(NotSupportedException), () => DoPurchaseWithErrorResponse("00000", "Irrelevant", "PartialSuccess").Status.ShouldEqual(PaymentStatus.Declined));
+            Assert.Throws(typeof (NotSupportedException), () => DoPurchaseWithErrorResponse("00000", "Irrelevant", "PartialSuccess").Status.ShouldEqual(PaymentStatus.Declined));
         }
 
         private static PaymentResponse DoPurchaseWithErrorResponse(string errorCode, string errorShortMessage, string ackValue) {
             if (errorCode == null) throw new ArgumentNullException("errorCode");
-            return DoPurchaseWithMockTransport(CreateMockTransportWithErrorResponse(errorCode, errorShortMessage, ackValue));
+            return DoPurchase(CreateMockTransportWithErrorResponse(errorCode, errorShortMessage, ackValue).Object);
         }
 
-        private static PaymentResponse DoPurchaseWithMockTransport(Mock<IHttpPostTransport> transportMock) {
-            var payPalNvpPaymentGateway = new PayPalDirectPaymentGateway(transportMock.Object, PayPalEnvironment.NegativeTestAccountSandboxEnvironment());
-            var paymentCard = new PaymentCard("BEN TAYLOR", "4716034283508634", new CardDate(10, 2015), "123", CardType.Visa);
-            return payPalNvpPaymentGateway.Purchase("REF", 100m, "GBP", paymentCard);
+        private static PaymentResponse DoPurchase(IHttpPostTransport transport) {
+            var payPalNvpPaymentGateway = new PayPalDirectPaymentGateway(transport, PayPalEnvironment.NegativeTestAccountSandboxEnvironment());
+            return payPalNvpPaymentGateway.Purchase("REF", 100m, "GBP", TestPaymentCards.VisaValid);
         }
 
-        private static Mock<IHttpPostTransport> CreateMockTransportWithErrorResponse(string errorCode, string errorShortMessage, string ackValue)
-        {
+        private static Mock<IHttpPostTransport> CreateMockTransportWithErrorResponse(string errorCode, string errorShortMessage, string ackValue) {
             var transportMock = new Mock<IHttpPostTransport>();
             var response = ACK_FAILURE_RESPONSE.Replace("{{ERROR_CODE}}", errorCode).Replace("{{SHORT_MESSAGE}}", errorShortMessage).Replace("{{ACK}}", ackValue);
             transportMock.Setup(tm => tm.Post(It.IsAny<Uri>(), It.IsAny<string>())).Returns(response);
