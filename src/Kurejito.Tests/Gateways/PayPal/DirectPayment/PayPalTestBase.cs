@@ -8,10 +8,13 @@ using Moq;
 
 namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
     public class PayPalTestBase {
+        public decimal Amount { get;  set; }
+
         public PayPalTestBase() {
             this.MerchantReference = Guid.NewGuid().ToString();
             this.Environment = PayPalEnvironment.NegativeTestAccountSandboxEnvironment();
             this.InitWithResponse(FakePayPalResponse.Success.ToString());
+            this.Amount = 100m;
         }
 
         protected void InitWithResponse(string response) {
@@ -27,7 +30,7 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         protected Mock<IHttpPostTransport> HttpTransportMock { get; set; }
 
         protected PaymentResponse DoValidPurchaseRequest() {
-            return Gateway.Purchase(MerchantReference, 100m, "GBP", TestPaymentCards.VisaValid);
+            return Gateway.Purchase(MerchantReference, this.Amount, "GBP", TestPaymentCards.VisaValid);
         }
 
         protected string MerchantReference { get; private set; }

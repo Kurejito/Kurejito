@@ -69,6 +69,8 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             if (currency == null) throw new ArgumentNullException("currency");
             if (card == null) throw new ArgumentNullException("card");
 
+            //TODO add supported currencies check (and add common interface so we can query providers).
+
             ThrowIfAmountZeroOrLess(amount);
 
             ThrowIfCardNotSupportedByPayPal(card); //TODO the supported cards stuff could be SRP'd for reuse.
@@ -83,14 +85,11 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         private static PaymentResponse ProcessResponse(NameValueCollection nameValueCollection) {
             var ack = nameValueCollection["ACK"];
 
-            if (ack.Equals("Success"))
+            if (ack.Equals("Success") || ack.Equals("SuccessWithWarning"))//TODO reflect PartialSuccess in the PaymentResponse.
                 return new PaymentResponse {
                                                Status = PaymentStatus.Ok,
                                                Reason = String.Empty
                                            };
-
-            if (ack.Equals("SuccessWithWarning"))
-                throw new NotImplementedException("SuccessWithWarning PayPal responses not implemented yet.");
 
             if (ack.Equals("PartialSuccess"))
                 throw new NotSupportedException("Received PartialSuccess Ack from PayPal.  This should only be returned for parallel payments (which we don't support).");

@@ -57,6 +57,20 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
             this.VerifyRequestPair("METHOD", "DoDirectPayment");
         }
 
+        [Theory]
+        [InlineData(100.20)]
+        [InlineData(22.99)]
+        [InlineData(100)]
+        [InlineData(9999.99)]
+        [InlineData(.01)]
+        public void Purchase_Request_Should_Have_PayPal_Formatted_Amount(double amount)
+        {
+            //TODO currently amount could have more than two decimal places and we would probably lose that which is bad.  Get Money back in.
+            this.Amount = Convert.ToDecimal(amount);
+            this.DoValidPurchaseRequest();
+            this.VerifyRequestPair("AMT", this.Amount.ToString("0.00"));
+        }
+        
         [Fact]
         public void Purchase_Request_Should_Use_PaymentAction_Sale()
         {
