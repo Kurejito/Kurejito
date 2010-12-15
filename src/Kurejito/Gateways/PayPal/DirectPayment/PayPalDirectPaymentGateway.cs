@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
 using Kurejito.Payments;
@@ -11,7 +10,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     ///   Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
     ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
-    public class PayPalDirectPaymentGateway : IPurchaseGateway, IAuthorise, ICapture {
+    public class PayPalDirectPaymentGateway : IPurchaseGateway, IAuthoriseAndCapture {
         //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
         private static readonly IDictionary<CardType, string> SupportedCards = new Dictionary<CardType, string> {
                                                                                                                     {CardType.Visa, "Visa"},
@@ -36,6 +35,18 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             this.httpTransport = httpTransport;
             this.environment = environment;
         }
+
+        #region IAuthoriseAndCapture Members
+
+        public PaymentResponse Authorise(string merchantReference, Money amount, PaymentCard card) {
+            return ProcessResponse(this.Post(this.BuildPayPalRequestMessage(card, amount, "Authorization")));
+        }
+
+        public PaymentResponse Capture() {
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
         #region IPurchaseGateway Members
 
@@ -75,17 +86,19 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
             ThrowIfCardNotSupportedByPayPal(card); //TODO the supported cards stuff could be SRP'd for reuse.
 
-            var response = this.httpTransport.Post(this.environment.Uri, this.BuildPurchaseQueryString(card, amount, currency));
+            var money = new Money(amount, new Currency(currency)); //TODO put this back in Purchase method sig.
 
-            return ProcessResponse(HttpUtility.ParseQueryString(response));
+            return ProcessResponse(this.Post(this.BuildPayPalRequestMessage(card, money, "Sale")));
         }
 
         #endregion
 
-        private static PaymentResponse ProcessResponse(NameValueCollection nameValueCollection) {
+        private static PaymentResponse ProcessResponse(string response) {
+            var nameValueCollection = HttpUtility.ParseQueryString(response);
+
             var ack = nameValueCollection["ACK"];
 
-            if (ack.Equals("Success") || ack.Equals("SuccessWithWarning"))//TODO reflect PartialSuccess in the PaymentResponse.
+            if (ack.Equals("Success") || ack.Equals("SuccessWithWarning")) //TODO reflect PartialSuccess in the PaymentResponse.
                 return new PaymentResponse {
                                                Status = PaymentStatus.Ok,
                                                Reason = String.Empty
@@ -110,21 +123,21 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             throw new NotImplementedException(string.Format("We have not implemented status for L_SHORTMESSAGE0 of {0}.", shortMessage));
         }
 
-        private string BuildPurchaseQueryString(PaymentCard card, decimal amount, string currency) {
-            
+        private string BuildPayPalRequestMessage(PaymentCard card, Money amount, string paymentAction) {
             var pairs = new Dictionary<string, string> {
                                                            {"VERSION", this.environment.Version},
                                                            {"SIGNATURE", this.environment.Signature},
                                                            {"USER", this.environment.Username},
                                                            {"PWD", this.environment.Password},
                                                            {"METHOD", "DoDirectPayment"}, //Required
-                                                           {"PAYMENTACTION", "Sale"}, //Other option is Authorization. Use when we do Auth and capture.
+                                                           {"PAYMENTACTION", paymentAction}, //Other option is Authorization. Use when we do Auth and capture.
                                                            {"IPADDRESS", "192.168.1.1"}, //TODO Required for fraud purposes.
                                                            {"AMT", amount.ToString("0.00")},
                                                            {"CREDITCARDTYPE", SupportedCards[card.CardType]},
                                                            {"ACCT", card.CardNumber},
                                                            {"EXPDATE", card.ExpiryDate.TwoDigitMonth + card.ExpiryDate.Year},
                                                            {"CVV2", card.CV2},
+                                                           //TODO billing address data for PayPal.
                                                            {"FIRSTNAME", "Bob"},
                                                            {"LASTNAME", "Le Builder"},
                                                            {"STREET", "1972 Toytown"},
@@ -133,8 +146,8 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                            {"ZIP", "N1 3JS"},
                                                            //TODO check how values for currency relate to PayPal currency codes
                                                            //https://cms.paypal.com/uk/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_country_codes
-                                                           {"COUNTRYCODE", "GB"},//TODO
-                                                           {"CURRENCYCODE", currency}
+                                                           {"COUNTRYCODE", "GB"}, //TODO
+                                                           {"CURRENCYCODE", amount.Currency.Iso3LetterCode}
                                                        };
 
             var values =
@@ -152,6 +165,10 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         private static void ThrowIfAmountZeroOrLess(decimal amount) {
             if (amount <= 0)
                 throw new ArgumentException(@"Purchase amount must be greater than zero.", "amount");
+        }
+
+        private string Post(string message) {
+            return this.httpTransport.Post(this.environment.Uri, message);
         }
     }
 }
