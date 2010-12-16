@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PaymentCard_Bad_Mastercard_Number" xml:space="preserve">
-    <value>The property {0} does not contain a valid Mastercard number.</value>
-  </data>
   <data name="PaymentCard_BlankProperty" xml:space="preserve">
-    <value>The property {0} cannot be blank.</value>
+    <value>The property "{0}" cannot be blank.</value>
   </data>
-  <data name="Payment_Card_Failed_Luhn_Check" xml:space="preserve">
+  <data name="PaymentCard_CardNumber_Failed_Luhn_Check" xml:space="preserve">
     <value>The card number is not a valid format (Luhn).</value>
+  </data>
+  <data name="PaymentCard_CardNumber_Fails_CardType_Rules" xml:space="preserve">
+    <value>The card number does not match the format for the card type.</value>
   </data>
 </root>
