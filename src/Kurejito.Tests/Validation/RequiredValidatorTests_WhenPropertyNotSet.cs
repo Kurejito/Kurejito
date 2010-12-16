@@ -1,4 +1,4 @@
-﻿using Kurejito.Validation;
+﻿/*using Kurejito.Validation;
 using Should;
 using Xunit;
 
@@ -38,4 +38,4 @@ namespace Kurejito.Tests.Validation {
     internal class ThingToValidate {
         public int? ThingNumber { get; set; }
     }
-}
+}*/

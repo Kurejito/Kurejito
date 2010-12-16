@@ -82,11 +82,14 @@
     <Compile Include="IPurchaseGateway.cs" />
     <Compile Include="Payments\CardDate.cs" />
     <Compile Include="Payments\CardType.cs" />
+    <Compile Include="Payments\PaymentCardValidator.cs" />
     <Compile Include="Payments\Payments.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Payments.resx</DependentUpon>
     </Compile>
+    <Compile Include="Validation\ValidationRule.cs" />
+    <Compile Include="Validation\ValidatorBase.cs" />
     <Compile Include="Validation\ValidationFailure.cs" />
     <Compile Include="Validation\ValidationResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

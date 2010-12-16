@@ -61,6 +61,24 @@ namespace Kurejito.Payments {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The card number is not a valid format (Luhn)..
+        /// </summary>
+        internal static string Payment_Card_Failed_Luhn_Check {
+            get {
+                return ResourceManager.GetString("Payment_Card_Failed_Luhn_Check", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The property {0} does not contain a valid Mastercard number..
+        /// </summary>
+        internal static string PaymentCard_Bad_Mastercard_Number {
+            get {
+                return ResourceManager.GetString("PaymentCard_Bad_Mastercard_Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The property {0} cannot be blank..
         /// </summary>
         internal static string PaymentCard_BlankProperty {

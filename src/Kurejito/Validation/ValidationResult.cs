@@ -55,16 +55,5 @@ namespace Kurejito.Validation {
         public static ValidationResult Success {
             get { return SuccessResult; }
         }
-
-        /// <summary>
-        ///   Froms the running.
-        /// </summary>
-        /// <typeparam name = "T"></typeparam>
-        /// <param name = "paymentCard">The payment card.</param>
-        /// <param name = "validators">The validators.</param>
-        /// <returns></returns>
-        public static ValidationResult FromRunning<T>(T paymentCard, IList<IValidate<T>> validators) {
-            return new ValidationResult(validators.Select(v => v.Validate(paymentCard)).SelectMany(vr => vr.Failures));
-        }
     }
 }

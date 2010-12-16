@@ -39,6 +39,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         #region IAuthoriseAndCapture Members
 
         public PaymentResponse Authorise(string merchantReference, Money amount, PaymentCard card) {
+            if (merchantReference == null) throw new ArgumentNullException("merchantReference");
+            if (card == null) throw new ArgumentNullException("card");
+            ThrowIfFailPaymentChecks(amount, card);
             return ProcessResponse(this.Post(this.BuildPayPalRequestMessage(card, amount, "Authorization")));
         }
 
@@ -80,15 +83,25 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             if (currency == null) throw new ArgumentNullException("currency");
             if (card == null) throw new ArgumentNullException("card");
 
-            //TODO add supported currencies check (and add common interface so we can query providers).
+            //TODO update Purchase signature to use Money again and remove this line.
+            var money = new Money(amount, new Currency(currency));
 
-            ThrowIfAmountZeroOrLess(amount);
-
-            ThrowIfCardNotSupportedByPayPal(card); //TODO the supported cards stuff could be SRP'd for reuse.
-
-            var money = new Money(amount, new Currency(currency)); //TODO put this back in Purchase method sig.
+            ThrowIfFailPaymentChecks(money, card);
 
             return ProcessResponse(this.Post(this.BuildPayPalRequestMessage(card, money, "Sale")));
+        }
+
+        private static void ThrowIfFailPaymentChecks(Money money, PaymentCard card) {
+
+            //TODO add supported currencies check (and add common interface so we can query providers).
+            //TODO the supported cards stuff could be SRP'd for reuse.
+
+            if(money <= 0)
+                throw new ArgumentException(@"Purchase amount must be greater than zero.", "amount");
+
+            string ppCreditCardType;
+            if (!SupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
+                throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}", String.Join(" ", SupportedCards.Keys.Select(e => e.ToString()).ToArray())));
         }
 
         #endregion
@@ -153,18 +166,6 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             var values =
                 pairs.Select(pair => String.Format("{0}={1}", pair.Key, HttpUtility.UrlEncode(pair.Value)));
             return (String.Join("&", values.ToArray()));
-        }
-
-        private static void ThrowIfCardNotSupportedByPayPal(PaymentCard card) {
-            string ppCreditCardType;
-            if (!SupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
-                throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}", String.Join(" ", SupportedCards.Keys.Select(e => e.ToString()).
-                                                                                                                                         ToArray())));
-        }
-
-        private static void ThrowIfAmountZeroOrLess(decimal amount) {
-            if (amount <= 0)
-                throw new ArgumentException(@"Purchase amount must be greater than zero.", "amount");
         }
 
         private string Post(string message) {
