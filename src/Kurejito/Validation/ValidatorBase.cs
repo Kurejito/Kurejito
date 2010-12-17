@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
-using Kurejito.Extensions;
 
 namespace Kurejito.Validation {
     /// <summary>
@@ -34,7 +33,7 @@ namespace Kurejito.Validation {
             if (value == null)
                 return false;
 
-            return !value.ToString().IsNullOrWhiteSpace();
+            return value.ToString().Trim().Length > 0;//REVIEW
         }
 
         protected virtual bool MatchesRegex(object value, string regex) {

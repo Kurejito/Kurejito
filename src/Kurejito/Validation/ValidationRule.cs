@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Kurejito.Extensions;
 
 namespace Kurejito.Validation {
     internal class ValidationRule<T> : IValidate<T> {

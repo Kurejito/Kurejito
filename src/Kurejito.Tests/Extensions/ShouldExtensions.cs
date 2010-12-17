@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using Kurejito.Validation;
-using Kurejito.Extensions;
 using Should.Core.Assertions;
 
 namespace Kurejito.Tests.Extensions

@@ -61,8 +61,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\ReflectionExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Validation\ReflectionExtensions.cs" />
     <Compile Include="Gateways\DataCash\DataCashPaymentGateway.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
     <Compile Include="Gateways\PayPal\PayPalEnvironment.cs" />

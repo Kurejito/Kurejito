@@ -2,10 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Kurejito.Extensions {
-    /// <summary>
-    /// //TODO credit Jeremy Skinner for this code (it's from Fluent Validation).
-    /// </summary>
+namespace Kurejito.Validation {
     internal static class ReflectionExtensions {
         public static MemberInfo GetMember(this LambdaExpression expression) {
             var memberExp = RemoveUnary(expression.Body);
