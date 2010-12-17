@@ -79,7 +79,7 @@ namespace Kurejito.Payments {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The card number does not match the format for the card type..
+        ///   Looks up a localized string similar to The card number does not match the expected.
         /// </summary>
         internal static string PaymentCard_CardNumber_Fails_CardType_Rules {
             get {

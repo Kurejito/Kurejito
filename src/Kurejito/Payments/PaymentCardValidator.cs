@@ -5,7 +5,7 @@ using Kurejito.Validation;
 namespace Kurejito.Payments {
     /// <summary>
     /// Responsible for validation <see cref = "PaymentCard" /> instances.
-    /// Currently supports Visa and Mastercard.
+    /// Reasonable support for validating Visa, Mastercard and American Express.
     /// Based on information from the following sources:
     /// * http://stackoverflow.com/questions/1463252/creditcard-verification-with-regex
     /// * http://www.beachnet.com/~hstiles/cardtype.html
@@ -15,18 +15,33 @@ namespace Kurejito.Payments {
         ///   Initializes a new instance of the <see cref = "PaymentCardValidator" /> class.
         /// </summary>
         public PaymentCardValidator() {
-            this.AddValidation(pc => pc.CardNumber, IsPopulated, () => Payments.PaymentCard_BlankProperty);
-            this.AddValidation(pc => pc.CardNumber, IsLuhnValid, () => Payments.PaymentCard_CardNumber_Failed_Luhn_Check);
-            this.AddValidation(pc => pc.CardHolder, IsPopulated, () => Payments.PaymentCard_BlankProperty);
-            this.AddValidation(pc => pc.CV2, IsPopulated, () => Payments.PaymentCard_BlankProperty);
-            this.AddValidation(pc => pc.ExpiryDate, IsPopulated, () => Payments.PaymentCard_BlankProperty);
-            this.AddValidation(pc => pc.CardType, IsPopulated, () => Payments.PaymentCard_BlankProperty);
+            this.AddRule(pc => pc.CardNumber, IsPopulated, () => Payments.PaymentCard_BlankProperty);
+            this.AddRule(pc => pc.CardNumber, IsLuhnValid, () => Payments.PaymentCard_CardNumber_Failed_Luhn_Check);
+            this.AddRule(pc => pc.CardHolder, IsPopulated, () => Payments.PaymentCard_BlankProperty);
+            this.AddRule(pc => pc.CV2, IsPopulated, () => Payments.PaymentCard_BlankProperty);
+            this.AddRule(pc => pc.ExpiryDate, IsPopulated, () => Payments.PaymentCard_BlankProperty);
+            //TODO//this.AddRule(pc => pc.CardType, IsPopulated, () => Payments.PaymentCard_BlankProperty);
 
             //Mastercard 
-            this.AddConditionalValidation(pc => pc.CardType == CardType.Mastercard, pc => pc.CardNumber, o => MatchesRegex(o, "^5[1-5][0-9]{14}$"), () => Payments.PaymentCard_CardNumber_Fails_CardType_Rules);
+            this.AddConditionalRule(
+                pc => pc.CardType == CardType.Mastercard,
+                pc => pc.CardNumber,
+                cn => MatchesRegex(cn, "^5[1-5][0-9]{14}$"),
+                () => Payments.PaymentCard_CardNumber_Fails_CardType_Rules);
 
             //Visa
-            this.AddConditionalValidation(pc => pc.CardType == CardType.Visa, pc => pc.CardNumber, o => MatchesRegex(o, "^4[0-9]{12}(?:[0-9]{3})?$"), () => Payments.PaymentCard_CardNumber_Fails_CardType_Rules);
+            this.AddConditionalRule(
+                pc => pc.CardType == CardType.Visa,
+                pc => pc.CardNumber,
+                cn => MatchesRegex(cn, "^4[0-9]{12}(?:[0-9]{3})?$"),
+                () => Payments.PaymentCard_CardNumber_Fails_CardType_Rules);
+
+            //Amex
+            this.AddConditionalRule(
+                pc => pc.CardType == CardType.AmericanExpress,
+                pc => pc.CardNumber,
+                cn => MatchesRegex(cn, "^3[47][0-9]{13}$"),
+                () => Payments.PaymentCard_CardNumber_Fails_CardType_Rules);
         }
 
         /// <summary>

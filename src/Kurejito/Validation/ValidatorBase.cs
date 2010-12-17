@@ -21,11 +21,11 @@ namespace Kurejito.Validation {
 
         #endregion
 
-        protected void AddValidation(Expression<Func<T, object>> propertyGetter, Func<object, bool> validator, Expression<Func<string>> messageGetter) {
-            this.AddConditionalValidation(t => true, propertyGetter, validator, messageGetter);
+        protected void AddRule(Expression<Func<T, object>> propertyGetter, Func<object, bool> validator, Expression<Func<string>> messageGetter) {
+            this.AddConditionalRule(t => true, propertyGetter, validator, messageGetter);
         }
 
-        protected void AddConditionalValidation(Func<T, bool> ifTrue, Expression<Func<T, object>> propertyGetter, Func<object, bool> validator, Expression<Func<string>> messageGetter) {
+        protected void AddConditionalRule(Func<T, bool> ifTrue, Expression<Func<T, object>> propertyGetter, Func<object, bool> validator, Expression<Func<string>> messageGetter) {
             var validationSite = ValidationRule<T>.Create(ifTrue, propertyGetter, validator, messageGetter);
             this.validationRules.Add(validationSite);
         }

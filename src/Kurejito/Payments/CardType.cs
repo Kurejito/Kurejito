@@ -5,6 +5,10 @@
 		/// <summary>Visa credit card.</summary>
 		Visa,
 		/// <summary>Mastercard</summary>
-		Mastercard
+		Mastercard,
+        /// <summary>
+        /// American Express.
+        /// </summary>
+	    AmericanExpress
 	}
 }

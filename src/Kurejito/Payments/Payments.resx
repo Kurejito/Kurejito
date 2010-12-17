@@ -124,6 +124,6 @@
     <value>The card number is not a valid format (Luhn).</value>
   </data>
   <data name="PaymentCard_CardNumber_Fails_CardType_Rules" xml:space="preserve">
-    <value>The card number does not match the format for the card type.</value>
+    <value>The card number does not match the expected</value>
   </data>
 </root>
