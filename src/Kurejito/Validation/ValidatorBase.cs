@@ -30,14 +30,14 @@ namespace Kurejito.Validation {
             this.validationRules.Add(validationSite);
         }
 
-        protected static bool IsPopulated(object value) {
+        protected virtual bool IsPopulated(object value) {
             if (value == null)
                 return false;
 
             return !value.ToString().IsNullOrWhiteSpace();
         }
 
-        protected static bool MatchesRegex(object value, string regex) {
+        protected virtual bool MatchesRegex(object value, string regex) {
             return value != null && new Regex(regex).IsMatch(value.ToString()); //REVIEW newing up regex every time.
         }
     }

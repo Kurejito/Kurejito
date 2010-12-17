@@ -48,7 +48,7 @@ namespace Kurejito.Payments {
         ///   Standard Luhn check.
         ///   See http://en.wikipedia.org/wiki/Luhn_algorithm for details and source.
         /// </summary>
-        private static bool IsLuhnValid(object value) {
+        protected virtual bool IsLuhnValid(object value) {
             if (value == null)
                 return false;
 
