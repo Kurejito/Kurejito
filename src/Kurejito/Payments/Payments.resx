@@ -121,9 +121,9 @@
     <value>The property "{0}" cannot be blank.</value>
   </data>
   <data name="PaymentCard_CardNumber_Failed_Luhn_Check" xml:space="preserve">
-    <value>The card number is not a valid format (Luhn).</value>
+    <value>The card number does not pass the Luhn check.</value>
   </data>
   <data name="PaymentCard_CardNumber_Fails_CardType_Rules" xml:space="preserve">
-    <value>The card number does not match the expected</value>
+    <value>The card number does not appear valid for the specified card type.</value>
   </data>
 </root>

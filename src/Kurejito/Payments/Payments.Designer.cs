@@ -70,7 +70,7 @@ namespace Kurejito.Payments {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The card number is not a valid format (Luhn)..
+        ///   Looks up a localized string similar to The card number does not pass the Luhn check..
         /// </summary>
         internal static string PaymentCard_CardNumber_Failed_Luhn_Check {
             get {
@@ -79,7 +79,7 @@ namespace Kurejito.Payments {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The card number does not match the expected.
+        ///   Looks up a localized string similar to The card number does not appear valid for the specified card type..
         /// </summary>
         internal static string PaymentCard_CardNumber_Fails_CardType_Rules {
             get {
