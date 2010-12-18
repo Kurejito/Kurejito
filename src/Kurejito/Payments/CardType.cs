@@ -1,14 +1,30 @@
 ﻿namespace Kurejito.Payments {
-	///<summary>
-	///</summary>
-	public enum CardType {
-		/// <summary>Visa credit card.</summary>
-		Visa,
-		/// <summary>Mastercard</summary>
-		Mastercard,
+    ///<summary>
+    ///</summary>
+    public enum CardType {
         /// <summary>
-        /// American Express.
+        ///   Visa credit card.
         /// </summary>
-	    AmericanExpress
-	}
+        Visa,
+        /// <summary>
+        ///   Mastercard
+        /// </summary>
+        MasterCard,
+        /// <summary>
+        ///   American Express.
+        /// </summary>
+        AmericanExpress,
+        /// <summary>
+        ///   Maestro.
+        /// </summary>
+        Maestro,
+        /// <summary>
+        ///   Solo.
+        /// </summary>
+        Solo,
+        /// <summary>
+        ///   Discover.
+        /// </summary>
+        Discover
+    }
 }

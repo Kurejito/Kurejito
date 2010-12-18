@@ -78,7 +78,7 @@ namespace Kurejito.Tests.Payments {
         [InlineData("30569309025904")]//Diners
         public void Validate_When_CardType_Mastercard_Should_Fail_When_CardNumber_Is_Not_MC_Format(string cardNumber)
         {
-	        Validate(new PaymentCard(){CardType = CardType.Mastercard, CardNumber = cardNumber})
+	        Validate(new PaymentCard(){CardType = CardType.MasterCard, CardNumber = cardNumber})
                 .Failures
                 .ShouldContainFailure<PaymentCard>(pc => pc.CardNumber, () => Kurejito.Payments.Payments.PaymentCard_CardNumber_Fails_CardType_Rules);
         }
@@ -88,7 +88,7 @@ namespace Kurejito.Tests.Payments {
         [InlineData("5105105105105100")]//Mastercard
         public void Validate_When_CardType_Mastercard_Should_Not_Fail_When_CardNumber_Is_MC_Format(string cardNumber)
         {
-            Validate(new PaymentCard() { CardType = CardType.Mastercard, CardNumber = cardNumber })
+            Validate(new PaymentCard() { CardType = CardType.MasterCard, CardNumber = cardNumber })
                 .Failures
                 .ShouldNotContainFailure<PaymentCard>(pc => pc.CardNumber, () => Kurejito.Payments.Payments.PaymentCard_CardNumber_Fails_CardType_Rules);
         }

@@ -111,7 +111,7 @@ namespace Kurejito.Tests.Gateways.SagePay {
 
 		[Fact]
 		public void SagePay_Purchase_Converts_Mastercard_CardType_To_Correct_SagePay_Value() {
-			card.CardType = CardType.Mastercard;
+			card.CardType = CardType.MasterCard;
 			SetupPostData(data => { Assert.Equal("MC", data["CardType"]); });
 			gateway.Purchase("123", 123.45m, "GBP", card);
 		}

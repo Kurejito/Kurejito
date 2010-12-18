@@ -10,15 +10,16 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     ///   Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
     ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
-    public class PayPalDirectPaymentGateway : IPurchaseGateway, IAuthoriseAndCapture {
+    public class PayPalDirectPaymentGateway : IPurchaseGateway, IAuthoriseAndCapture
+    {
         //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
-        private static readonly IDictionary<CardType, string> SupportedCards = new Dictionary<CardType, string> {
+        //TODO if we add support for Canada we need to switch out supported cards based on Country in the PayPalEnvironment or similar.
+        private static readonly IDictionary<CardType, string> UkSupportedCards = new Dictionary<CardType, string> {
                                                                                                                     {CardType.Visa, "Visa"},
-                                                                                                                    {
-                                                                                                                        CardType.Mastercard,
-                                                                                                                        "MasterCard"
-                                                                                                                        },
-                                                                                                                    //TODO Other, Switch, Solo?
+                                                                                                                    {CardType.MasterCard,"MasterCard"},
+                                                                                                                    {CardType.Maestro,"Maestro"},
+                                                                                                                    {CardType.Solo,"Solo"},
+                                                                                                                    {CardType.Discover,"Discover"},
                                                                                                                 };
 
         private readonly PayPalEnvironment environment;
@@ -42,7 +43,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             if (merchantReference == null) throw new ArgumentNullException("merchantReference");
             if (card == null) throw new ArgumentNullException("card");
             ThrowIfFailPaymentChecks(amount, card);
-            return ProcessResponse(this.Post(this.BuildPayPalRequestMessage(card, amount, "Authorization")));
+            return ProcessResponse(this.Post(this.BuildDirectPaymentRequestMessage(card, amount, "Authorization")));
         }
 
         public PaymentResponse Capture() {
@@ -88,7 +89,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
             ThrowIfFailPaymentChecks(money, card);
 
-            return ProcessResponse(this.Post(this.BuildPayPalRequestMessage(card, money, "Sale")));
+            return ProcessResponse(this.Post(this.BuildDirectPaymentRequestMessage(card, money, "Sale")));
         }
 
         private static void ThrowIfFailPaymentChecks(Money money, PaymentCard card) {
@@ -100,8 +101,8 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                 throw new ArgumentException(@"Purchase amount must be greater than zero.", "amount");
 
             string ppCreditCardType;
-            if (!SupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
-                throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}", String.Join(" ", SupportedCards.Keys.Select(e => e.ToString()).ToArray())));
+            if (!UkSupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
+                throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}", String.Join(" ", UkSupportedCards.Keys.Select(e => e.ToString()).ToArray())));
         }
 
         #endregion
@@ -136,7 +137,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
             throw new NotImplementedException(string.Format("We have not implemented status for L_SHORTMESSAGE0 of {0}.", shortMessage));
         }
 
-        private string BuildPayPalRequestMessage(PaymentCard card, Money amount, string paymentAction) {
+        private string BuildDirectPaymentRequestMessage(PaymentCard card, Money amount, string paymentAction) {
             var pairs = new Dictionary<string, string> {
                                                            {"VERSION", this.environment.Version},
                                                            {"SIGNATURE", this.environment.Signature},
@@ -146,7 +147,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                            {"PAYMENTACTION", paymentAction}, //Other option is Authorization. Use when we do Auth and capture.
                                                            {"IPADDRESS", "192.168.1.1"}, //TODO Required for fraud purposes.
                                                            {"AMT", amount.ToString("0.00")},
-                                                           {"CREDITCARDTYPE", SupportedCards[card.CardType]},
+                                                           {"CREDITCARDTYPE", UkSupportedCards[card.CardType]},
                                                            {"ACCT", card.CardNumber},
                                                            {"EXPDATE", card.ExpiryDate.TwoDigitMonth + card.ExpiryDate.Year},
                                                            {"CVV2", card.CV2},

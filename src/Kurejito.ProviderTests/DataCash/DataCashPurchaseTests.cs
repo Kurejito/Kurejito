@@ -28,7 +28,7 @@ namespace Kurejito.ProviderTests.DataCash {
 				case PaymentStatus.Invalid:
 					return (new PaymentCard("1234123412341234", "I M STUPID", EXPIRY_DATE, "123", CardType.Visa));
 				case PaymentStatus.Referred:
-					return (new PaymentCard("I M DODGY", "1000350000000122", EXPIRY_DATE, "123", CardType.Mastercard));
+					return (new PaymentCard("I M DODGY", "1000350000000122", EXPIRY_DATE, "123", CardType.MasterCard));
 			}
 			throw new ArgumentOutOfRangeException("status");
 		}

@@ -24,7 +24,7 @@ namespace Kurejito.Payments {
 
             //Mastercard 
             this.AddConditionalRule(
-                pc => pc.CardType == CardType.Mastercard,
+                pc => pc.CardType == CardType.MasterCard,
                 pc => pc.CardNumber,
                 cn => MatchesRegex(cn, "^5[1-5][0-9]{14}$"),
                 () => Payments.PaymentCard_CardNumber_Fails_CardType_Rules);

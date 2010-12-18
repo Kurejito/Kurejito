@@ -47,7 +47,7 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 
 		private string TranslateCardType(CardType cardType) {
 			switch (cardType) {
-				case CardType.Mastercard: return ("MC");
+				case CardType.MasterCard: return ("MC");
 				case CardType.Visa: return ("VISA");
 			}
 			throw (new NotImplementedException("Only Visa and Mastercard currently supported!"));
