@@ -95,5 +95,10 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
             var paymentCard = new PaymentCard("BEN TAYLOR", "4716034283508634", new CardDate(10, 2015), "123", CardType.Visa);
             payPalNvpPaymentGateway.Purchase("REF", amount, "GBP", paymentCard).Status.ShouldEqual(expectedStatus);
         }
+
+        [Fact]
+        public void PaymentId_Should_Equal_PayPal_TransactionId() {
+            this.DoValidPurchaseRequest().PaymentId.ShouldEqual("58840544LM668971C");
+        }
     }
 }

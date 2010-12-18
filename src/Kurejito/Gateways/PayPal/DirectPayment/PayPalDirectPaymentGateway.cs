@@ -114,6 +114,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
             if (ack.Equals("Success") || ack.Equals("SuccessWithWarning")) //TODO reflect PartialSuccess in the PaymentResponse.
                 return new PaymentResponse {
+                                               PaymentId = nameValueCollection["TRANSACTIONID"],
                                                Status = PaymentStatus.Ok,
                                                Reason = String.Empty
                                            };
