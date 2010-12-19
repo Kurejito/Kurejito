@@ -64,18 +64,31 @@ namespace Kurejito.Gateways.DataCash {
 			var response = http.Post(new Uri(gatewayUri),
 										xml.ToString(SaveOptions.DisableFormatting));
 			var xmlResponse = XDocument.Parse(response);
-			var status = this.ExtractStatus(xmlResponse);
-			return (new PaymentResponse {
-				Status = status,
-				Reason = response
-			});
+			var paymentResponse = this.PopulateResponse(xmlResponse);
+			return (paymentResponse);
 		}
+
+		private PaymentResponse PopulateResponse(XDocument xmlResponse) {
+			var status = this.ExtractStatus(xmlResponse);
+			var response = new PaymentResponse() {
+				Status = status,
+				Reason = xmlResponse.ToString()
+			};
+			response.PaymentId = ExtractPaymentId(xmlResponse);
+			return(response);
+		}
+
+		private static string ExtractPaymentId(XDocument xmlResponse) {
+			var element = xmlResponse.XPathSelectElement("Response/datacash_reference");
+			return (element.Value);
+		}
+
 
 		private XElement MakeAuthenticationElement() {
 			return (new XElement("Authentication", new XElement("client", client), new XElement("password", password)));
 		}
 
-		private XElement MakeCardTxnElement(PaymentCard card, Method method) {
+		private static XElement MakeCardTxnElement(PaymentCard card, Method method) {
 			var cardElement = new XElement("Card",
 										   new XElement("pan", card.CardNumber),
 										   new XElement("expirydate", card.ExpiryDate.MM_YY)

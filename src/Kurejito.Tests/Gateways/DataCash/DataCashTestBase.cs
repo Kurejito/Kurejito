@@ -22,7 +22,7 @@ namespace Kurejito.Tests.Gateways.DataCash {
       <authcode>100000</authcode>
       <card_scheme>VISA</card_scheme>
     </CardTxn>
-    <datacash_reference>1234123412341234</datacash_reference>
+    <datacash_reference>{2}</datacash_reference>
     <merchantreference>ABCDEFGHIJKLMNOPQRSTUVWXYZ</merchantreference>
     <mode>TEST</mode>
     <reason>{1}</reason>
@@ -31,7 +31,11 @@ namespace Kurejito.Tests.Gateways.DataCash {
   </Response>";
 
 		protected string MakeXmlResponse(int status, string reason) {
-			return (String.Format(XML_RESPONSE_FORMAT, status, reason));
+			return (MakeXmlResponse(status, reason, "1234123412341234"));
+		}
+
+		protected string MakeXmlResponse(int status, string reason, string dataCashReference) {
+			return (String.Format(XML_RESPONSE_FORMAT, status, reason, dataCashReference));
 		}
 	}
 }

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Kurejito.Gateways.DataCash;
+using Kurejito.Gateways.SagePay.VspDirect;
 using Kurejito.Transport;
 using Moq;
 using Xunit;
 
 namespace Kurejito.Tests.Gateways.DataCash {
-	public class DataCashResponseStatusTests : DataCashTestBase {
+	public class DataCashResponseTests : DataCashTestBase {
 		private PaymentResponse Get_Mock_DataCash_Response(int dataCashReturnCode, string dataCashReason) {
 			var http = new Mock<IHttpPostTransport>();
 			http
@@ -135,6 +136,19 @@ namespace Kurejito.Tests.Gateways.DataCash {
 		public void Return_Code_482_Converts_To_PaymentStatus_Invalid() { Verify_Return_Code_Translation_From_DataCash(482, PaymentStatus.Invalid, "Invalid element merchantid"); }
 		[Fact]
 		public void Return_Code_510_Converts_To_PaymentStatus_Invalid() { Verify_Return_Code_Translation_From_DataCash(510, PaymentStatus.Invalid, "GE Capital: Inappropriate GE Capital card number"); }
+
+		[Fact]
+		public void DataCash_Response_Contains_Payment_Id() {
+			var http = new Mock<IHttpPostTransport>();
+			var dataCashReference = Guid.NewGuid().ToString();
+			http
+				.Setup(h => h.Post(It.IsAny<Uri>(), It.IsAny<string>()))
+				.Returns(this.MakeXmlResponse(1, "Success", dataCashReference));
+
+			var gw = new DataCashPaymentGateway(http.Object, CLIENT_ID, PASSWORD, GATEWAY_URI);
+			var response = gw.Purchase(TestData.MerchantReference, TestData.Amount, TestData.Currency, TestData.Card);
+			Assert.Equal(dataCashReference, response.PaymentId);
+		}
 		// ReSharper restore InconsistentNaming
 	}
 }
