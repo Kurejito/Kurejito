@@ -61,6 +61,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Payments\CreditCardAvsCode.cs" />
+    <Compile Include="Payments\DebitCardAvsCode.cs" />
     <Compile Include="Validation\ReflectionExtensions.cs" />
     <Compile Include="Gateways\DataCash\DataCashPaymentGateway.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
