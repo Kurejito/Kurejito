@@ -19,12 +19,12 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 			{ GatewayMode.Live, new Uri("https://live.sagepay.com/gateway/service/vspdirect-register.vsp") },
 		};
 
-	    /// <summary>Construct a new <see cref="SagePayPaymentGateway" /> that uses the supplied <see cref="IHttpPostTransport" /> to communicate with the remote server.</summary>
-	    /// <param name="http">An instance of a class implementing <see cref="IHttpPostTransport"/> to provide HTTP POST capabilities.</param>
-	    /// <param name="vendorName">The vendor name used by this SagePay installation.</param>
-	    /// <param name="vpsProtocol">The version of the VPS Protocol used by the remote SagePay system.</param>
-	    /// <param name="mode"></param>
-	    public SagePayPaymentGateway(IHttpPostTransport http, string vendorName, decimal vpsProtocol, GatewayMode mode) {
+		/// <summary>Construct a new <see cref="SagePayPaymentGateway" /> that uses the supplied <see cref="IHttpPostTransport" /> to communicate with the remote server.</summary>
+		/// <param name="http">An instance of a class implementing <see cref="IHttpPostTransport"/> to provide HTTP POST capabilities.</param>
+		/// <param name="vendorName">The vendor name used by this SagePay installation.</param>
+		/// <param name="vpsProtocol">The version of the VPS Protocol used by the remote SagePay system.</param>
+		/// <param name="mode"></param>
+		public SagePayPaymentGateway(IHttpPostTransport http, string vendorName, decimal vpsProtocol, GatewayMode mode) {
 			this.http = http;
 			this.mode = mode;
 			this.vendorName = vendorName;
@@ -37,7 +37,7 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 			    {"Vendor", vendorName},
 			    {"VPSProtocol", vpsProtocol.ToString()}
 			};
-		    return (data);
+			return (data);
 		}
 
 		private string FormatPostData(IDictionary<string, string> data) {
@@ -86,30 +86,50 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 			var postData = FormatPostData(data);
 			var uri = postUris[this.mode];
 			var httpResponse = http.Post(uri, postData);
-			var status = this.ExtractStatus(httpResponse);
-			return (new PaymentResponse() {
-			                              	Status = status,
-			                              	Reason = httpResponse
-			                              });
+			var response = this.ParseResponse(httpResponse);
+			return (response);
+
+		}
+		private static IEnumerable<string[]> Tokenize(string postResponse) {
+			var possiblePairs = postResponse.Split('\r', '\n');
+			var verifiedPairs = possiblePairs.Where(pair => (pair != null && pair.Contains("=")));
+			var returnedPairs = verifiedPairs.Select(pair => pair.Split(new char[] {'='}, 2));
+			return (returnedPairs);
 		}
 
-		private PaymentStatus ExtractStatus (string postResponse) {
-			var pairs = postResponse.Split('\r', '\n');
-			foreach(var pair in pairs) {
-				var tokens = pair.Split(new char[] {'='}, 2);
-				if (tokens.Length == 2 && tokens[0] == "Status") {
-					switch(tokens[1].ToUpper()) {
-						case "OK":
-							return (PaymentStatus.Ok);
-						case "MALFORMED":
-						case "INVALID":
-							return (PaymentStatus.Invalid);
-						case "NOTAUTHED":
-							return (PaymentStatus.Declined);
-					}
-				}
+		private PaymentResponse ParseResponse(string postResponse) {
+			var response = new PaymentResponse {
+				Reason = postResponse
+			};
+			foreach (var pair in Tokenize(postResponse)) {
+				this.PopulateResponseProperty(response, pair);
 			}
-			return (PaymentStatus.Error);
+			return (response);
+		}
+
+		private void PopulateResponseProperty(PaymentResponse response, string[] pair) {
+			if (pair.Length != 2) throw (new ArgumentException("Token " + string.Join(",", pair) + " was not an array with exactly two elements", "pair"));
+			switch (pair[0]) {
+				case "Status":
+					response.Status = ExtractStatus(pair);
+					return;
+				case "VPSTxId":
+					response.PaymentId = pair[1];
+					return;
+			}
+		}
+
+		private PaymentStatus ExtractStatus(string[] pair) {
+			switch (pair[1].ToUpper()) {
+				case "OK":
+					return (PaymentStatus.Ok);
+				case "MALFORMED":
+				case "INVALID":
+					return (PaymentStatus.Invalid);
+				case "NOTAUTHED":
+					return (PaymentStatus.Declined);
+			}
+			return (PaymentStatus.Undefined);
 		}
 	}
 }

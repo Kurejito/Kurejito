@@ -17,7 +17,7 @@ namespace Kurejito.Tests.Gateways.SagePay {
 		private const string POST_RESPONSE_FORMAT = @"VPSProtocol=2.23
 Status={0}
 StatusDetail=Simulated result from HTTP transport mock
-VPSTxId={{00000000-1111-2222-3333-444455556666}}
+VPSTxId={1}
 SecurityKey=1234567890
 TxAuthNo=1234
 AVSCV2=NO DATA MATCHES
@@ -37,9 +37,13 @@ CV2Result=NOTMATCHED
 			card = new PaymentCard("I M LOADED", "13412341341234", "1212", "123", CardType.Visa);
 		}
 
+		protected string MakePostResponse(string status, string vpsTxId) {
+			return (String.Format(POST_RESPONSE_FORMAT, status, vpsTxId));
+		}
+
 
 		protected string MakePostResponse(string status) {
-			return (String.Format(POST_RESPONSE_FORMAT, status));
+			return (MakePostResponse(status, "{00000000-1111-2222-3333-444455556666}"));
 		}
 	}
 }

@@ -77,7 +77,7 @@
     <Compile Include="Gateways\DataCash\DataCashTestBase.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGatewayTests.cs" />
     <Compile Include="Gateways\PayPal\DirectPayment\PayPalDirectPaymentTests.cs" />
-    <Compile Include="Gateways\SagePay\SagePayResponseStatusTests.cs" />
+    <Compile Include="Gateways\SagePay\SagePayResponseTests.cs" />
     <Compile Include="Gateways\SagePay\SagePayTestBase.cs" />
     <Compile Include="Gateways\SagePay\SagePayUnitTests.cs" />
     <Compile Include="Payments\CardDateTests.cs" />

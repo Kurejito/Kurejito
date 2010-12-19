@@ -9,7 +9,7 @@ using Kurejito.Gateways.SagePay.VspDirect;
 using Kurejito.Payments;
 
 namespace Kurejito.Tests.Gateways.SagePay {
-	public class SagePayResponseStatusTests : SagePayTestBase {
+	public class SagePayResponseTests : SagePayTestBase {
 
 		private void Verify_Sagepay_Status_Code(string sagePayStatus, PaymentStatus expectedStatus) {
 			var http = new Mock<IHttpPostTransport>();
@@ -47,5 +47,19 @@ namespace Kurejito.Tests.Gateways.SagePay {
 		public void SagePay_ERROR_Response_Translates_To_Error_PaymentStatus() {
 			this.Verify_Sagepay_Status_Code("ERROR", PaymentStatus.Error);
 		}
+
+		[Fact]
+		public void SagePay_Response_Contains_Payment_Id() {
+			var http = new Mock<IHttpPostTransport>();
+			var vpsTxId = "{00001111-2222-3333-4444-556677889900}";
+			var sagepay = new SagePayPaymentGateway(http.Object, "rockshop", 2.23m, GatewayMode.Live);
+			http
+				.Setup(h => h.Post(It.IsAny<Uri>(), It.IsAny<string>()))
+				.Returns(this.MakePostResponse("OK", vpsTxId));
+			var card = new PaymentCard("I M LOADED", "123412341234134", "1212", "123", CardType.Visa);
+			var response = sagepay.Purchase("1234", 123.45m, "GBP", card);
+			Assert.Equal(vpsTxId, response.PaymentId);
+		}
+
 	}
 }
