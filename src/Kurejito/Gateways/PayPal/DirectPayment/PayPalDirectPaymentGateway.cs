@@ -10,20 +10,36 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     ///   Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
     ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
-    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture, IAccept
-    {
-        private static readonly PaymentCardMap = new PaymentCardMap
-    
-    
+    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture, IAccept {
+
+        private static readonly IList<AcceptEntry> UkAccepts = new List<AcceptEntry> 
+        {
+            new AcceptEntry(Currency.Aud, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Cad, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Czk, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Dkk, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Eur, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Huf, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Jpy, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Nok, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Nzd, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Pln, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Gbp, CardType.Visa, CardType.MasterCard, CardType.Maestro, CardType.Solo),
+            new AcceptEntry(Currency.Sgd, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Sek, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Chf, CardType.Visa, CardType.MasterCard),
+            new AcceptEntry(Currency.Usd, CardType.Visa, CardType.MasterCard),
+        };
+
         //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
         //TODO if we add support for Canada we need to switch out supported cards based on Country in the PayPalEnvironment or similar.
         private static readonly IDictionary<CardType, string> UkSupportedCards = new Dictionary<CardType, string> {
-                                                                                                                    {CardType.Visa, "Visa"},
-                                                                                                                    {CardType.MasterCard,"MasterCard"},
-                                                                                                                    {CardType.Maestro,"Maestro"},
-                                                                                                                    {CardType.Solo,"Solo"},
-                                                                                                                    {CardType.Discover,"Discover"},
-                                                                                                                };
+                                                                                                                      {CardType.Visa, "Visa"},
+                                                                                                                      {CardType.MasterCard, "MasterCard"},
+                                                                                                                      {CardType.Maestro, "Maestro"},
+                                                                                                                      {CardType.Solo, "Solo"},
+                                                                                                                      {CardType.Discover, "Discover"},
+                                                                                                                  };
 
         private readonly PayPalEnvironment environment;
         private readonly IHttpPostTransport httpTransport;
@@ -56,35 +72,38 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         #endregion
 
         #region IPurchase Members
-        
+
         /// <summary>
-        /// Attempts to debit the specified amount from the supplied payment card.
+        ///   Attempts to debit the specified amount from the supplied payment card.
         /// </summary>
-        /// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
-        /// <param name="amount">The amount of money to be debited from the payment card (includes the ISO4217 currency code).</param>
-        /// <param name="card">An instance of <see cref="PaymentCard"/> containing the customer's payment card details.</param>
+        /// <param name = "merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
+        /// <param name = "amount">The amount of money to be debited from the payment card (includes the ISO4217 currency code).</param>
+        /// <param name = "card">An instance of <see cref = "PaymentCard" /> containing the customer's payment card details.</param>
         /// <returns>
-        /// A <see cref="PaymentResponse"/> indicating whether the transaction succeeded.
+        ///   A <see cref = "PaymentResponse" /> indicating whether the transaction succeeded.
         /// </returns>
         public PaymentResponse Purchase(string merchantReference, Money amount, PaymentCard card) {
             ThrowIfFailPaymentChecks(amount, card);
             return ProcessResponse(this.Post(this.BuildDirectPaymentRequestMessage(card, amount, "Sale")));
         }
 
-        private static void ThrowIfFailPaymentChecks(Money money, PaymentCard card) {
+        public bool Accepts(Currency currency, CardType cardType) {
+            throw new NotImplementedException();
+        }
 
+        #endregion
+
+        private static void ThrowIfFailPaymentChecks(Money money, PaymentCard card) {
             //TODO add supported currencies check (and add common interface so we can query providers).
             //TODO the supported cards stuff could be SRP'd for reuse.
 
-            if(money <= 0)
+            if (money <= 0)
                 throw new ArgumentException(@"Purchase amount must be greater than zero.", "amount");
 
             string ppCreditCardType;
             if (!UkSupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
                 throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}", String.Join(" ", UkSupportedCards.Keys.Select(e => e.ToString()).ToArray())));
         }
-
-        #endregion
 
         private static PaymentResponse ProcessResponse(string response) {
             var nameValueCollection = HttpUtility.ParseQueryString(response);
@@ -151,10 +170,6 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
         private string Post(string message) {
             return this.httpTransport.Post(this.environment.Uri, message);
-        }
-
-        public bool Accepts(Currency currency, CardType cardType) {
-            throw new NotImplementedException();
         }
     }
 }

@@ -65,7 +65,7 @@
     <Compile Include="Payments\Address.cs" />
     <Compile Include="Payments\CreditCardAvsCode.cs" />
     <Compile Include="Payments\DebitCardAvsCode.cs" />
-    <Compile Include="Payments\PaymentCardMap.cs" />
+    <Compile Include="Payments\AcceptEntry.cs" />
     <Compile Include="Validation\ReflectionExtensions.cs" />
     <Compile Include="Gateways\DataCash\DataCashPaymentGateway.cs" />
     <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
