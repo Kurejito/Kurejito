@@ -93,7 +93,7 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
             var amount = Convert.ToDecimal(code/100);
             var expectedStatus = Enum.Parse(typeof (PaymentStatus), kurejitoErrorCode);
             var paymentCard = new PaymentCard("BEN TAYLOR", "4716034283508634", new CardDate(10, 2015), "123", CardType.Visa);
-            payPalNvpPaymentGateway.Purchase("REF", amount, "GBP", paymentCard).Status.ShouldEqual(expectedStatus);
+            payPalNvpPaymentGateway.Purchase("REF", new Money(amount, new Currency("GBP")), paymentCard).Status.ShouldEqual(expectedStatus);
         }
 
         [Fact]

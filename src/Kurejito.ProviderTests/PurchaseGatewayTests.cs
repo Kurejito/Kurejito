@@ -25,9 +25,8 @@ namespace Kurejito.ProviderTests {
 		protected virtual PaymentResponse SubmitPayment(PaymentStatus requiredStatus) {
 			var gw = CreateGateway();
 			var card = this.GetMagicCard(requiredStatus);
-			var amount = 123.45m;
 			var merchantReference = this.GenerateMerchantReference();
-			return(gw.Purchase(merchantReference, amount, "GBP", card));
+            return (gw.Purchase(merchantReference, new Money(123.45m, new Currency("GBP")), card));
 		}
 
 		[Fact]

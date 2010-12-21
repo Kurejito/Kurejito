@@ -53,24 +53,19 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         #endregion
 
         #region IPurchase Members
-
+        
         /// <summary>
-        ///   Attempts to debit the specified amount from the supplied payment card.
+        /// Attempts to debit the specified amount from the supplied payment card.
         /// </summary>
-        /// <param name = "merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
-        /// <param name = "amount">The amount of money to be debited from the payment card</param>
-        /// <param name = "currency">The ISO4217 currency code of the currency to be used for this transaction.</param>
-        /// <param name = "card">An instance of <see cref = "PaymentCard" /> containing the customer's payment card details.</param>
+        /// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
+        /// <param name="amount">The amount of money to be debited from the payment card (includes the ISO4217 currency code).</param>
+        /// <param name="card">An instance of <see cref="PaymentCard"/> containing the customer's payment card details.</param>
         /// <returns>
-        ///   A <see cref = "PaymentResponse" /> indicating whether the transaction succeeded.
+        /// A <see cref="PaymentResponse"/> indicating whether the transaction succeeded.
         /// </returns>
-        public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card) {
-            //TODO update Purchase signature to use Money again and remove this line.
-            var money = new Money(amount, new Currency(currency));
-
-            ThrowIfFailPaymentChecks(money, card);
-
-            return ProcessResponse(this.Post(this.BuildDirectPaymentRequestMessage(card, money, "Sale")));
+        public PaymentResponse Purchase(string merchantReference, Money amount, PaymentCard card) {
+            ThrowIfFailPaymentChecks(amount, card);
+            return ProcessResponse(this.Post(this.BuildDirectPaymentRequestMessage(card, amount, "Sale")));
         }
 
         private static void ThrowIfFailPaymentChecks(Money money, PaymentCard card) {

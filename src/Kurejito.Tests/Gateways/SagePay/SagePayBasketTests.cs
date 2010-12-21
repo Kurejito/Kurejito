@@ -27,7 +27,7 @@ namespace Kurejito.Tests.Gateways.SagePay {
 				})
 				.Returns(MakePostResponse("OK"));
 			var sagePay = new SagePayPaymentGateway(http.Object, VENDOR_NAME, VPS_PROTOCOL, GatewayMode.Simulator);
-			sagePay.Purchase("1234", 123.45m, "GBP", card);
+            sagePay.Purchase("1234", new Money(123.45m, new Currency("GBP")), card);
 			http.VerifyAll();
 		}
 	}

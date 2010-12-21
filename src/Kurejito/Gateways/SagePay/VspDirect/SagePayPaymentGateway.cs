@@ -57,12 +57,12 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 		/// <remarks>Because the SagePay gateway requires a shopping basket, this overload will create
 		///  a simple basket containing a single line item whose description is auto-generated from the 
 		/// supplied order details.</remarks>
-		public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card) {
+		public PaymentResponse Purchase(string merchantReference, Money amount, PaymentCard card) {
             var data = MakePostData();
             data.Add("TxType", "PAYMENT");
             data.Add("VendorTxCode", merchantReference);
             data.Add("Amount", amount.ToString("0.00"));
-            data.Add("Currency", currency);
+            data.Add("Currency", amount.Currency.Iso3LetterCode);
             data.Add("CardHolder", card.CardHolder);
             data.Add("CardNumber", card.CardNumber);
             data.Add("CardType", TranslateCardType(card.CardType));

@@ -11,8 +11,7 @@ namespace Kurejito.Tests.Gateways.DataCash {
 
 		protected static class TestData {
 			public static string MerchantReference = Base32Url.ToBase32String(Guid.NewGuid().ToByteArray());
-			public static decimal Amount = 123.45m;
-			public static string Currency = "GBP";
+			public static Money Amount = new Money(123.45m, new Currency("GBP"));
 			public static PaymentCard Card = new PaymentCard("I M LOADED", "1234123413241234", "1212", "123", CardType.Visa);
 		}
 

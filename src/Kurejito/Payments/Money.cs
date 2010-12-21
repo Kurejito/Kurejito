@@ -1,6 +1,7 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
-namespace System {
+namespace Kurejito.Payments {
     public struct Money : IEquatable<Money>,
                           IComparable<Money>,
                           IFormattable,

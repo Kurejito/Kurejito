@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace System
+namespace Kurejito.Payments
 {
     /// <summary>
     /// Represents a system of money within which <see cref="Money"/>

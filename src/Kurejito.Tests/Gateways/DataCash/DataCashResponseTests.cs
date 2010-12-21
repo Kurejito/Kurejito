@@ -17,7 +17,7 @@ namespace Kurejito.Tests.Gateways.DataCash {
 				.Returns(this.MakeXmlResponse(dataCashReturnCode, dataCashReason));
 
 			var gw = new DataCashPaymentGateway(http.Object, CLIENT_ID, PASSWORD, GATEWAY_URI);
-			return (gw.Purchase(TestData.MerchantReference, TestData.Amount, TestData.Currency, TestData.Card));
+			return (gw.Purchase(TestData.MerchantReference, TestData.Amount, TestData.Card));
 		}
 
 		private void Verify_Return_Code_Translation_From_DataCash(int returnCode, PaymentStatus expectedStatus, string reason) {
@@ -146,7 +146,7 @@ namespace Kurejito.Tests.Gateways.DataCash {
 				.Returns(this.MakeXmlResponse(1, "Success", dataCashReference));
 
 			var gw = new DataCashPaymentGateway(http.Object, CLIENT_ID, PASSWORD, GATEWAY_URI);
-			var response = gw.Purchase(TestData.MerchantReference, TestData.Amount, TestData.Currency, TestData.Card);
+			var response = gw.Purchase(TestData.MerchantReference, TestData.Amount, TestData.Card);
 			Assert.Equal(dataCashReference, response.PaymentId);
 		}
 		// ReSharper restore InconsistentNaming

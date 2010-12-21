@@ -28,22 +28,22 @@ namespace Kurejito.Gateways.DataCash {
 			this.gatewayUri = gatewayUri;
 		}
 
-		/// <summary>
-		/// Attempts to debit the specified amount from the supplied payment card.
-		/// </summary>
-		/// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
-		/// <param name="amount">The amount of money to be debited from the payment card</param>
-		/// <param name="currency">The ISO4217 currency code of the currency to be used for this transaction.</param>
-		/// <param name="card">An instance of <see cref="PaymentCard"/> containing the customer's payment card details.</param>
-		/// <returns>
-		/// A <see cref="PaymentResponse"/> indicating whether the transaction succeeded.
-		/// </returns>
-		public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card) {
+
+        /// <summary>
+        /// Attempts to debit the specified amount from the supplied payment card.
+        /// </summary>
+        /// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
+        /// <param name="amount">The amount of money to be debited from the payment card (includes the ISO4217 currency code).</param>
+        /// <param name="card">An instance of <see cref="PaymentCard"/> containing the customer's payment card details.</param>
+        /// <returns>
+        /// A <see cref="PaymentResponse"/> indicating whether the transaction succeeded.
+        /// </returns>
+		public PaymentResponse Purchase(string merchantReference, Money amount, PaymentCard card) {
             var xml = new XDocument(
                 new XDeclaration("1.0", "UTF-8", null),
                 new XElement("Request",
                              MakeAuthenticationElement(),
-                             MakeTransactionElement(merchantReference, amount, currency, card, Method.auth)
+                             MakeTransactionElement(merchantReference, amount, amount.Currency.Iso3LetterCode, card, Method.auth)
                     )
                 );
             var response = http.Post(new Uri(gatewayUri),

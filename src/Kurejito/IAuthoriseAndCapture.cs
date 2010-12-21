@@ -1,5 +1,4 @@
-﻿using System;
-using Kurejito.Payments;
+﻿using Kurejito.Payments;
 
 namespace Kurejito {
     /// <summary>

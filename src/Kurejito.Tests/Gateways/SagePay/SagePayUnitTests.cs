@@ -16,7 +16,7 @@ namespace Kurejito.Tests.Gateways.SagePay {
 		private void VerifyPurchasePostUrl(GatewayMode mode, string postUri) {
 			http.Setup(h => h.Post(new Uri(postUri), It.IsAny<string>())).Returns(MakePostResponse("OK"));
 			var sagePay = new SagePayPaymentGateway(http.Object, "myVendor", 2.23m, mode);
-			sagePay.Purchase("123", 123.45m, "GBP", card);
+            sagePay.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 			http.VerifyAll();
 		}
 
@@ -48,7 +48,7 @@ namespace Kurejito.Tests.Gateways.SagePay {
 
 			SetupPostData(data => Assert.Equal(VENDOR_NAME, data["Vendor"]));
 
-			gateway.Purchase("123", 123.45m, "GBP", card);
+            gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 
 			http.VerifyAll();
 		}
@@ -56,56 +56,56 @@ namespace Kurejito.Tests.Gateways.SagePay {
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_VpsProtocol_In_PostData() {
 			SetupPostData(data => { Assert.Equal(VPS_PROTOCOL, Decimal.Parse(data["VPSProtocol"])); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+            gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_TxType_In_PostData() {
 			SetupPostData(data => { Assert.Equal("PAYMENT", data["TxType"]); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+			gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_VendorTxCode_In_PostData() {
 			SetupPostData(data => { Assert.Equal("abcd1234", data["VendorTxCode"]); });
-			gateway.Purchase("abcd1234", 123.45m, "GBP", card);
+			gateway.Purchase("abcd1234", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_Amount_In_PostData() {
 			SetupPostData(data => { Assert.Equal(123.45m, Decimal.Parse(data["Amount"])); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+			gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_Currency_In_PostData() {
 			SetupPostData(data => { Assert.Equal("GBP", data["Currency"]); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+			gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_CardHolder_In_PostData() {
 			SetupPostData(data => { Assert.Equal(card.CardHolder, data["CardHolder"]); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+			gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_CardNumber_In_PostData() {
 			SetupPostData(data => { Assert.Equal(card.CardNumber, data["CardNumber"]); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+			gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 		[Fact]
 		public void SagePay_Purchase_Passes_Correct_ExpiryDate_In_PostData() {
 			SetupPostData(data => { Assert.Equal(card.ExpiryDate.ToString(), data["ExpiryDate"]); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+			gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 		[Fact]
 		public void SagePay_Purchase_Converts_Visa_CardType_To_Correct_SagePay_Value() {
 			card.CardType = CardType.Visa;
 			SetupPostData(data => { Assert.Equal("VISA", data["CardType"]); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+			gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 
@@ -113,7 +113,7 @@ namespace Kurejito.Tests.Gateways.SagePay {
 		public void SagePay_Purchase_Converts_Mastercard_CardType_To_Correct_SagePay_Value() {
 			card.CardType = CardType.MasterCard;
 			SetupPostData(data => { Assert.Equal("MC", data["CardType"]); });
-			gateway.Purchase("123", 123.45m, "GBP", card);
+			gateway.Purchase("123", new Money(123.45m, new Currency("GBP")), card);
 		}
 
 

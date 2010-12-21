@@ -2,6 +2,7 @@
 using System.Web;
 using Kurejito.Gateways.PayPal;
 using Kurejito.Gateways.PayPal.DirectPayment;
+using Kurejito.Payments;
 using Kurejito.Tests.Payments;
 using Kurejito.Transport;
 using Moq;
@@ -30,7 +31,7 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         protected Mock<IHttpPostTransport> HttpTransportMock { get; set; }
 
         protected PaymentResponse DoValidPurchaseRequest() {
-            return Gateway.Purchase(MerchantReference, this.Amount, "GBP", TestPaymentCards.VisaValid);
+            return Gateway.Purchase(MerchantReference, new Money(this.Amount, new Currency("GBP")), TestPaymentCards.VisaValid);
         }
 
         protected string MerchantReference { get; private set; }
