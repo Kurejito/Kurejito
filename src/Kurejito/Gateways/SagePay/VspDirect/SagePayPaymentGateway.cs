@@ -58,39 +58,32 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 		///  a simple basket containing a single line item whose description is auto-generated from the 
 		/// supplied order details.</remarks>
 		public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card) {
-			var lineItem = new LineItem(String.Format("Transaction ref {0}", merchantReference), amount);
-			var basket = new Basket(lineItem);
-			return (this.Purchase(merchantReference, amount, currency, card, basket));
-		}
+            var data = MakePostData();
+            data.Add("TxType", "PAYMENT");
+            data.Add("VendorTxCode", merchantReference);
+            data.Add("Amount", amount.ToString("0.00"));
+            data.Add("Currency", currency);
+            data.Add("CardHolder", card.CardHolder);
+            data.Add("CardNumber", card.CardNumber);
+            data.Add("CardType", TranslateCardType(card.CardType));
+            data.Add("ExpiryDate", card.ExpiryDate.ToString());
+		    data.Add("Basket", CreateBasketString(merchantReference, amount));
+            data.Add("Description", "DUMMY DESCRIPTION");
+            var postData = FormatPostData(data);
+            var uri = postUris[this.mode];
+            var httpResponse = http.Post(uri, postData);
+            var response = this.ParseResponse(httpResponse);
+            return (response);
+        }
 
+	    private static string CreateBasketString(string merchantReference, decimal amount) {
+	        var desc = String.Format("Transaction ref {0}", merchantReference).ToASCIIString();
+	        var token = String.Format("{0}:{1}:{2}:{3}:{4}:{5}", desc, "", "", "", "", amount.ToString("0.00"));
+	        var tokens = new List<string> {"1", token};
+	        return String.Join(":", tokens.ToArray());
+	    }
 
-		/// <summary>Attempt to take the specified payment amount from the supplied payment card.</summary>
-		/// <param name="merchantReference">The merchant reference.</param>
-		/// <param name="amount">The amount.</param>
-		/// <param name="currency">The currency.</param>
-		/// <param name="card">The card.</param>
-		/// <param name="basket">The basket.</param>
-		/// <returns></returns>
-		public PaymentResponse Purchase(string merchantReference, decimal amount, string currency, PaymentCard card, Basket basket) {
-			var data = MakePostData();
-			data.Add("TxType", "PAYMENT");
-			data.Add("VendorTxCode", merchantReference);
-			data.Add("Amount", amount.ToString("0.00"));
-			data.Add("Currency", currency);
-			data.Add("CardHolder", card.CardHolder);
-			data.Add("CardNumber", card.CardNumber);
-			data.Add("CardType", TranslateCardType(card.CardType));
-			data.Add("ExpiryDate", card.ExpiryDate.ToString());
-			data.Add("Basket", basket.ToSagePayBasketFormat());
-			data.Add("Description", "DUMMY DESCRIPTION");
-			var postData = FormatPostData(data);
-			var uri = postUris[this.mode];
-			var httpResponse = http.Post(uri, postData);
-			var response = this.ParseResponse(httpResponse);
-			return (response);
-
-		}
-		private static IEnumerable<string[]> Tokenize(string postResponse) {
+	    private static IEnumerable<string[]> Tokenize(string postResponse) {
 			var possiblePairs = postResponse.Split('\r', '\n');
 			var verifiedPairs = possiblePairs.Where(pair => (pair != null && pair.Contains("=")));
 			var returnedPairs = verifiedPairs.Select(pair => pair.Split(new char[] {'='}, 2));

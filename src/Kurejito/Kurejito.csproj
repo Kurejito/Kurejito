@@ -69,16 +69,13 @@
     <Compile Include="Gateways\FakeBank\PaymentGateway.cs" />
     <Compile Include="Gateways\PayPal\PayPalEnvironment.cs" />
     <Compile Include="Gateways\PayPal\DirectPayment\PayPalDirectPaymentGateway.cs" />
-    <Compile Include="Gateways\SagePay\SagePayBasketExtensions.cs" />
     <Compile Include="Gateways\SagePay\SagePayStringExtensions.cs" />
     <Compile Include="Gateways\SagePay\VspDirect\GatewayMode.cs" />
     <Compile Include="Gateways\SagePay\VspDirect\SagePayPaymentGateway.cs" />
     <Compile Include="IAuthoriseAndCapture.cs" />
     <Compile Include="PaymentResponse.cs" />
     <Compile Include="PaymentStatus.cs" />
-    <Compile Include="Payments\Basket.cs" />
     <Compile Include="Payments\Currency.cs" />
-    <Compile Include="Payments\LineItem.cs" />
     <Compile Include="Payments\Money.cs" />
     <Compile Include="Payments\PaymentCard.cs" />
     <Compile Include="IPurchase.cs" />
