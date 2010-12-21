@@ -6,7 +6,7 @@ using Kurejito.Gateways.SagePay.VspDirect;
 
 namespace Kurejito.ProviderTests.SagePay {
 	public class SagePaySimulatorPurchaseTests : PurchaseGatewayTests {
-		protected override IPurchaseGateway CreateGateway() {
+		protected override IPurchase CreateGateway() {
 			var http = new HttpTransport();
 			throw (new Exception("You can't run these tests without a live SagePay test account - sorry."));
 //			return (new SagePayPaymentGateway(http, "myVendor", 2.23m, GatewayMode.Simulator));

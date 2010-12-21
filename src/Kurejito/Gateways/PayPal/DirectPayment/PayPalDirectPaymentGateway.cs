@@ -10,7 +10,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     ///   Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
     ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
-    public class PayPalDirectPaymentGateway : IPurchaseGateway, IAuthoriseAndCapture
+    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture
     {
         //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
         //TODO if we add support for Canada we need to switch out supported cards based on Country in the PayPalEnvironment or similar.
@@ -52,7 +52,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
         #endregion
 
-        #region IPurchaseGateway Members
+        #region IPurchase Members
 
         /// <summary>
         ///   Attempts to debit the specified amount from the supplied payment card.

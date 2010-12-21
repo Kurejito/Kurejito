@@ -6,9 +6,9 @@ using Kurejito.Transport;
 
 ///<summary>Classes that implement the Kurejito API on top of the payment gateway supplied by <a href="DataCash">DataCash</a></summary>
 namespace Kurejito.Gateways.DataCash {
-	/// <summary>Implements the <see cref="IPurchaseGateway" /> interface to provide purchase and immediate payment 
+	/// <summary>Implements the <see cref="IPurchase" /> interface to provide purchase and immediate payment 
 	/// capabilities when using DataCash as your payment provider.</summary>
-	public class DataCashPaymentGateway : IPurchaseGateway {
+	public class DataCashPaymentGateway : IPurchase {
 		private readonly string client;
 		private readonly IHttpPostTransport http;
 		private readonly string password;

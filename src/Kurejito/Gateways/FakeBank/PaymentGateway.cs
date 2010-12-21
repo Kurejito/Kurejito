@@ -2,9 +2,9 @@
 
 namespace Kurejito.Gateways.FakeBank {
 	/// <summary>
-    /// Provides a fake, in-memory, stateless simulated payment provider for testing code that uses a <see cref="IPurchaseGateway" />.
+    /// Provides a fake, in-memory, stateless simulated payment provider for testing code that uses a <see cref="IPurchase" />.
 	/// </summary>
-	public class PaymentGateway : IPurchaseGateway {
+	public class PaymentGateway : IPurchase {
 		/// <summary>Attempts to debit the specified amount from the supplied payment card.</summary>
 		/// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
 		/// <param name="amount">The amount of money to be debited from the payment card</param>

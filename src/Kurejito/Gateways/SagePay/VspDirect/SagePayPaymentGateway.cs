@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Kurejito.Gateways.SagePay.VspDirect {
 	/// <summary>A payment gateway interface to the SagePay VspDirect payment system.</summary>
-	public class SagePayPaymentGateway : IPurchaseGateway {
+	public class SagePayPaymentGateway : IPurchase {
 		private readonly string vendorName;
 		private readonly decimal vpsProtocol;
 		private readonly GatewayMode mode;

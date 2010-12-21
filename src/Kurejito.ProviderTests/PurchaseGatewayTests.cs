@@ -16,7 +16,7 @@ namespace Kurejito.ProviderTests {
 
 
 		/// <summary>Implement this method to return an instance of the gateway that's being tested</summary>
-		protected abstract IPurchaseGateway CreateGateway();
+		protected abstract IPurchase CreateGateway();
 
 		/// <summary>Return a set of <see cref="PaymentCard" /> values that will return the 
 		/// specified response type when submitted to this provider's test gateway.</summary>

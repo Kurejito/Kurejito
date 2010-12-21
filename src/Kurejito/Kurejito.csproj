@@ -81,7 +81,7 @@
     <Compile Include="Payments\LineItem.cs" />
     <Compile Include="Payments\Money.cs" />
     <Compile Include="Payments\PaymentCard.cs" />
-    <Compile Include="IPurchaseGateway.cs" />
+    <Compile Include="IPurchase.cs" />
     <Compile Include="Payments\CardDate.cs" />
     <Compile Include="Payments\CardType.cs" />
     <Compile Include="Payments\PaymentCardValidator.cs" />

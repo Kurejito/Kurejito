@@ -11,7 +11,7 @@ namespace Kurejito.ProviderTests.DataCash {
 		private const string PASSWORD = "QAVgBZMQ5Jt9";
 		private const string GATEWAY_URI = "https://testserver.datacash.com/Transaction";
 
-		protected override IPurchaseGateway CreateGateway() {
+		protected override IPurchase CreateGateway() {
 			var http = new HttpTransport();
 			return (new DataCashPaymentGateway(http, CLIENT_ID, PASSWORD, GATEWAY_URI));
 		}
