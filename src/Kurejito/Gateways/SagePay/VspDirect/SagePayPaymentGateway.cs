@@ -121,6 +121,8 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 					return (PaymentStatus.Invalid);
 				case "NOTAUTHED":
 					return (PaymentStatus.Declined);
+                case "ERROR"://TODO DB review this as added in by BT to fix red test.
+                    return PaymentStatus.Error;
 			}
 			return (PaymentStatus.Undefined);
 		}
