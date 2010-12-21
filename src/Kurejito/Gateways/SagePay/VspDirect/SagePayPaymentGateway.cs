@@ -126,5 +126,9 @@ namespace Kurejito.Gateways.SagePay.VspDirect {
 			}
 			return (PaymentStatus.Undefined);
 		}
+
+	    public bool Accepts(Currency currency, CardType cardType) {
+	        throw new NotImplementedException();
+	    }
 	}
 }

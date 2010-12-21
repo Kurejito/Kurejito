@@ -100,5 +100,11 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         public void PaymentId_Should_Equal_PayPal_TransactionId() {
             this.DoValidPurchaseRequest().PaymentId.ShouldEqual("58840544LM668971C");
         }
+
+        [Theory]
+        [InlineData("GBP", CardType.Visa)]
+        public void SupportedCards_Contains_Correct_Card_Types(string currency, CardType cardType) {
+            base.Gateway.Accepts(new Currency(currency), cardType);
+        }
     }
 }

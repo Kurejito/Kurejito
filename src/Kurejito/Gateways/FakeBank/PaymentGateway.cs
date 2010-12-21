@@ -1,4 +1,5 @@
-﻿using Kurejito.Payments;
+﻿using System;
+using Kurejito.Payments;
 
 namespace Kurejito.Gateways.FakeBank {
 	/// <summary>
@@ -29,6 +30,10 @@ namespace Kurejito.Gateways.FakeBank {
                 Reason = "Payment successful"
             });
         }
+
+	    public bool Accepts(Currency currency, CardType cardType) {
+	        throw new NotImplementedException();
+	    }
 	}
 }
 

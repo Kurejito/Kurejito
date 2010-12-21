@@ -4,7 +4,7 @@ namespace Kurejito {
     /// <summary>
     /// Interface implemented by providers that support an authorise and capture payment model.
     /// </summary>
-    internal interface IAuthoriseAndCapture {
+    public interface IAuthoriseAndCapture : IAccept {
         /// <summary>
         /// Authorise <paramref name="amount"/> for later Capture.
         /// </summary>

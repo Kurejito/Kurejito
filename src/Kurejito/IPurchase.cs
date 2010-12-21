@@ -4,7 +4,7 @@
 namespace Kurejito {
 
 	/// <summary>Providers that support purchases - straightforward payments where the money is debited immediately - should implement this interface.</summary>
-	public interface IPurchase {
+	public interface IPurchase : IAccept {
 		/// <summary>Attempts to debit the specified amount from the supplied payment card.</summary>
 		/// <param name="merchantReference">An alphanumeric reference supplied by the merchant that uniquely identifies this transaction</param>
         /// <param name="amount">The amount of money to be debited from the payment card (includes the ISO4217 currency code).</param>

@@ -10,8 +10,11 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     ///   Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
     ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
-    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture
+    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture, IAccept
     {
+        private static readonly PaymentCardMap = new PaymentCardMap
+    
+    
         //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
         //TODO if we add support for Canada we need to switch out supported cards based on Country in the PayPalEnvironment or similar.
         private static readonly IDictionary<CardType, string> UkSupportedCards = new Dictionary<CardType, string> {
@@ -148,6 +151,10 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
 
         private string Post(string message) {
             return this.httpTransport.Post(this.environment.Uri, message);
+        }
+
+        public bool Accepts(Currency currency, CardType cardType) {
+            throw new NotImplementedException();
         }
     }
 }

@@ -241,5 +241,9 @@ namespace Kurejito.Gateways.DataCash {
 			}
 			return (PaymentStatus.Undefined);
 		}
+
+	    public bool Accepts(Currency currency, CardType cardType) {
+	        throw new NotImplementedException();
+	    }
 	}
 }
