@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAccept.cs" />
+    <Compile Include="Payments\AcceptsAttribute.cs" />
     <Compile Include="Payments\Address.cs" />
     <Compile Include="Payments\CreditCardAvsCode.cs" />
     <Compile Include="Payments\DebitCardAvsCode.cs" />

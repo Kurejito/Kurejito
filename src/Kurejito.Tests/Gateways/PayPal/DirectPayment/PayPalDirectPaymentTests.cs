@@ -63,17 +63,15 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         [InlineData(100)]
         [InlineData(9999.99)]
         [InlineData(.01)]
-        public void Purchase_Request_Should_Have_PayPal_Formatted_Amount(double amount)
-        {
+        public void Purchase_Request_Should_Have_PayPal_Formatted_Amount(double amount) {
             //TODO currently amount could have more than two decimal places and we would probably lose that which is bad.  Get Money back in.
             this.Amount = Convert.ToDecimal(amount);
             this.DoValidPurchaseRequest();
             this.VerifyRequestPair("AMT", this.Amount.ToString("0.00"));
         }
-        
+
         [Fact]
-        public void Purchase_Request_Should_Use_PaymentAction_Sale()
-        {
+        public void Purchase_Request_Should_Use_PaymentAction_Sale() {
             this.DoValidPurchaseRequest();
             this.VerifyRequestPair("PAYMENTACTION", "Sale");
         }
@@ -102,9 +100,40 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         }
 
         [Theory]
-        [InlineData("GBP", CardType.Visa)]
-        public void SupportedCards_Contains_Correct_Card_Types(string currency, CardType cardType) {
-            base.Gateway.Accepts(new Currency(currency), cardType);
+        [InlineData("GBR", "AUD", CardType.Visa)]
+        [InlineData("GBR", "AUD", CardType.MasterCard)]
+        [InlineData("GBR", "CAD", CardType.Visa)]
+        [InlineData("GBR", "CAD", CardType.MasterCard)]
+        [InlineData("GBR", "CZK", CardType.Visa)]
+        [InlineData("GBR", "CZK", CardType.MasterCard)]
+        [InlineData("GBR", "DKK", CardType.Visa)]
+        [InlineData("GBR", "DKK", CardType.MasterCard)]
+        [InlineData("GBR", "EUR", CardType.Visa)]
+        [InlineData("GBR", "EUR", CardType.MasterCard)]
+        [InlineData("GBR", "HUF", CardType.Visa)]
+        [InlineData("GBR", "HUF", CardType.MasterCard)]
+        [InlineData("GBR", "JPY", CardType.Visa)]
+        [InlineData("GBR", "JPY", CardType.MasterCard)]
+        [InlineData("GBR", "NOK", CardType.Visa)]
+        [InlineData("GBR", "NOK", CardType.MasterCard)]
+        [InlineData("GBR", "NZD", CardType.Visa)]
+        [InlineData("GBR", "NZD", CardType.MasterCard)]
+        [InlineData("GBR", "PLN", CardType.Visa)]
+        [InlineData("GBR", "PLN", CardType.MasterCard)]
+        [InlineData("GBR", "GBP", CardType.Visa)]
+        [InlineData("GBR", "GBP", CardType.MasterCard)]
+        [InlineData("GBR", "GBP", CardType.Solo)]
+        [InlineData("GBR", "GBP", CardType.Maestro)]
+        [InlineData("GBR", "SGD", CardType.Visa)]
+        [InlineData("GBR", "SGD", CardType.MasterCard)]
+        [InlineData("GBR", "SEK", CardType.Visa)]
+        [InlineData("GBR", "SEK", CardType.MasterCard)]
+        [InlineData("GBR", "CHF", CardType.Visa)]
+        [InlineData("GBR", "CHF", CardType.MasterCard)]
+        [InlineData("GBR", "USD", CardType.Visa)]
+        [InlineData("GBR", "USD", CardType.MasterCard)]
+        public void SupportedCards_Contains_Correct_Card_Types(string countryCode, string currency, CardType cardType) {
+            this.Gateway.Accepts(new Currency(currency), cardType);
         }
     }
 }

@@ -10,27 +10,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     ///   Responsible for processing payments using the Direct Payments functionality of PayPal Website Payments Pro.
     ///   See https://www.x.com/community/ppx/documentation#wpp
     /// </summary>
+    [Accepts("GBR", "AUD,CAD,CZK,DKK,EUR,HUF,JPY,NOK,NZD,PLN,GBP,SGD,SEK,CHF,USD", CardType.Visa, CardType.MasterCard)]
+    [Accepts("GBR", "GBP", CardType.Visa, CardType.MasterCard, CardType.Solo, CardType.Maestro)]
     public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture, IAccept {
-
-        private static readonly IList<AcceptEntry> UkAccepts = new List<AcceptEntry> 
-        {
-            new AcceptEntry(Currency.Aud, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Cad, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Czk, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Dkk, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Eur, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Huf, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Jpy, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Nok, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Nzd, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Pln, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Gbp, CardType.Visa, CardType.MasterCard, CardType.Maestro, CardType.Solo),
-            new AcceptEntry(Currency.Sgd, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Sek, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Chf, CardType.Visa, CardType.MasterCard),
-            new AcceptEntry(Currency.Usd, CardType.Visa, CardType.MasterCard),
-        };
-
         //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
         //TODO if we add support for Canada we need to switch out supported cards based on Country in the PayPalEnvironment or similar.
         private static readonly IDictionary<CardType, string> UkSupportedCards = new Dictionary<CardType, string> {
@@ -88,7 +70,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         }
 
         public bool Accepts(Currency currency, CardType cardType) {
-            throw new NotImplementedException();
+            return AcceptsAttribute.DecoratedToAccept<PayPalDirectPaymentGateway>("GBR", currency.Iso3LetterCode, cardType);
         }
 
         #endregion
