@@ -61,6 +61,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gateways\Cardstream\CardStreamGateway.cs" />
     <Compile Include="IAccept.cs" />
     <Compile Include="Payments\AcceptsAttribute.cs" />
     <Compile Include="Payments\Address.cs" />
