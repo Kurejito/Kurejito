@@ -87,7 +87,7 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         public void PayPal_Error_Code_CorrectlyTranslates_To_Kurejito_Code(double code, string kurejitoErrorCode, string shortMessage, string longMessage, string correctiveAction) {
             //https://cms.paypal.com/uk/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_testing_SBTestErrorConditions
 
-            var payPalNvpPaymentGateway = new PayPalDirectPaymentGateway(new HttpTransport(), PayPalEnvironment.NegativeTestAccountSandboxEnvironment());
+            var payPalNvpPaymentGateway = new PayPalDirectPaymentGateway(new HttpTransport(), PayPalEnvironment.NegativeTestAccountSandboxEnvironmentForGbr());
             var amount = Convert.ToDecimal(code/100);
             var expectedStatus = Enum.Parse(typeof (PaymentStatus), kurejitoErrorCode);
             var paymentCard = new PaymentCard("BEN TAYLOR", "4716034283508634", new CardDate(10, 2015), "123", CardType.Visa);
@@ -132,8 +132,19 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         [InlineData("GBR", "CHF", CardType.MasterCard)]
         [InlineData("GBR", "USD", CardType.Visa)]
         [InlineData("GBR", "USD", CardType.MasterCard)]
-        public void SupportedCards_Contains_Correct_Card_Types(string countryCode, string currency, CardType cardType) {
-            this.Gateway.Accepts(new Currency(currency), cardType);
+        public void Accepts_Should_Return_True_For_All_Uk_Supported_Cards_Currency_Combos(string countryCode, string currency, CardType cardType) {
+            PayPalEnvironment.NegativeTestAccountSandboxEnvironment((PayPalAccountCountry) Enum.Parse(typeof (PayPalAccountCountry), countryCode));
+            this.Gateway.Accepts(new Currency(currency), cardType).ShouldBeTrue();
+        }
+
+        [Theory]
+        [InlineData("GBR", "GHS", CardType.Visa)]
+        [InlineData("USA", "CRC", CardType.Visa)]
+        [InlineData("CAN", "KHR", CardType.Visa)]
+        public void Accepts_Should_Return_False_For_Set_Of_Unsupported_Card_Nation_Currency_Combos(string countryCode, string currency, CardType cardType)
+        {
+            PayPalEnvironment.NegativeTestAccountSandboxEnvironment((PayPalAccountCountry)Enum.Parse(typeof(PayPalAccountCountry), countryCode));
+            this.Gateway.Accepts(new Currency(currency), cardType).ShouldBeFalse();
         }
     }
 }

@@ -12,10 +12,9 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     /// </summary>
     [Accepts("GBR", "AUD,CAD,CZK,DKK,EUR,HUF,JPY,NOK,NZD,PLN,GBP,SGD,SEK,CHF,USD", CardType.Visa, CardType.MasterCard)]
     [Accepts("GBR", "GBP", CardType.Visa, CardType.MasterCard, CardType.Solo, CardType.Maestro)]
-    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture, IAccept {
-        //MAYBE add SupportedCards to the public interface? Then one can query for a processor to match certain criteria.
-        //TODO if we add support for Canada we need to switch out supported cards based on Country in the PayPalEnvironment or similar.
-        private static readonly IDictionary<CardType, string> UkSupportedCards = new Dictionary<CardType, string> {
+    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture {
+        //TODO maybe make this map a type as in other providers too.
+        private static readonly IDictionary<CardType, string> CardTypeToPayPalCardStringMap = new Dictionary<CardType, string> {
                                                                                                                       {CardType.Visa, "Visa"},
                                                                                                                       {CardType.MasterCard, "MasterCard"},
                                                                                                                       {CardType.Maestro, "Maestro"},
@@ -70,21 +69,22 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
         }
 
         public bool Accepts(Currency currency, CardType cardType) {
-            return AcceptsAttribute.DecoratedToAccept<PayPalDirectPaymentGateway>("GBR", currency.Iso3LetterCode, cardType);
+            return AcceptsAttribute.DecoratedToAccept<PayPalDirectPaymentGateway>(this.environment.AccountCountry.ToString(), currency.Iso3LetterCode, cardType);
         }
 
         #endregion
 
-        private static void ThrowIfFailPaymentChecks(Money money, PaymentCard card) {
-            //TODO add supported currencies check (and add common interface so we can query providers).
-            //TODO the supported cards stuff could be SRP'd for reuse.
+        private void ThrowIfFailPaymentChecks(Money amount, PaymentCard card) {
+            if(!Accepts(amount.Currency, card.CardType)) {
+                throw new ArgumentOutOfRangeException("card", String.Format("Gateway cannot accept CardType of {0} with currency {1} in {2}.", card.CardType, amount.Currency.Iso3LetterCode, this.environment.AccountCountry));
+            }
 
-            if (money <= 0)
+            if (amount <= 0)
                 throw new ArgumentException(@"Purchase amount must be greater than zero.", "amount");
 
             string ppCreditCardType;
-            if (!UkSupportedCards.TryGetValue(card.CardType, out ppCreditCardType))
-                throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}", String.Join(" ", UkSupportedCards.Keys.Select(e => e.ToString()).ToArray())));
+            if (!CardTypeToPayPalCardStringMap.TryGetValue(card.CardType, out ppCreditCardType))
+                throw new ArgumentException(string.Format("PaymentCard.CardType must be one of the following: {0}", String.Join(" ", CardTypeToPayPalCardStringMap.Keys.Select(e => e.ToString()).ToArray())));
         }
 
         private static PaymentResponse ProcessResponse(string response) {
@@ -128,7 +128,7 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
                                                            {"PAYMENTACTION", paymentAction}, //Other option is Authorization. Use when we do Auth and capture.
                                                            {"IPADDRESS", "192.168.1.1"}, //TODO Required for fraud purposes.
                                                            {"AMT", amount.ToString("0.00")},
-                                                           {"CREDITCARDTYPE", UkSupportedCards[card.CardType]},
+                                                           {"CREDITCARDTYPE", CardTypeToPayPalCardStringMap[card.CardType]},
                                                            {"ACCT", card.CardNumber},
                                                            {"EXPDATE", card.ExpiryDate.TwoDigitMonth + card.ExpiryDate.Year},
                                                            {"CVV2", card.CV2},

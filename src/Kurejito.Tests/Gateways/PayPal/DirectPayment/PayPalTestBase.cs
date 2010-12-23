@@ -13,7 +13,7 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
 
         public PayPalTestBase() {
             this.MerchantReference = Guid.NewGuid().ToString();
-            this.Environment = PayPalEnvironment.NegativeTestAccountSandboxEnvironment();
+            this.Environment = PayPalEnvironment.NegativeTestAccountSandboxEnvironmentForGbr();
             this.InitWithResponse(FakePayPalResponse.Success.ToString());
             this.Amount = 100m;
         }
