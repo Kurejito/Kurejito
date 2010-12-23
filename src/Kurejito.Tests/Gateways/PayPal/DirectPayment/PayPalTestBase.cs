@@ -39,5 +39,9 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         protected void VerifyRequestPair(string key, string value) {
             this.HttpTransportMock.Verify(t => t.Post(It.IsAny<Uri>(),It.Is<string>(s => HttpUtility.ParseQueryString(s)[key].Equals(value))));
         }
+
+        protected void ReInitWithEnvironment(PayPalEnvironment environment) {
+            this.Gateway = new PayPalDirectPaymentGateway(this.HttpTransportMock.Object, environment);
+        }
     }
 }

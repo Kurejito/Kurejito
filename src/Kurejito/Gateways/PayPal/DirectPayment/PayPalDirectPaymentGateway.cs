@@ -12,7 +12,11 @@ namespace Kurejito.Gateways.PayPal.DirectPayment {
     /// </summary>
     [Accepts("GBR", "AUD,CAD,CZK,DKK,EUR,HUF,JPY,NOK,NZD,PLN,GBP,SGD,SEK,CHF,USD", CardType.Visa, CardType.MasterCard)]
     [Accepts("GBR", "GBP", CardType.Visa, CardType.MasterCard, CardType.Solo, CardType.Maestro)]
-    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture {
+    [Accepts("CAN", "AUD,CAD,CZK,DKK,EUR,GBP,HUF,JPY,NOK,NZD,PLN,GBP,SGD,SEK,CHF,USD", CardType.Visa, CardType.MasterCard)]
+    [Accepts("USA", "AUD,CAD,EUR,GBP,JPY,GBP", CardType.Visa, CardType.MasterCard)]
+    [Accepts("USA", "USD", CardType.Visa, CardType.MasterCard, CardType.Discover, CardType.AmericanExpress)]
+    public class PayPalDirectPaymentGateway : IPurchase, IAuthoriseAndCapture
+    {
         //TODO maybe make this map a type as in other providers too.
         private static readonly IDictionary<CardType, string> CardTypeToPayPalCardStringMap = new Dictionary<CardType, string> {
                                                                                                                       {CardType.Visa, "Visa"},

@@ -100,50 +100,109 @@ namespace Kurejito.Tests.Gateways.PayPal.DirectPayment {
         }
 
         [Theory]
-        [InlineData("GBR", "AUD", CardType.Visa)]
-        [InlineData("GBR", "AUD", CardType.MasterCard)]
-        [InlineData("GBR", "CAD", CardType.Visa)]
-        [InlineData("GBR", "CAD", CardType.MasterCard)]
-        [InlineData("GBR", "CZK", CardType.Visa)]
-        [InlineData("GBR", "CZK", CardType.MasterCard)]
-        [InlineData("GBR", "DKK", CardType.Visa)]
-        [InlineData("GBR", "DKK", CardType.MasterCard)]
-        [InlineData("GBR", "EUR", CardType.Visa)]
-        [InlineData("GBR", "EUR", CardType.MasterCard)]
-        [InlineData("GBR", "HUF", CardType.Visa)]
-        [InlineData("GBR", "HUF", CardType.MasterCard)]
-        [InlineData("GBR", "JPY", CardType.Visa)]
-        [InlineData("GBR", "JPY", CardType.MasterCard)]
-        [InlineData("GBR", "NOK", CardType.Visa)]
-        [InlineData("GBR", "NOK", CardType.MasterCard)]
-        [InlineData("GBR", "NZD", CardType.Visa)]
-        [InlineData("GBR", "NZD", CardType.MasterCard)]
-        [InlineData("GBR", "PLN", CardType.Visa)]
-        [InlineData("GBR", "PLN", CardType.MasterCard)]
-        [InlineData("GBR", "GBP", CardType.Visa)]
-        [InlineData("GBR", "GBP", CardType.MasterCard)]
-        [InlineData("GBR", "GBP", CardType.Solo)]
-        [InlineData("GBR", "GBP", CardType.Maestro)]
-        [InlineData("GBR", "SGD", CardType.Visa)]
-        [InlineData("GBR", "SGD", CardType.MasterCard)]
-        [InlineData("GBR", "SEK", CardType.Visa)]
-        [InlineData("GBR", "SEK", CardType.MasterCard)]
-        [InlineData("GBR", "CHF", CardType.Visa)]
-        [InlineData("GBR", "CHF", CardType.MasterCard)]
-        [InlineData("GBR", "USD", CardType.Visa)]
-        [InlineData("GBR", "USD", CardType.MasterCard)]
-        public void Accepts_Should_Return_True_For_All_Uk_Supported_Cards_Currency_Combos(string countryCode, string currency, CardType cardType) {
-            PayPalEnvironment.NegativeTestAccountSandboxEnvironment((PayPalAccountCountry) Enum.Parse(typeof (PayPalAccountCountry), countryCode));
+        [InlineData("AUD", CardType.Visa)]
+        [InlineData("AUD", CardType.MasterCard)]
+        [InlineData("CAD", CardType.Visa)]
+        [InlineData("CAD", CardType.MasterCard)]
+        [InlineData("CZK", CardType.Visa)]
+        [InlineData("CZK", CardType.MasterCard)]
+        [InlineData("DKK", CardType.Visa)]
+        [InlineData("DKK", CardType.MasterCard)]
+        [InlineData("EUR", CardType.Visa)]
+        [InlineData("EUR", CardType.MasterCard)]
+        [InlineData("HUF", CardType.Visa)]
+        [InlineData("HUF", CardType.MasterCard)]
+        [InlineData("JPY", CardType.Visa)]
+        [InlineData("JPY", CardType.MasterCard)]
+        [InlineData("NOK", CardType.Visa)]
+        [InlineData("NOK", CardType.MasterCard)]
+        [InlineData("NZD", CardType.Visa)]
+        [InlineData("NZD", CardType.MasterCard)]
+        [InlineData("PLN", CardType.Visa)]
+        [InlineData("PLN", CardType.MasterCard)]
+        [InlineData("GBP", CardType.Visa)]
+        [InlineData("GBP", CardType.MasterCard)]
+        [InlineData("GBP", CardType.Solo)]
+        [InlineData("GBP", CardType.Maestro)]
+        [InlineData("SGD", CardType.Visa)]
+        [InlineData("SGD", CardType.MasterCard)]
+        [InlineData("SEK", CardType.Visa)]
+        [InlineData("SEK", CardType.MasterCard)]
+        [InlineData("CHF", CardType.Visa)]
+        [InlineData("CHF", CardType.MasterCard)]
+        [InlineData("USD", CardType.Visa)]
+        [InlineData("USD", CardType.MasterCard)]
+        public void Accepts_Should_Return_True_For_All_Uk_Supported_Cards_Currency_Combos(string currency, CardType cardType) {
             this.Gateway.Accepts(new Currency(currency), cardType).ShouldBeTrue();
         }
 
         [Theory]
-        [InlineData("GBR", "GHS", CardType.Visa)]
+        [InlineData("AUD", CardType.Visa)]
+        [InlineData("AUD", CardType.MasterCard)]
+        [InlineData("CAD", CardType.Visa)]
+        [InlineData("CAD", CardType.MasterCard)]
+        [InlineData("CZK", CardType.Visa)]
+        [InlineData("CZK", CardType.MasterCard)]
+        [InlineData("DKK", CardType.Visa)]
+        [InlineData("DKK", CardType.MasterCard)]
+        [InlineData("EUR", CardType.Visa)]
+        [InlineData("EUR", CardType.MasterCard)]
+        [InlineData("HUF", CardType.Visa)]
+        [InlineData("HUF", CardType.MasterCard)]
+        [InlineData("JPY", CardType.Visa)]
+        [InlineData("JPY", CardType.MasterCard)]
+        [InlineData("NOK", CardType.Visa)]
+        [InlineData("NOK", CardType.MasterCard)]
+        [InlineData("NZD", CardType.Visa)]
+        [InlineData("NZD", CardType.MasterCard)]
+        [InlineData("PLN", CardType.Visa)]
+        [InlineData("PLN", CardType.MasterCard)]
+        [InlineData("GBP", CardType.Visa)]
+        [InlineData("GBP", CardType.MasterCard)]
+        [InlineData("SGD", CardType.Visa)]
+        [InlineData("SGD", CardType.MasterCard)]
+        [InlineData("SEK", CardType.Visa)]
+        [InlineData("SEK", CardType.MasterCard)]
+        [InlineData("CHF", CardType.Visa)]
+        [InlineData("CHF", CardType.MasterCard)]
+        [InlineData("USD", CardType.Visa)]
+        [InlineData("USD", CardType.MasterCard)]
+        public void Accepts_Should_Return_True_For_All_Canadian_Supported_Cards_Currency_Combos(string currency, CardType cardType)
+        {
+            //MAYBE this reinit is ugly. Do it better.
+            this.ReInitWithEnvironment(PayPalEnvironment.NegativeTestAccountSandboxEnvironment(PayPalAccountCountry.CAN));
+            this.Gateway.Accepts(new Currency(currency), cardType).ShouldBeTrue();
+        }
+
+        [Theory]
+        [InlineData("AUD", CardType.Visa)]
+        [InlineData("AUD", CardType.MasterCard)]
+        [InlineData("CAD", CardType.Visa)]
+        [InlineData("CAD", CardType.MasterCard)]
+        [InlineData("EUR", CardType.Visa)]
+        [InlineData("EUR", CardType.MasterCard)]
+        [InlineData("GBP", CardType.Visa)]
+        [InlineData("GBP", CardType.MasterCard)]
+        [InlineData("JPY", CardType.Visa)]
+        [InlineData("JPY", CardType.MasterCard)]
+        [InlineData("USD", CardType.Visa)]
+        [InlineData("USD", CardType.MasterCard)]
+        [InlineData("USD", CardType.Discover)]
+        [InlineData("USD", CardType.AmericanExpress)]
+        public void Accepts_Should_Return_True_For_All_Usa_Supported_Cards_Currency_Combos(string currency, CardType cardType) {
+            this.ReInitWithEnvironment(PayPalEnvironment.NegativeTestAccountSandboxEnvironment(PayPalAccountCountry.USA));
+            this.Gateway.Accepts(new Currency(currency), cardType).ShouldBeTrue();
+        }
+
+        [Theory]
+        [InlineData("GBR", "GHS", CardType.Visa)]//Start bad currencies
         [InlineData("USA", "CRC", CardType.Visa)]
         [InlineData("CAN", "KHR", CardType.Visa)]
+        [InlineData("CAN", "GBP", CardType.Solo)]//Start bad card types
+        [InlineData("USA", "USD", CardType.Solo)]//Start bad card types
         public void Accepts_Should_Return_False_For_Set_Of_Unsupported_Card_Nation_Currency_Combos(string countryCode, string currency, CardType cardType)
         {
-            PayPalEnvironment.NegativeTestAccountSandboxEnvironment((PayPalAccountCountry)Enum.Parse(typeof(PayPalAccountCountry), countryCode));
+            this.ReInitWithEnvironment(PayPalEnvironment.NegativeTestAccountSandboxEnvironment((PayPalAccountCountry)Enum.Parse(typeof(PayPalAccountCountry), countryCode)));
             this.Gateway.Accepts(new Currency(currency), cardType).ShouldBeFalse();
         }
     }
